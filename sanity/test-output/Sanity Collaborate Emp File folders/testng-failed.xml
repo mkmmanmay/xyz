@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Sanity Collaborate Emp File folders]">
+  <parameter name="copyToOptions" value="Private Files-Everyone in Work Room"/>
+  <parameter name="reportName" value="SANITY020_COLLABORATE_EMP_FILE_FOLDERS"/>
+  <parameter name="workroomIndex" value="1"/>
+  <parameter name="reportDetailLevel" value="43"/>
+  <parameter name="url" value="https://qa.guru.com/login.aspx"/>
+  <parameter name="path" value="C:\TestData\img2.jpg"/>
+  <parameter name="password" value="12345678"/>
+  <parameter name="thinkTime" value="5"/>
+  <parameter name="filesCheck" value="img1.jpg"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="filenames" value="img1.jpg"/>
+  <parameter name="waitTime" value="10"/>
+  <parameter name="fileNames" value="img1.jp"/>
+  <parameter name="implicitWaitTime" value="10"/>
+  <parameter name="username" value="guruemp001@gmail.com"/>
+  <listeners>
+    <listener class-name="com.guru.framework.testing.helpers.PDFReporter"/>
+    <listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener"/>
+  </listeners>
+  <test name="3. Click Private Files tab, and verify page loaded. Upload a file in private, and verify counter increased. Go to Chats.(failed)" preserve-order="true">
+    <parameter name="path" value="C:\TestData\img2.jpg"/>
+    <parameter name="password" value="12345678"/>
+    <parameter name="thinkTime" value="5"/>
+    <parameter name="reportName" value="SANITY020_COLLABORATE_EMP_FILE_FOLDERS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="reportDetailLevel" value="43"/>
+    <parameter name="waitTime" value="10"/>
+    <parameter name="url" value="https://qa.guru.com/login.aspx"/>
+    <parameter name="implicitWaitTime" value="10"/>
+    <parameter name="username" value="guruemp001@gmail.com"/>
+    <classes>
+      <class name="com.guru.testing.page.LaunchApplicationPageTest">
+        <methods>
+          <include name="startBrowserBeforeTest"/>
+          <include name="waitTime"/>
+          <include name="closeBrowserAfterSuite"/>
+          <include name="loadObjectMaps"/>
+          <include name="closeBroserAfterTest"/>
+          <include name="startBrowserBeforeSuite"/>
+        </methods>
+      </class> <!-- com.guru.testing.page.LaunchApplicationPageTest -->
+      <class name="com.guru.testing.page.WorkroomPageTest">
+        <methods>
+          <include name="verifyDefaultChatroomTest"/>
+        </methods>
+      </class> <!-- com.guru.testing.page.WorkroomPageTest -->
+    </classes>
+  </test> <!-- 3. Click Private Files tab, and verify page loaded. Upload a file in private, and verify counter increased. Go to Chats.(failed) -->
+</suite> <!-- Failed suite [Sanity Collaborate Emp File folders] -->

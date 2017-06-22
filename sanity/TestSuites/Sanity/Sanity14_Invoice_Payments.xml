@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sanity Invoice Payment" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="15" />
+	<parameter name="thinkTime" value="5" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY014_INVOICE_PAYMENT" />
+	<parameter name="reportDetailLevel" value="107" />
+	<parameter name="url" value="https://qa.guru.com/login.aspx" />
+	<parameter name="username" value="autoempinvoice@mailinator.com" />
+	<parameter name="password" value="12345678" />
+		
+	<test name="1. Login as Employer." preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="clickPayTabTest" />
+				</methods>
+			</class>			
+		</classes>
+	</test>
+	
+	<test name="2. Go to Invoices tab, and click on View and Pay. 10 dollars from CA, and remaining from Safepay" preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.InvoicePageTest">
+				<methods>
+				 	<include name="verifyInvoicePageTest" />
+				 	<include name="clickFirstUnpaidInvTest" />
+				 	<include name="verifyInvoiceDetailsTest" />
+				 	<include name="getInvoiceTotalAmountTest" />
+				 	<include name="clickPayInvoiceTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PayNowPageTest" >
+			<parameter name = "subtractOriginalBy" value = "10" />
+			<parameter name="paymentMethod" value="CASH_ACCOUNT"/>
+				<methods>
+					<include name="verifyPayforInvoiceTest" />
+					<include name="verifyPaymentMethodTest" />
+					<include name="editSafePayFundsTest" />
+					<include name="clickUseCAfunds" />
+					<include name="selectAgreeToPayCheckboxTest" />
+					<include name="clickToPayTest" />
+					<include name="verifyInvoicePaidTest" />
+					<include name="clickBackToInvoiceTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3. Click on View and Pay on invoice, and pay using CA and CC." preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.InvoicePageTest">
+				<methods>
+				 	<include name="verifyInvoicePageTest" />
+				 	<include name="clickFirstUnpaidInvTest" />
+				 	<include name="getInvoiceTotalAmountTest" />
+				 	<include name="clickPayInvoiceTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PayNowPageTest" >
+			<parameter name = "subtractOriginalBy" value = "10" />
+			<parameter name="paymentMethod" value="CREDIT_CARD"/>
+				<methods>
+					<include name="verifyPayforInvoiceTest" />
+					
+					<include name="clearSafePayFundsTest" />
+					<include name="verifyPaymentMethodTest" />
+					<include name="clickUseCAfunds" />
+					<include name="getAmountinCATextboxTest" />
+					<include name="editCAFundsTest" />
+					<include name="selectCCTest" />
+					<include name="selectAgreeToPayCheckboxTest" />
+					<include name="clickToPayTest" />
+					<include name="verifyInvoicePaidTest" />
+					<include name="clickBackToInvoiceTest" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="4. Click on View and Pay on invoice, and pay using CA and Paypal." preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.InvoicePageTest">
+				<methods>
+				 	<include name="verifyInvoicePageTest" />
+				 	<include name="clickFirstUnpaidInvTest" />
+				 	<include name="getInvoiceTotalAmountTest" />
+				 	<include name="clickPayInvoiceTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PayNowPageTest" >
+			<parameter name = "subtractOriginalBy" value = "10" />
+			<parameter name="paymentMethod" value="PAY_PAL"/>
+				<methods>
+					<include name="verifyPayforInvoiceTest" />
+					<include name="clearSafePayFundsTest" />
+					<include name="verifyPaymentMethodTest" />
+					<include name="clickUseCAfunds" />
+					<include name="getAmountinCATextboxTest" />
+					<include name="editCAFundsTest" />
+					<include name="selectPaypalTest" />
+					<include name="selectAgreeToPayCheckboxTest" />
+					<include name="clickToPayTest" />
+					<include name="verifyInvoicePaidTest" />
+					<include name="clickBackToInvoiceTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	
+</suite>

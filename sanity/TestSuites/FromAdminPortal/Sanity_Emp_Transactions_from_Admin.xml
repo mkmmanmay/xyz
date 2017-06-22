@@ -1,0 +1,190 @@
+<suite name="Transactions Sanity fr Employer from Admin page" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="10" />
+	<parameter name="thinkTime" value="2" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY_EMP__TRANSACTIONS_FROM_ADMIN" />
+	<parameter name="reportDetailLevel" value="107" />
+	<parameter name="url" value="https://admin.guru.com/admin/login.aspx" />
+	 <parameter name="username" value="small" />
+	<parameter name="password" value="password" />
+	
+	
+
+	<test name="1. Goto Account from admin site for employer and Verify Transactions UI">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminLoginPageTest">
+				<methods>
+					<include name="verifyAdminLoginPageTest" />
+					<include name="enterUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickLoginTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminHomePageTest">
+				
+				<methods>
+					<include name="verifyAdminHomePageTest" />
+					<include name="clickCRMAccountSearch" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminCRMPageTest">
+			 <parameter name="searchKeyword" value="149861" />
+			<parameter name="searchEmpBy" value="Employer ID" />
+			<methods>
+				<include name="verifyCRMAccountSearchPageTest" />
+				<include name="enterEmpSearchKeywordTest" />
+				<include name="selectEmpSearchbyTest" />				
+				<include name="clickEmpSearchTest" />								
+				<include name="verifyEmpSearchResultsTest" />
+				<include name="gotoAccountTest" />
+				<include name="switchToAccountPageTest" />
+				</methods>
+			</class>
+					
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+				<include name="verifyEMPDashboardPageTest" />				
+				<include name="clickPayTabTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PaymentsInvoicePageTest">
+				<methods>
+				<include name="verifyInvoicePageTest" />				
+				<include name="clickTransactionsTabTest" />
+				</methods>
+			</class>		
+			
+		<class name="com.guru.testing.page.TransactionsPageTest">		
+			<methods>
+				<include name="verifyTransactionsPageTest" />
+				<include name="verifyCalendarTest" />
+				<include name="closeCalendarTest" />												
+			</methods>
+			</class> 			
+		</classes>
+	</test>
+	
+	<test name="2. Verify Calendar Controls ">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">			
+			<parameter name="noDataDateRange" value="01-02-2017|01-02-2017" />
+			<parameter name="fromDateAfterToDate" value="23-02-2017|01-02-2017" />			
+			<parameter name="dateRangeMoreThanAYear" value="01-02-2015|01-02-2016" />
+			<parameter name="validDataDateRange" value="01-09-2016|01-03-2017" />			
+			<parameter name="noDataText" value="You have no transaction in this date range." />
+			<parameter name="rangeMoreThanYearText" value="Please select a date range that does not exceed 12 months." />
+			<methods>
+				<include name="verifyDefaultDateRangeTest" />
+				<include name="applyDateRangeNoDataTest" />	
+				<include name="clickFilter1Test" />	
+				<include name="verifyWhenNoDataPresentTest" />															
+				<include name="applyAndVerifyFutureToDateIsDisabledTest" />				
+				<include name="applyAndVerifyFromDateAfterToDateIsDisabledTest" />
+				<include name="closeCalendarTest" />				
+				<include name="applyDateRangeMoreThanAYearTest" />			
+				<include name="clickFilter2Test" />				
+				<include name="verifyDateRangeMoreThanAYearTest" />				
+				<include name="reloadAndVerifyDateRangeTest" />				
+				<include name="applyDateRangeValidDataTest" />
+				<include name="clickFilter3Test" />	
+				<include name="verifyDataIsLoadedTest" />
+				<include name="verifyReportingByOptionsTest" />
+				<include name="verifyDownloadOptionsTest" />
+				<include name="closeDownloadOptionTest" />								
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+	
+		<test name="3. Verify Sort by Guru Name">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<methods>
+				<include name="verifyReportByGuruTest" />
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+	
+	<test name="4. Verify sort by Payment Method">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<methods>
+				<include name="applyReportByPaymentMethodTest" />
+				<include name="verifyReportByPaymentMethodTest" />
+				<include name="verifySortByPaymentMethodTest" />	
+					
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+	
+	<test name="5. Verify sort by Job Id">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<methods>
+				<include name="applyReportByJobTest" />
+				<include name="verifyReportByJobTest" />
+				<include name="verifySortByIDTest" />
+				
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+	
+	<test name="6. Download report by PDF and Verify Print ">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<parameter name="fileType" value="PDF"/>
+			<methods>
+				<include name="downloadReportByTest" />
+				<include name="clickPrintButtonTest" />
+				<include name="verifyPrintWindowTest" />
+			</methods>
+		</class>
+	</classes>
+	</test>
+	
+	<test name="7. Download report by CSV and Verify Print ">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<parameter name="fileType" value="CSV"/>
+			<methods>
+				<include name="downloadReportByTest" />
+			</methods>
+		</class>
+				
+		<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutEmployerTest" />
+			</methods>
+		</class>
+		
+		<class name="com.guru.testing.page.LoginPageTest">
+			<methods>
+				<include name="verifyLoginPageTest" />
+			</methods>
+		</class>
+		
+	</classes>
+	</test> 
+	</suite>

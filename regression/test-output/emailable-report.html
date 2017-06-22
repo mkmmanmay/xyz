@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Launch application</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">8.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">Login application</td><td class="numi">5</td><td class="numi">5</td><td class="numi">0</td><td class="numi">0</td><td class="numi">39.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Approve payments</td><td class="numi">93</td><td class="numi">93</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">429.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="total"><td>Total</td>
+<td class="numi">99</td><td class="numi">99</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">477.2 seconds</td><td colspan="2">&nbsp;</td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Launch application &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.tests.LaunchApplication<td><a href="#m1"><b>navigateToUrlTest</b>  </a></td><td class="numi">1</td><td>1498029007015</td><td class="numi">6244</td></tr>
+<tr><th colspan="4">Login application &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="5">com.guru.testing.tests.EMPLogin<td><a href="#m2"><b>enterUsernameAndPasswordTest</b>  </a></td><td class="numi">1</td><td>1498029013294</td><td class="numi">353</td></tr><tr class="passedodd"><td><a href="#m3"><b>clickSignInTest</b>  </a></td><td class="numi">1</td><td>1498029013648</td><td class="numi">8162</td></tr><tr class="passedodd"><td><a href="#m4"><b>validateSecurityTest</b>  </a></td><td class="numi">1</td><td>1498029021813</td><td class="numi">9805</td></tr><tr class="passedodd"><td><a href="#m5"><b>verifyAndSkipPhoneVerificationTest</b>  </a></td><td class="numi">1</td><td>1498029031621</td><td class="numi">20510</td></tr><tr class="passedodd"><td><a href="#m6"><b>verifyDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1498029052134</td><td class="numi">238</td></tr>
+<tr><th colspan="4">Approve payments &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="3">com.guru.testing.tests.RefundRevokeDecline<td><a href="#m7"><b>verifyAdminLoginPageTest</b>  </a></td><td class="numi">1</td><td>1498029374641</td><td class="numi">25</td></tr><tr class="failedodd"><td><a href="#m8"><b>verifyLoggedOutTest</b>  </a></td><td class="numi">1</td><td>1498029406458</td><td class="numi">16</td></tr><tr class="failedodd"><td><a href="#m9"><b>validateAdminLoginPageTest</b>  </a></td><td class="numi">1</td><td>1498029466388</td><td class="numi">9</td></tr>
+<tr><th colspan="4">Approve payments &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="93">com.guru.testing.tests.RefundRevokeDecline<td><a href="#m10"><b>goToPostAJobPageTest</b>  </a></td><td class="numi">1</td><td>1498029052384</td><td class="numi">4146</td></tr><tr class="passedodd"><td><a href="#m11"><b>verifyPostAJobPageTest</b>  </a></td><td class="numi">1</td><td>1498029056533</td><td class="numi">878</td></tr><tr class="passedodd"><td><a href="#m12"><b>enterJobDetailsTest</b>  </a></td><td class="numi">1</td><td>1498029057412</td><td class="numi">27026</td></tr><tr class="passedodd"><td><a href="#m13"><b>clickPostJobTest</b>  </a></td><td class="numi">1</td><td>1498029084440</td><td class="numi">5523</td></tr><tr class="passedodd"><td><a href="#m14"><b>verifyFeatureJobPayNowPageTest</b>  </a></td><td class="numi">1</td><td>1498029089968</td><td class="numi">7021</td></tr><tr class="passedodd"><td><a href="#m15"><b>agreeToPayCheckTest</b>  </a></td><td class="numi">1</td><td>1498029096990</td><td class="numi">66</td></tr><tr class="passedodd"><td><a href="#m16"><b>clickPayTest</b>  </a></td><td class="numi">1</td><td>1498029097057</td><td class="numi">89</td></tr><tr class="passedodd"><td><a href="#m17"><b>verifyJobPostSuccessTest</b>  </a></td><td class="numi">1</td><td>1498029097148</td><td class="numi">14415</td></tr><tr class="passedodd"><td><a href="#m18"><b>goToJobHirePageTest</b>  </a></td><td class="numi">1</td><td>1498029111564</td><td class="numi">9713</td></tr><tr class="passedodd"><td><a href="#m19"><b>verifyHirePageTest</b>  </a></td><td class="numi">1</td><td>1498029121279</td><td class="numi">11667</td></tr><tr class="passedodd"><td><a href="#m20"><b>signOutEMPTest</b>  </a></td><td class="numi">1</td><td>1498029132949</td><td class="numi">15201</td></tr><tr class="passedodd"><td><a href="#m21"><b>verifyLoginPageOneTest</b>  </a></td><td class="numi">1</td><td>1498029148152</td><td class="numi">155</td></tr><tr class="passedodd"><td><a href="#m22"><b>loginAsFLTest</b>  </a></td><td class="numi">1</td><td>1498029148308</td><td class="numi">274</td></tr><tr class="passedodd"><td><a href="#m23"><b>verifyFLLoggedInTest</b>  </a></td><td class="numi">1</td><td>1498029148583</td><td class="numi">25008</td></tr><tr class="passedodd"><td><a href="#m24"><b>verifyFLDashTest</b>  </a></td><td class="numi">1</td><td>1498029173594</td><td class="numi">206</td></tr><tr class="passedodd"><td><a href="#m25"><b>launchTinyUrlTest</b>  </a></td><td class="numi">1</td><td>1498029173801</td><td class="numi">7554</td></tr><tr class="passedodd"><td><a href="#m26"><b>verifyJobDetailsPageTest</b>  </a></td><td class="numi">1</td><td>1498029181356</td><td class="numi">1328</td></tr><tr class="passedodd"><td><a href="#m27"><b>clickApplyTest</b>  </a></td><td class="numi">1</td><td>1498029182685</td><td class="numi">58</td></tr><tr class="passedodd"><td><a href="#m28"><b>verifyApplyQuoteFormTest</b>  </a></td><td class="numi">1</td><td>1498029182745</td><td class="numi">4346</td></tr><tr class="passedodd"><td><a href="#m29"><b>craftMilestoneQuoteTest</b>  </a></td><td class="numi">1</td><td>1498029187092</td><td class="numi">5309</td></tr><tr class="passedodd"><td><a href="#m30"><b>submitQuoteTest</b>  </a></td><td class="numi">1</td><td>1498029192402</td><td class="numi">119</td></tr><tr class="passedodd"><td><a href="#m31"><b>verifyQuoteSubmittedTest</b>  </a></td><td class="numi">1</td><td>1498029192523</td><td class="numi">2359</td></tr><tr class="passedodd"><td><a href="#m32"><b>signOutFLTest</b>  </a></td><td class="numi">1</td><td>1498029194883</td><td class="numi">6459</td></tr><tr class="passedodd"><td><a href="#m33"><b>verifyLoginPageTwoTest</b>  </a></td><td class="numi">1</td><td>1498029201345</td><td class="numi">179</td></tr><tr class="passedodd"><td><a href="#m34"><b>loginAsEMPTest</b>  </a></td><td class="numi">1</td><td>1498029201525</td><td class="numi">214</td></tr><tr class="passedodd"><td><a href="#m35"><b>verifyEMPLoggedInTest</b>  </a></td><td class="numi">1</td><td>1498029201740</td><td class="numi">14269</td></tr><tr class="passedodd"><td><a href="#m36"><b>verifyEMPDashTest</b>  </a></td><td class="numi">1</td><td>1498029216012</td><td class="numi">255</td></tr><tr class="passedodd"><td><a href="#m37"><b>goToJobHirePageAgainTest</b>  </a></td><td class="numi">1</td><td>1498029216268</td><td class="numi">3402</td></tr><tr class="passedodd"><td><a href="#m38"><b>verifyHirePageAgainTest</b>  </a></td><td class="numi">1</td><td>1498029219672</td><td class="numi">1040</td></tr><tr class="passedodd"><td><a href="#m39"><b>hireTheFLTest</b>  </a></td><td class="numi">1</td><td>1498029220713</td><td class="numi">8151</td></tr><tr class="passedodd"><td><a href="#m40"><b>logOutEMPTest</b>  </a></td><td class="numi">1</td><td>1498029228866</td><td class="numi">9937</td></tr><tr class="passedodd"><td><a href="#m41"><b>verifyLoginPageThreeTest</b>  </a></td><td class="numi">1</td><td>1498029238805</td><td class="numi">140</td></tr><tr class="passedodd"><td><a href="#m42"><b>loginAsFreeLTest</b>  </a></td><td class="numi">1</td><td>1498029238946</td><td class="numi">256</td></tr><tr class="passedodd"><td><a href="#m43"><b>verifyFreeLLoggedInTest</b>  </a></td><td class="numi">1</td><td>1498029239203</td><td class="numi">13682</td></tr><tr class="passedodd"><td><a href="#m44"><b>verifyFLDashboardTest</b>  </a></td><td class="numi">1</td><td>1498029252888</td><td class="numi">210</td></tr><tr class="passedodd"><td><a href="#m45"><b>goToWorkroomTest</b>  </a></td><td class="numi">1</td><td>1498029253099</td><td class="numi">4220</td></tr><tr class="passedodd"><td><a href="#m46"><b>verifyFLWorkroomTest</b>  </a></td><td class="numi">1</td><td>1498029257322</td><td class="numi">246</td></tr><tr class="passedodd"><td><a href="#m47"><b>clickSendInvoiceTest</b>  </a></td><td class="numi">1</td><td>1498029257569</td><td class="numi">6093</td></tr><tr class="passedodd"><td><a href="#m48"><b>verifyCreateInvoicePageTest</b>  </a></td><td class="numi">1</td><td>1498029263663</td><td class="numi">9393</td></tr><tr class="passedodd"><td><a href="#m49"><b>enterInvoiceDetailsTest</b>  </a></td><td class="numi">1</td><td>1498029273057</td><td class="numi">2210</td></tr><tr class="passedodd"><td><a href="#m50"><b>sendInvoiceTest</b>  </a></td><td class="numi">1</td><td>1498029275268</td><td class="numi">2065</td></tr><tr class="passedodd"><td><a href="#m51"><b>verifyFLInvoicePageTest</b>  </a></td><td class="numi">1</td><td>1498029277336</td><td class="numi">3411</td></tr><tr class="passedodd"><td><a href="#m52"><b>signOutFreeLTest</b>  </a></td><td class="numi">1</td><td>1498029280748</td><td class="numi">6362</td></tr><tr class="passedodd"><td><a href="#m53"><b>verifyLoginPageFourTest</b>  </a></td><td class="numi">1</td><td>1498029287111</td><td class="numi">129</td></tr><tr class="passedodd"><td><a href="#m54"><b>loginEMPTest</b>  </a></td><td class="numi">1</td><td>1498029287241</td><td class="numi">214</td></tr><tr class="passedodd"><td><a href="#m55"><b>verifyEMPLogInTest</b>  </a></td><td class="numi">1</td><td>1498029287458</td><td class="numi">10290</td></tr><tr class="passedodd"><td><a href="#m56"><b>verifyDashEMPTest</b>  </a></td><td class="numi">1</td><td>1498029297751</td><td class="numi">247</td></tr><tr class="passedodd"><td><a href="#m57"><b>clickPayTabTest</b>  </a></td><td class="numi">1</td><td>1498029297999</td><td class="numi">2820</td></tr><tr class="passedodd"><td><a href="#m58"><b>verifyInvoicePageTest</b>  </a></td><td class="numi">1</td><td>1498029300821</td><td class="numi">308</td></tr><tr class="passedodd"><td><a href="#m59"><b>clickUnpaidInvoiceTest</b>  </a></td><td class="numi">1</td><td>1498029301130</td><td class="numi">380</td></tr><tr class="passedodd"><td><a href="#m60"><b>verifyInvoiceDetailsPageTest</b>  </a></td><td class="numi">1</td><td>1498029301513</td><td class="numi">11611</td></tr><tr class="passedodd"><td><a href="#m61"><b>clickPayInvoiceTest</b>  </a></td><td class="numi">1</td><td>1498029313125</td><td class="numi">4043</td></tr><tr class="passedodd"><td><a href="#m62"><b>verifyInvoicePayNowPageTest</b>  </a></td><td class="numi">1</td><td>1498029317170</td><td class="numi">5947</td></tr><tr class="passedodd"><td><a href="#m63"><b>selectECheckAndAgreeTermsTest</b>  </a></td><td class="numi">1</td><td>1498029323118</td><td class="numi">34324</td></tr><tr class="passedodd"><td><a href="#m64"><b>payInvoiceTest</b>  </a></td><td class="numi">1</td><td>1498029357443</td><td class="numi">99</td></tr><tr class="passedodd"><td><a href="#m65"><b>verifyInvoicePaidTest</b>  </a></td><td class="numi">1</td><td>1498029357544</td><td class="numi">6381</td></tr><tr class="passedodd"><td><a href="#m66"><b>signOutEmployerTest</b>  </a></td><td class="numi">1</td><td>1498029363926</td><td class="numi">9352</td></tr><tr class="passedodd"><td><a href="#m67"><b>verifyLoginPageFiveTest</b>  </a></td><td class="numi">1</td><td>1498029373280</td><td class="numi">135</td></tr><tr class="passedodd"><td><a href="#m68"><b>launchAdminSiteTest</b>  </a></td><td class="numi">1</td><td>1498029373416</td><td class="numi">1220</td></tr><tr class="passedodd"><td><a href="#m69"><b>loginToAdminTest</b>  </a></td><td class="numi">1</td><td>1498029376635</td><td class="numi">6548</td></tr><tr class="passedodd"><td><a href="#m70"><b>verifyAdminHomePageTest</b>  </a></td><td class="numi">1</td><td>1498029383186</td><td class="numi">76</td></tr><tr class="passedodd"><td><a href="#m71"><b>goToAcceptApproveTest</b>  </a></td><td class="numi">1</td><td>1498029383263</td><td class="numi">2893</td></tr><tr class="passedodd"><td><a href="#m72"><b>verifyAdminApprovePaymentsPage</b>  </a></td><td class="numi">1</td><td>1498029386158</td><td class="numi">927</td></tr><tr class="passedodd"><td><a href="#m73"><b>goToPendingTabTest</b>  </a></td><td class="numi">1</td><td>1498029387086</td><td class="numi">674</td></tr><tr class="passedodd"><td><a href="#m74"><b>findPendingPaymentTest</b>  </a></td><td class="numi">1</td><td>1498029387761</td><td class="numi">968</td></tr><tr class="passedodd"><td><a href="#m75"><b>clickApproveTest</b>  </a></td><td class="numi">1</td><td>1498029388730</td><td class="numi">5468</td></tr><tr class="passedodd"><td><a href="#m76"><b>goToCompletedTabTest</b>  </a></td><td class="numi">1</td><td>1498029394200</td><td class="numi">1050</td></tr><tr class="passedodd"><td><a href="#m77"><b>clickRevokeTest</b>  </a></td><td class="numi">1</td><td>1498029395252</td><td class="numi">3364</td></tr><tr class="passedodd"><td><a href="#m78"><b>logoutAdminTest</b>  </a></td><td class="numi">1</td><td>1498029398618</td><td class="numi">7837</td></tr><tr class="passedodd"><td><a href="#m79"><b>launchGuruTest</b>  </a></td><td class="numi">1</td><td>1498029407159</td><td class="numi">1872</td></tr><tr class="passedodd"><td><a href="#m80"><b>verifyLoginPageSixTest</b>  </a></td><td class="numi">1</td><td>1498029409032</td><td class="numi">126</td></tr><tr class="passedodd"><td><a href="#m81"><b>loginEmployerTest</b>  </a></td><td class="numi">1</td><td>1498029409159</td><td class="numi">201</td></tr><tr class="passedodd"><td><a href="#m82"><b>verifyEmployerLogInTest</b>  </a></td><td class="numi">1</td><td>1498029409362</td><td class="numi">14620</td></tr><tr class="passedodd"><td><a href="#m83"><b>verifyEmployerDashTest</b>  </a></td><td class="numi">1</td><td>1498029423985</td><td class="numi">280</td></tr><tr class="passedodd"><td><a href="#m84"><b>goToInvoiceSummaryTest</b>  </a></td><td class="numi">1</td><td>1498029424265</td><td class="numi">3068</td></tr><tr class="passedodd"><td><a href="#m85"><b>verifyInvoiceSummaryTest</b>  </a></td><td class="numi">1</td><td>1498029427335</td><td class="numi">511</td></tr><tr class="passedodd"><td><a href="#m86"><b>clickFirstViewAndPayTest</b>  </a></td><td class="numi">1</td><td>1498029427848</td><td class="numi">83</td></tr><tr class="passedodd"><td><a href="#m87"><b>validateInvoiceDetailsPageTest</b>  </a></td><td class="numi">1</td><td>1498029427932</td><td class="numi">11429</td></tr><tr class="passedodd"><td><a href="#m88"><b>clickPayInvoiceBtnTest</b>  </a></td><td class="numi">1</td><td>1498029439362</td><td class="numi">4085</td></tr><tr class="passedodd"><td><a href="#m89"><b>validateInvoicePayNowPageTest</b>  </a></td><td class="numi">1</td><td>1498029443448</td><td class="numi">6734</td></tr><tr class="passedodd"><td><a href="#m90"><b>payUsingEcheckTest</b>  </a></td><td class="numi">1</td><td>1498029450183</td><td class="numi">321</td></tr><tr class="passedodd"><td><a href="#m91"><b>payTheInvoiceTest</b>  </a></td><td class="numi">1</td><td>1498029450506</td><td class="numi">83</td></tr><tr class="passedodd"><td><a href="#m92"><b>verifyInvoiceIsPaidTest</b>  </a></td><td class="numi">1</td><td>1498029450592</td><td class="numi">6356</td></tr><tr class="passedodd"><td><a href="#m93"><b>logOutEmployerTest</b>  </a></td><td class="numi">1</td><td>1498029456950</td><td class="numi">8442</td></tr><tr class="passedodd"><td><a href="#m94"><b>verifyLoginPageSevenTest</b>  </a></td><td class="numi">1</td><td>1498029465394</td><td class="numi">142</td></tr><tr class="passedodd"><td><a href="#m95"><b>goToAdminSiteTest</b>  </a></td><td class="numi">1</td><td>1498029465536</td><td class="numi">850</td></tr><tr class="passedodd"><td><a href="#m96"><b>logIntoAdminTest</b>  </a></td><td class="numi">1</td><td>1498029467151</td><td class="numi">6574</td></tr><tr class="passedodd"><td><a href="#m97"><b>validateAdminHomePageTest</b>  </a></td><td class="numi">1</td><td>1498029473728</td><td class="numi">63</td></tr><tr class="passedodd"><td><a href="#m98"><b>goToAcceptApprovePaymentsTest</b>  </a></td><td class="numi">1</td><td>1498029473791</td><td class="numi">2208</td></tr><tr class="passedodd"><td><a href="#m99"><b>validateAdminApprovePaymentsPage</b>  </a></td><td class="numi">1</td><td>1498029476000</td><td class="numi">817</td></tr><tr class="passedodd"><td><a href="#m100"><b>navToPendingTabTest</b>  </a></td><td class="numi">1</td><td>1498029476819</td><td class="numi">698</td></tr><tr class="passedodd"><td><a href="#m101"><b>searchForPendingPaymentTest</b>  </a></td><td class="numi">1</td><td>1498029477518</td><td class="numi">625</td></tr><tr class="passedodd"><td><a href="#m102"><b>clickDeclineTest</b>  </a></td><td class="numi">1</td><td>1498029478144</td><td class="numi">4021</td></tr>
+</table>
+<h1>Launch application</h1>
+<a id="m1"></a><h2>com.guru.testing.tests.LaunchApplication:navigateToUrlTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">https://qa.guru.com/login.aspx</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Login application</h1>
+<a id="m2"></a><h2>com.guru.testing.tests.EMPLogin:clickSignInTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.guru.testing.tests.EMPLogin:verifyDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.guru.testing.tests.EMPLogin:enterUsernameAndPasswordTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemp001@gmail.com</td>
+<td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>com.guru.testing.tests.EMPLogin:validateSecurityTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>com.guru.testing.tests.EMPLogin:verifyAndSkipPhoneVerificationTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Approve payments</h1>
+<a id="m7"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoggedOutTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.NullPointerException</p>
+com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)
+<br/>at com.guru.testing.tests.RefundRevokeDecline.verifyLoggedOutTest(RefundRevokeDecline.java:513)
+<br/>25 lines not shown
+<p>Caused by null</p>
+com.guru.framework.testing.browser.BrowserAccess.getLocalizationText(BrowserAccess.java:71)
+<br/>at com.guru.framework.testing.browser.BrowserWait.waitUntilText(BrowserWait.java:336)
+<br/>at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:17)
+<br/>at com.guru.testing.tests.RefundRevokeDecline.verifyLoggedOutTest(RefundRevokeDecline.java:513)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyAdminLoginPageTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.NullPointerException</p>
+com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)
+<br/>at com.guru.testing.tests.RefundRevokeDecline.verifyAdminLoginPageTest(RefundRevokeDecline.java:426)
+<br/>25 lines not shown
+<p>Caused by null</p>
+com.guru.framework.testing.browser.BrowserAccess.getLocalizationText(BrowserAccess.java:71)
+<br/>at com.guru.framework.testing.browser.BrowserWait.waitUntilText(BrowserWait.java:336)
+<br/>at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:17)
+<br/>at com.guru.testing.tests.RefundRevokeDecline.verifyAdminLoginPageTest(RefundRevokeDecline.java:426)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>com.guru.testing.tests.RefundRevokeDecline:validateAdminLoginPageTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.NullPointerException</p>
+com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)
+<br/>at com.guru.testing.tests.RefundRevokeDecline.validateAdminLoginPageTest(RefundRevokeDecline.java:627)
+<br/>25 lines not shown
+<p>Caused by null</p>
+com.guru.framework.testing.browser.BrowserAccess.getLocalizationText(BrowserAccess.java:71)
+<br/>at com.guru.framework.testing.browser.BrowserWait.waitUntilText(BrowserWait.java:336)
+<br/>at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:17)
+<br/>at com.guru.testing.tests.RefundRevokeDecline.validateAdminLoginPageTest(RefundRevokeDecline.java:627)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m10"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickUnpaidInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m11"></a><h2>com.guru.testing.tests.RefundRevokeDecline:validateAdminHomePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m12"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageSixTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m13"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageOneTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m14"></a><h2>com.guru.testing.tests.RefundRevokeDecline:agreeToPayCheckTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m15"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyQuoteSubmittedTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m16"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToCompletedTabTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th><th style="padding-left:1em;padding-right:1em">Parameter #3</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">COMPLETED</td>
+<td style="padding-left:.5em;padding-right:2em">2017-06-20</td>
+<td style="padding-left:.5em;padding-right:2em">2017-06-21</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m17"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickPayInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m18"></a><h2>com.guru.testing.tests.RefundRevokeDecline:signOutFreeLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m19"></a><h2>com.guru.testing.tests.RefundRevokeDecline:loginAsEMPTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemp001@gmail.com</td>
+<td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m20"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyHirePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m21"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyApplyQuoteFormTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m22"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFLWorkroomTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m23"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickSendInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m24"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickApproveTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m25"></a><h2>com.guru.testing.tests.RefundRevokeDecline:payTheInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m26"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyEMPLoggedInTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m27"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToJobHirePageAgainTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m28"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyCreateInvoicePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m29"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFLDashTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m30"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyInvoiceSummaryTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m31"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickFirstViewAndPayTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m32"></a><h2>com.guru.testing.tests.RefundRevokeDecline:enterJobDetailsTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th><th style="padding-left:1em;padding-right:1em">Parameter #3</th><th style="padding-left:1em;padding-right:1em">Parameter #4</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">Automated Job Details</td>
+<td style="padding-left:.5em;padding-right:2em">Web, Software & IT</td>
+<td style="padding-left:.5em;padding-right:2em">testing</td>
+<td style="padding-left:.5em;padding-right:2em">Under $250</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m33"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToInvoiceSummaryTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m34"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToAdminSiteTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">https://qa.guru.com/admin/login.aspx</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m35"></a><h2>com.guru.testing.tests.RefundRevokeDecline:searchForPendingPaymentTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">2017-06-20</td>
+<td style="padding-left:.5em;padding-right:2em">2017-06-21</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m36"></a><h2>com.guru.testing.tests.RefundRevokeDecline:loginAsFreeLTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">gurufree001@gmail.com</td>
+<td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m37"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyInvoicePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m38"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyEmployerDashTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m39"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyJobPostSuccessTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m40"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFreeLLoggedInTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m41"></a><h2>com.guru.testing.tests.RefundRevokeDecline:submitQuoteTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m42"></a><h2>com.guru.testing.tests.RefundRevokeDecline:signOutFLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m43"></a><h2>com.guru.testing.tests.RefundRevokeDecline:loginAsFLTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">gurufree001@gmail.com</td>
+<td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m44"></a><h2>com.guru.testing.tests.RefundRevokeDecline:sendInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m45"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageThreeTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m46"></a><h2>com.guru.testing.tests.RefundRevokeDecline:logOutEmployerTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m47"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageFiveTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m48"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyAdminHomePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m49"></a><h2>com.guru.testing.tests.RefundRevokeDecline:launchTinyUrlTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m50"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyJobDetailsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m51"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyInvoiceDetailsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m52"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyInvoicePaidTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m53"></a><h2>com.guru.testing.tests.RefundRevokeDecline:validateAdminApprovePaymentsPage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m54"></a><h2>com.guru.testing.tests.RefundRevokeDecline:launchAdminSiteTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">https://qa.guru.com/admin/login.aspx</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m55"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyHirePageAgainTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m56"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFLDashboardTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m57"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToPostAJobPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m58"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyEMPDashTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m59"></a><h2>com.guru.testing.tests.RefundRevokeDecline:loginEMPTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemp001@gmail.com</td>
+<td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m60"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyInvoiceIsPaidTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m61"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToJobHirePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m62"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToWorkroomTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">1</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m63"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyInvoicePayNowPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m64"></a><h2>com.guru.testing.tests.RefundRevokeDecline:logOutEMPTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m65"></a><h2>com.guru.testing.tests.RefundRevokeDecline:logIntoAdminTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">small</td>
+<td style="padding-left:.5em;padding-right:2em">password</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m66"></a><h2>com.guru.testing.tests.RefundRevokeDecline:craftMilestoneQuoteTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th><th style="padding-left:1em;padding-right:1em">Parameter #3</th><th style="padding-left:1em;padding-right:1em">Parameter #4</th><th style="padding-left:1em;padding-right:1em">Parameter #5</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">1</td>
+<td style="padding-left:.5em;padding-right:2em">Auto Mile 1</td>
+<td style="padding-left:.5em;padding-right:2em">01-12-2018</td>
+<td style="padding-left:.5em;padding-right:2em">120</td>
+<td style="padding-left:.5em;padding-right:2em">Automated Scope of Work</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m67"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickRevokeTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m68"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFLInvoicePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m69"></a><h2>com.guru.testing.tests.RefundRevokeDecline:findPendingPaymentTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th><th style="padding-left:1em;padding-right:1em">Parameter #3</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">2017-06-20</td>
+<td style="padding-left:.5em;padding-right:2em">2017-06-21</td>
+<td style="padding-left:.5em;padding-right:2em">0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m70"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyAdminApprovePaymentsPage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m71"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageFourTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m72"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageTwoTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m73"></a><h2>com.guru.testing.tests.RefundRevokeDecline:loginEmployerTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemp001@gmail.com</td>
+<td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m74"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFeatureJobPayNowPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m75"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyDashEMPTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m76"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickPayTabTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m77"></a><h2>com.guru.testing.tests.RefundRevokeDecline:payUsingEcheckTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m78"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyFLLoggedInTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m79"></a><h2>com.guru.testing.tests.RefundRevokeDecline:enterInvoiceDetailsTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">Web, Software & IT</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m80"></a><h2>com.guru.testing.tests.RefundRevokeDecline:logoutAdminTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m81"></a><h2>com.guru.testing.tests.RefundRevokeDecline:selectECheckAndAgreeTermsTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m82"></a><h2>com.guru.testing.tests.RefundRevokeDecline:hireTheFLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m83"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickPayInvoiceBtnTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m84"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickDeclineTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m85"></a><h2>com.guru.testing.tests.RefundRevokeDecline:launchGuruTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">https://qa.guru.com/login.aspx</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m86"></a><h2>com.guru.testing.tests.RefundRevokeDecline:payInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m87"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyEMPLogInTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m88"></a><h2>com.guru.testing.tests.RefundRevokeDecline:validateInvoicePayNowPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m89"></a><h2>com.guru.testing.tests.RefundRevokeDecline:loginToAdminTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">small</td>
+<td style="padding-left:.5em;padding-right:2em">password</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m90"></a><h2>com.guru.testing.tests.RefundRevokeDecline:signOutEMPTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m91"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToPendingTabTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">PENDING</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m92"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToAcceptApprovePaymentsTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m93"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyPostAJobPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m94"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickApplyTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m95"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickPayTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m96"></a><h2>com.guru.testing.tests.RefundRevokeDecline:goToAcceptApproveTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m97"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyEmployerLogInTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m98"></a><h2>com.guru.testing.tests.RefundRevokeDecline:clickPostJobTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m99"></a><h2>com.guru.testing.tests.RefundRevokeDecline:validateInvoiceDetailsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m100"></a><h2>com.guru.testing.tests.RefundRevokeDecline:verifyLoginPageSevenTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m101"></a><h2>com.guru.testing.tests.RefundRevokeDecline:signOutEmployerTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m102"></a><h2>com.guru.testing.tests.RefundRevokeDecline:navToPendingTabTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">PENDING</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

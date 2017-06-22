@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sanity Collaborate Emp Tasks" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="10" />
+	<parameter name="thinkTime" value="5" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY022_COLLABORATE_EMP_TASKS" />
+	<parameter name="reportDetailLevel" value="43" />
+	<parameter name="url" value="https://qa.guru.com/login.aspx" />
+	<parameter name="username" value="guruemployer001@mailinator.com" />
+	<parameter name="password" value="12345678" />
+		
+	<test name="1. Login as Employer. And click first active workroom." preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<parameter name="workroomIndex" value="1" />
+				<methods>
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="getEMPWorkroomJobNameByIndex" />
+					<include name="clickEMPWorkroomByIndexTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="verifyEMPStatusUpdatesTabTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="2. Click on Task, and verify the page. Click on 'New Task'. Create a task with valid data." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+			<parameter name="taskName" value="Automated Task" />
+			<parameter name="taskDescription" value="Automated Task Description" />
+			<parameter name="path" value="C:\TestData\img1.jpg" />
+				<methods>
+					<include name="clickTasksTabTest" />
+					<include name="verifyTasksPageTest" />
+					<include name="clickNewTaskBtnTest" />
+					<include name="verifyCreateTaskWindowTest" />
+					<include name="enterTaskNameTest" />
+					<include name="enterTaskDescriptionTest" />
+					<include name="clickAttachFilesTest" />
+					<include name="clickSelectFilesTest" />
+					<include name="uploadFileTest" />
+					<include name="clickFinishedTest" />
+					<include name="clickAssignToMeTest" />
+					<include name="clickAddEveryoneTest" />
+					<include name="clickCreateTaskTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3. Verify Task created with the same name as given in the form." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="verifyTaskCreatedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="4. Click Add due date, and click on a date. Verify the date is added. " preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="clickAddDueDateTest" />
+					<include name="selectLastDayOfMonthTest" />
+					<include name="verifyLastDayOfMonthAddedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="5. Click All Tasks, and verify user to redirected to Tasks tab, and then verify task created appears in the list. " preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="clickAllTasksBtnTest" />
+					<include name="verifyTasksPageTest" />
+					<include name="verifyTaskAddedInTasksListTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="5.5 Log out EMP" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="signOutEmployerTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="6. Login as Freelancer. And Go to workroom the EMP previously added a task in." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LoginPageTest">
+			<parameter name="username" value="gurufreelancer001@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyFLDashboardPageTest" />
+					<include name="clickFLWorkroomByNameTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="7. Go to 'Tasks' tab, and Verify task created by Employer appears in the list." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="verifyFLStatusUpdatesTabTest" />
+					<include name="clickTasksTabTest" />
+					<include name="verifyTasksPageTest" />
+					<include name="verifyTaskAddedInTasksListTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="8. " preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+			<parameter name="taskName" value="Automated Task" />
+			<parameter name="taskDescription" value="Automated Task Description" />
+			<parameter name="path" value="C:\TestData\img1.jpg" />
+				<methods>
+					<include name="clickNewTaskBtnTest" />
+					<include name="verifyCreateTaskWindowTest" />
+					<include name="enterTaskNameTest" />
+					<include name="enterTaskDescriptionTest" />
+					<include name="clickAttachFilesTest" />
+					<include name="clickSelectFilesTest" />
+					<include name="uploadFileTest" />
+					<include name="clickFinishedTest" />
+					<include name="clickAssignToMeTest" />
+					<include name="clickAddEveryoneTest" />
+					<include name="clickCreateTaskTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="9. Verify Task created by Freelancer is with the same name as given in the form." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="verifyTaskCreatedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="10. Click on Add due date, and click on any date. Verify the date is added. " preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="clickAddDueDateTest" />
+					<include name="selectLastDayOfMonthTest" />
+					<include name="verifyLastDayOfMonthAddedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="11. Go back to Tasks Summary list, verify user to redirected to Tasks tab, and then verify task created appears in the list. " preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="clickAllTasksBtnTest" />
+					<include name="verifyTasksPageTest" />
+					<include name="verifyTaskAddedInTasksListTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="11.5 Log out FL" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="signOutFlTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

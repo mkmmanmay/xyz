@@ -1,0 +1,12 @@
+Test Step,Description,Test Class,Started,Finished,Duration(sec),Status,FailureMessage,Additional Parameters,
+
+navigateToUrlTest,,LaunchApplication,12:08:13 PM,12:08:17 PM,3.8,PASS,,
+verifyAdminLoginPageTest,,AdminLogin,12:08:17 PM,12:08:17 PM,0.1,PASS,,
+enterUsernamePasswordTest,,AdminLogin,12:08:17 PM,12:08:17 PM,0.1,PASS,,
+clickLoginTest,,AdminLogin,12:08:17 PM,12:08:23 PM,5.5,PASS,,
+goToCreateNewUsersTest,,CreateNewEMP,12:08:23 PM,12:08:27 PM,4.7,PASS,,
+createEMPUserTest,,CreateNewEMP,12:08:27 PM,12:08:36 PM,8.6,PASS,,
+goToAccountTest,,CreateNewEMP,12:08:36 PM,12:08:47 PM,10.5,PASS,,
+goToEMPDashboard,,CreateNewEMP,12:08:47 PM,12:08:53 PM,6.7,PASS,,
+goToEMPPaymentsTest,,AddAllEMPPaymentMethods,12:08:53 PM,12:09:11 PM,17.3,PASS,,
+addBankAccountEMPTest,,AddAllEMPPaymentMethods,12:09:11 PM,12:13:59 PM,288.5,PASS,,

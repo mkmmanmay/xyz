@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG new reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Approve_payments">
+              <span class="suite-name border-failed">Approve payments</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Approve_payments">
+                    <span>C:\Users\mkumar\devworkspace\regression\TestSuites\Payments\Regression_Revoke_Refund_Decline_Payments.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Approve_payments">
+                    <span class="test-stats">3 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Approve_payments">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Approve_payments">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Approve_payments">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Approve_payments">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Approve_payments">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">102 methods, 3 failed,   99 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Approve_payments" class="hide-methods failed suite-Approve_payments"> (hide)</a> <!-- hide-methods failed suite-Approve_payments -->
+                      <a href="#" panel-name="suite-Approve_payments" class="show-methods failed suite-Approve_payments"> (show)</a> <!-- show-methods failed suite-Approve_payments -->
+                    </span>
+                    <div class="method-list-content failed suite-Approve_payments">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="validateAdminLoginPageTest">validateAdminLoginPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyAdminLoginPageTest">verifyAdminLoginPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoggedOutTest">verifyLoggedOutTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Approve_payments -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Approve_payments" class="hide-methods passed suite-Approve_payments"> (hide)</a> <!-- hide-methods passed suite-Approve_payments -->
+                      <a href="#" panel-name="suite-Approve_payments" class="show-methods passed suite-Approve_payments"> (show)</a> <!-- show-methods passed suite-Approve_payments -->
+                    </span>
+                    <div class="method-list-content passed suite-Approve_payments">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="agreeToPayCheckTest">agreeToPayCheckTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickApplyTest">clickApplyTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickApproveTest(0)">clickApproveTest(0)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickDeclineTest(0)">clickDeclineTest(0)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickFirstViewAndPayTest">clickFirstViewAndPayTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickPayInvoiceBtnTest">clickPayInvoiceBtnTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickPayInvoiceTest">clickPayInvoiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickPayTabTest">clickPayTabTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickPayTest">clickPayTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickPostJobTest">clickPostJobTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickRevokeTest(0)">clickRevokeTest(0)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickSendInvoiceTest">clickSendInvoiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.EMPLogin" hash-for-method="clickSignInTest">clickSignInTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="clickUnpaidInvoiceTest">clickUnpaidInvoiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="craftMilestoneQuoteTest(1, Auto Mile 1, 01-12-2018, 120, Automated Scope of Work)">craftMilestoneQuoteTest(1, Auto Mile 1, 01-12-2018, 120, Automated Scope of Work)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="enterInvoiceDetailsTest(Web, Software &amp; IT)">enterInvoiceDetailsTest(Web, Software & IT)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="enterJobDetailsTest(Automated Job Details, Web, Software &amp; IT, testing, Under $250)">enterJobDetailsTest(Automated Job Details, Web, Software & IT, testing, Under $250)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.EMPLogin" hash-for-method="enterUsernameAndPasswordTest(guruemp001@gmail.com, 12345678)">enterUsernameAndPasswordTest(guruemp001@gmail.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="findPendingPaymentTest(2017-06-20, 2017-06-21, 0)">findPendingPaymentTest(2017-06-20, 2017-06-21, 0)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToAcceptApprovePaymentsTest">goToAcceptApprovePaymentsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToAcceptApproveTest">goToAcceptApproveTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToAdminSiteTest(https://qa.guru.com/admin/login.aspx)">goToAdminSiteTest(https://qa.guru.com/admin/login.aspx)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToCompletedTabTest(COMPLETED, 2017-06-20, 2017-06-21)">goToCompletedTabTest(COMPLETED, 2017-06-20, 2017-06-21)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToInvoiceSummaryTest">goToInvoiceSummaryTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToJobHirePageAgainTest">goToJobHirePageAgainTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToJobHirePageTest">goToJobHirePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToPendingTabTest(PENDING)">goToPendingTabTest(PENDING)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToPostAJobPageTest">goToPostAJobPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="goToWorkroomTest(1)">goToWorkroomTest(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="hireTheFLTest">hireTheFLTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="launchAdminSiteTest(https://qa.guru.com/admin/login.aspx)">launchAdminSiteTest(https://qa.guru.com/admin/login.aspx)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="launchGuruTest(https://qa.guru.com/login.aspx)">launchGuruTest(https://qa.guru.com/login.aspx)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="launchTinyUrlTest">launchTinyUrlTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="logIntoAdminTest(small, password)">logIntoAdminTest(small, password)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="logOutEMPTest">logOutEMPTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="logOutEmployerTest">logOutEmployerTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="loginAsEMPTest(guruemp001@gmail.com, 12345678)">loginAsEMPTest(guruemp001@gmail.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="loginAsFLTest(gurufree001@gmail.com, 12345678)">loginAsFLTest(gurufree001@gmail.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="loginAsFreeLTest(gurufree001@gmail.com, 12345678)">loginAsFreeLTest(gurufree001@gmail.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="loginEMPTest(guruemp001@gmail.com, 12345678)">loginEMPTest(guruemp001@gmail.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="loginEmployerTest(guruemp001@gmail.com, 12345678)">loginEmployerTest(guruemp001@gmail.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="loginToAdminTest(small, password)">loginToAdminTest(small, password)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="logoutAdminTest">logoutAdminTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="navToPendingTabTest(PENDING)">navToPendingTabTest(PENDING)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.LaunchApplication" hash-for-method="navigateToUrlTest(https://qa.guru.com/login.aspx)">navigateToUrlTest(https://qa.guru.com/login.aspx)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="payInvoiceTest">payInvoiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="payTheInvoiceTest">payTheInvoiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="payUsingEcheckTest">payUsingEcheckTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="searchForPendingPaymentTest(2017-06-20, 2017-06-21)">searchForPendingPaymentTest(2017-06-20, 2017-06-21)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="selectECheckAndAgreeTermsTest">selectECheckAndAgreeTermsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="sendInvoiceTest">sendInvoiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="signOutEMPTest">signOutEMPTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="signOutEmployerTest">signOutEmployerTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="signOutFLTest">signOutFLTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="signOutFreeLTest">signOutFreeLTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="submitQuoteTest">submitQuoteTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="validateAdminApprovePaymentsPage">validateAdminApprovePaymentsPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="validateAdminHomePageTest">validateAdminHomePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="validateInvoiceDetailsPageTest">validateInvoiceDetailsPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="validateInvoicePayNowPageTest">validateInvoicePayNowPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.EMPLogin" hash-for-method="validateSecurityTest">validateSecurityTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyAdminApprovePaymentsPage">verifyAdminApprovePaymentsPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyAdminHomePageTest">verifyAdminHomePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.EMPLogin" hash-for-method="verifyAndSkipPhoneVerificationTest">verifyAndSkipPhoneVerificationTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyApplyQuoteFormTest">verifyApplyQuoteFormTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyCreateInvoicePageTest">verifyCreateInvoicePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyDashEMPTest">verifyDashEMPTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.EMPLogin" hash-for-method="verifyDashboardPageTest">verifyDashboardPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyEMPDashTest">verifyEMPDashTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyEMPLogInTest">verifyEMPLogInTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyEMPLoggedInTest">verifyEMPLoggedInTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyEmployerDashTest">verifyEmployerDashTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyEmployerLogInTest">verifyEmployerLogInTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFLDashTest">verifyFLDashTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFLDashboardTest">verifyFLDashboardTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFLInvoicePageTest">verifyFLInvoicePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFLLoggedInTest">verifyFLLoggedInTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFLWorkroomTest">verifyFLWorkroomTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFeatureJobPayNowPageTest">verifyFeatureJobPayNowPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyFreeLLoggedInTest">verifyFreeLLoggedInTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyHirePageAgainTest">verifyHirePageAgainTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyHirePageTest">verifyHirePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyInvoiceDetailsPageTest">verifyInvoiceDetailsPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyInvoiceIsPaidTest">verifyInvoiceIsPaidTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyInvoicePageTest">verifyInvoicePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyInvoicePaidTest">verifyInvoicePaidTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyInvoicePayNowPageTest">verifyInvoicePayNowPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyInvoiceSummaryTest">verifyInvoiceSummaryTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyJobDetailsPageTest">verifyJobDetailsPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyJobPostSuccessTest">verifyJobPostSuccessTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageFiveTest">verifyLoginPageFiveTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageFourTest">verifyLoginPageFourTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageOneTest">verifyLoginPageOneTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageSevenTest">verifyLoginPageSevenTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageSixTest">verifyLoginPageSixTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageThreeTest">verifyLoginPageThreeTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyLoginPageTwoTest">verifyLoginPageTwoTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyPostAJobPageTest">verifyPostAJobPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Approve_payments" title="com.guru.testing.tests.RefundRevokeDecline" hash-for-method="verifyQuoteSubmittedTest">verifyQuoteSubmittedTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Approve_payments -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Approve_payments" class="panel Approve_payments">
+          <div class="suite-Approve_payments-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.guru.testing.tests.RefundRevokeDecline</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAdminLoginPageTest">
+                  </a> <!-- validateAdminLoginPageTest -->
+                  <span class="method-name">validateAdminLoginPageTest</span>
+                  <div class="stack-trace"><b>"java.lang.NullPointerException"</b><br>com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)<br>com.guru.testing.tests.RefundRevokeDecline.validateAdminLoginPageTest(RefundRevokeDecline.java:627)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:702)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:768)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1113)<br>org.testng.TestNG.run(TestNG.java:1025)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAdminLoginPageTest">
+                  </a> <!-- verifyAdminLoginPageTest -->
+                  <span class="method-name">verifyAdminLoginPageTest</span>
+                  <div class="stack-trace"><b>"java.lang.NullPointerException"</b><br>com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)<br>com.guru.testing.tests.RefundRevokeDecline.verifyAdminLoginPageTest(RefundRevokeDecline.java:426)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:702)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:768)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1113)<br>org.testng.TestNG.run(TestNG.java:1025)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoggedOutTest">
+                  </a> <!-- verifyLoggedOutTest -->
+                  <span class="method-name">verifyLoggedOutTest</span>
+                  <div class="stack-trace"><b>"java.lang.NullPointerException"</b><br>com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)<br>com.guru.testing.tests.RefundRevokeDecline.verifyLoggedOutTest(RefundRevokeDecline.java:513)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:702)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:768)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1113)<br>org.testng.TestNG.run(TestNG.java:1025)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Approve_payments-class-failed -->
+          <div class="suite-Approve_payments-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.guru.testing.tests.LaunchApplication</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="navigateToUrlTest(https://qa.guru.com/login.aspx)">
+                  </a> <!-- navigateToUrlTest(https://qa.guru.com/login.aspx) -->
+                  <span class="method-name">navigateToUrlTest</span>
+                  <span class="parameters">(https://qa.guru.com/login.aspx)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Approve_payments-class-passed -->
+          <div class="suite-Approve_payments-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.guru.testing.tests.RefundRevokeDecline</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="agreeToPayCheckTest">
+                  </a> <!-- agreeToPayCheckTest -->
+                  <span class="method-name">agreeToPayCheckTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickApplyTest">
+                  </a> <!-- clickApplyTest -->
+                  <span class="method-name">clickApplyTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickApproveTest(0)">
+                  </a> <!-- clickApproveTest(0) -->
+                  <span class="method-name">clickApproveTest</span>
+                  <span class="parameters">(0)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickDeclineTest(0)">
+                  </a> <!-- clickDeclineTest(0) -->
+                  <span class="method-name">clickDeclineTest</span>
+                  <span class="parameters">(0)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickFirstViewAndPayTest">
+                  </a> <!-- clickFirstViewAndPayTest -->
+                  <span class="method-name">clickFirstViewAndPayTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickPayInvoiceBtnTest">
+                  </a> <!-- clickPayInvoiceBtnTest -->
+                  <span class="method-name">clickPayInvoiceBtnTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickPayInvoiceTest">
+                  </a> <!-- clickPayInvoiceTest -->
+                  <span class="method-name">clickPayInvoiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickPayTabTest">
+                  </a> <!-- clickPayTabTest -->
+                  <span class="method-name">clickPayTabTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickPayTest">
+                  </a> <!-- clickPayTest -->
+                  <span class="method-name">clickPayTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickPostJobTest">
+                  </a> <!-- clickPostJobTest -->
+                  <span class="method-name">clickPostJobTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickRevokeTest(0)">
+                  </a> <!-- clickRevokeTest(0) -->
+                  <span class="method-name">clickRevokeTest</span>
+                  <span class="parameters">(0)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickSendInvoiceTest">
+                  </a> <!-- clickSendInvoiceTest -->
+                  <span class="method-name">clickSendInvoiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickUnpaidInvoiceTest">
+                  </a> <!-- clickUnpaidInvoiceTest -->
+                  <span class="method-name">clickUnpaidInvoiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="craftMilestoneQuoteTest(1, Auto Mile 1, 01-12-2018, 120, Automated Scope of Work)">
+                  </a> <!-- craftMilestoneQuoteTest(1, Auto Mile 1, 01-12-2018, 120, Automated Scope of Work) -->
+                  <span class="method-name">craftMilestoneQuoteTest</span>
+                  <span class="parameters">(1, Auto Mile 1, 01-12-2018, 120, Automated Scope of Work)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterInvoiceDetailsTest(Web, Software &amp; IT)">
+                  </a> <!-- enterInvoiceDetailsTest(Web, Software & IT) -->
+                  <span class="method-name">enterInvoiceDetailsTest</span>
+                  <span class="parameters">(Web, Software & IT)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterJobDetailsTest(Automated Job Details, Web, Software &amp; IT, testing, Under $250)">
+                  </a> <!-- enterJobDetailsTest(Automated Job Details, Web, Software & IT, testing, Under $250) -->
+                  <span class="method-name">enterJobDetailsTest</span>
+                  <span class="parameters">(Automated Job Details, Web, Software & IT, testing, Under $250)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="findPendingPaymentTest(2017-06-20, 2017-06-21, 0)">
+                  </a> <!-- findPendingPaymentTest(2017-06-20, 2017-06-21, 0) -->
+                  <span class="method-name">findPendingPaymentTest</span>
+                  <span class="parameters">(2017-06-20, 2017-06-21, 0)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToAcceptApprovePaymentsTest">
+                  </a> <!-- goToAcceptApprovePaymentsTest -->
+                  <span class="method-name">goToAcceptApprovePaymentsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToAcceptApproveTest">
+                  </a> <!-- goToAcceptApproveTest -->
+                  <span class="method-name">goToAcceptApproveTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToAdminSiteTest(https://qa.guru.com/admin/login.aspx)">
+                  </a> <!-- goToAdminSiteTest(https://qa.guru.com/admin/login.aspx) -->
+                  <span class="method-name">goToAdminSiteTest</span>
+                  <span class="parameters">(https://qa.guru.com/admin/login.aspx)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToCompletedTabTest(COMPLETED, 2017-06-20, 2017-06-21)">
+                  </a> <!-- goToCompletedTabTest(COMPLETED, 2017-06-20, 2017-06-21) -->
+                  <span class="method-name">goToCompletedTabTest</span>
+                  <span class="parameters">(COMPLETED, 2017-06-20, 2017-06-21)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToInvoiceSummaryTest">
+                  </a> <!-- goToInvoiceSummaryTest -->
+                  <span class="method-name">goToInvoiceSummaryTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToJobHirePageAgainTest">
+                  </a> <!-- goToJobHirePageAgainTest -->
+                  <span class="method-name">goToJobHirePageAgainTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToJobHirePageTest">
+                  </a> <!-- goToJobHirePageTest -->
+                  <span class="method-name">goToJobHirePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToPendingTabTest(PENDING)">
+                  </a> <!-- goToPendingTabTest(PENDING) -->
+                  <span class="method-name">goToPendingTabTest</span>
+                  <span class="parameters">(PENDING)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToPostAJobPageTest">
+                  </a> <!-- goToPostAJobPageTest -->
+                  <span class="method-name">goToPostAJobPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="goToWorkroomTest(1)">
+                  </a> <!-- goToWorkroomTest(1) -->
+                  <span class="method-name">goToWorkroomTest</span>
+                  <span class="parameters">(1)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="hireTheFLTest">
+                  </a> <!-- hireTheFLTest -->
+                  <span class="method-name">hireTheFLTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="launchAdminSiteTest(https://qa.guru.com/admin/login.aspx)">
+                  </a> <!-- launchAdminSiteTest(https://qa.guru.com/admin/login.aspx) -->
+                  <span class="method-name">launchAdminSiteTest</span>
+                  <span class="parameters">(https://qa.guru.com/admin/login.aspx)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="launchGuruTest(https://qa.guru.com/login.aspx)">
+                  </a> <!-- launchGuruTest(https://qa.guru.com/login.aspx) -->
+                  <span class="method-name">launchGuruTest</span>
+                  <span class="parameters">(https://qa.guru.com/login.aspx)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="launchTinyUrlTest">
+                  </a> <!-- launchTinyUrlTest -->
+                  <span class="method-name">launchTinyUrlTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="logIntoAdminTest(small, password)">
+                  </a> <!-- logIntoAdminTest(small, password) -->
+                  <span class="method-name">logIntoAdminTest</span>
+                  <span class="parameters">(small, password)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="logOutEMPTest">
+                  </a> <!-- logOutEMPTest -->
+                  <span class="method-name">logOutEMPTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="logOutEmployerTest">
+                  </a> <!-- logOutEmployerTest -->
+                  <span class="method-name">logOutEmployerTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginAsEMPTest(guruemp001@gmail.com, 12345678)">
+                  </a> <!-- loginAsEMPTest(guruemp001@gmail.com, 12345678) -->
+                  <span class="method-name">loginAsEMPTest</span>
+                  <span class="parameters">(guruemp001@gmail.com, 12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginAsFLTest(gurufree001@gmail.com, 12345678)">
+                  </a> <!-- loginAsFLTest(gurufree001@gmail.com, 12345678) -->
+                  <span class="method-name">loginAsFLTest</span>
+                  <span class="parameters">(gurufree001@gmail.com, 12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginAsFreeLTest(gurufree001@gmail.com, 12345678)">
+                  </a> <!-- loginAsFreeLTest(gurufree001@gmail.com, 12345678) -->
+                  <span class="method-name">loginAsFreeLTest</span>
+                  <span class="parameters">(gurufree001@gmail.com, 12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginEMPTest(guruemp001@gmail.com, 12345678)">
+                  </a> <!-- loginEMPTest(guruemp001@gmail.com, 12345678) -->
+                  <span class="method-name">loginEMPTest</span>
+                  <span class="parameters">(guruemp001@gmail.com, 12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginEmployerTest(guruemp001@gmail.com, 12345678)">
+                  </a> <!-- loginEmployerTest(guruemp001@gmail.com, 12345678) -->
+                  <span class="method-name">loginEmployerTest</span>
+                  <span class="parameters">(guruemp001@gmail.com, 12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginToAdminTest(small, password)">
+                  </a> <!-- loginToAdminTest(small, password) -->
+                  <span class="method-name">loginToAdminTest</span>
+                  <span class="parameters">(small, password)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="logoutAdminTest">
+                  </a> <!-- logoutAdminTest -->
+                  <span class="method-name">logoutAdminTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="navToPendingTabTest(PENDING)">
+                  </a> <!-- navToPendingTabTest(PENDING) -->
+                  <span class="method-name">navToPendingTabTest</span>
+                  <span class="parameters">(PENDING)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="payInvoiceTest">
+                  </a> <!-- payInvoiceTest -->
+                  <span class="method-name">payInvoiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="payTheInvoiceTest">
+                  </a> <!-- payTheInvoiceTest -->
+                  <span class="method-name">payTheInvoiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="payUsingEcheckTest">
+                  </a> <!-- payUsingEcheckTest -->
+                  <span class="method-name">payUsingEcheckTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchForPendingPaymentTest(2017-06-20, 2017-06-21)">
+                  </a> <!-- searchForPendingPaymentTest(2017-06-20, 2017-06-21) -->
+                  <span class="method-name">searchForPendingPaymentTest</span>
+                  <span class="parameters">(2017-06-20, 2017-06-21)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="selectECheckAndAgreeTermsTest">
+                  </a> <!-- selectECheckAndAgreeTermsTest -->
+                  <span class="method-name">selectECheckAndAgreeTermsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sendInvoiceTest">
+                  </a> <!-- sendInvoiceTest -->
+                  <span class="method-name">sendInvoiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="signOutEMPTest">
+                  </a> <!-- signOutEMPTest -->
+                  <span class="method-name">signOutEMPTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="signOutEmployerTest">
+                  </a> <!-- signOutEmployerTest -->
+                  <span class="method-name">signOutEmployerTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="signOutFLTest">
+                  </a> <!-- signOutFLTest -->
+                  <span class="method-name">signOutFLTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="signOutFreeLTest">
+                  </a> <!-- signOutFreeLTest -->
+                  <span class="method-name">signOutFreeLTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="submitQuoteTest">
+                  </a> <!-- submitQuoteTest -->
+                  <span class="method-name">submitQuoteTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAdminApprovePaymentsPage">
+                  </a> <!-- validateAdminApprovePaymentsPage -->
+                  <span class="method-name">validateAdminApprovePaymentsPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAdminHomePageTest">
+                  </a> <!-- validateAdminHomePageTest -->
+                  <span class="method-name">validateAdminHomePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateInvoiceDetailsPageTest">
+                  </a> <!-- validateInvoiceDetailsPageTest -->
+                  <span class="method-name">validateInvoiceDetailsPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateInvoicePayNowPageTest">
+                  </a> <!-- validateInvoicePayNowPageTest -->
+                  <span class="method-name">validateInvoicePayNowPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAdminApprovePaymentsPage">
+                  </a> <!-- verifyAdminApprovePaymentsPage -->
+                  <span class="method-name">verifyAdminApprovePaymentsPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAdminHomePageTest">
+                  </a> <!-- verifyAdminHomePageTest -->
+                  <span class="method-name">verifyAdminHomePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyApplyQuoteFormTest">
+                  </a> <!-- verifyApplyQuoteFormTest -->
+                  <span class="method-name">verifyApplyQuoteFormTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCreateInvoicePageTest">
+                  </a> <!-- verifyCreateInvoicePageTest -->
+                  <span class="method-name">verifyCreateInvoicePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDashEMPTest">
+                  </a> <!-- verifyDashEMPTest -->
+                  <span class="method-name">verifyDashEMPTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEMPDashTest">
+                  </a> <!-- verifyEMPDashTest -->
+                  <span class="method-name">verifyEMPDashTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEMPLogInTest">
+                  </a> <!-- verifyEMPLogInTest -->
+                  <span class="method-name">verifyEMPLogInTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEMPLoggedInTest">
+                  </a> <!-- verifyEMPLoggedInTest -->
+                  <span class="method-name">verifyEMPLoggedInTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEmployerDashTest">
+                  </a> <!-- verifyEmployerDashTest -->
+                  <span class="method-name">verifyEmployerDashTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEmployerLogInTest">
+                  </a> <!-- verifyEmployerLogInTest -->
+                  <span class="method-name">verifyEmployerLogInTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFLDashTest">
+                  </a> <!-- verifyFLDashTest -->
+                  <span class="method-name">verifyFLDashTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFLDashboardTest">
+                  </a> <!-- verifyFLDashboardTest -->
+                  <span class="method-name">verifyFLDashboardTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFLInvoicePageTest">
+                  </a> <!-- verifyFLInvoicePageTest -->
+                  <span class="method-name">verifyFLInvoicePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFLLoggedInTest">
+                  </a> <!-- verifyFLLoggedInTest -->
+                  <span class="method-name">verifyFLLoggedInTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFLWorkroomTest">
+                  </a> <!-- verifyFLWorkroomTest -->
+                  <span class="method-name">verifyFLWorkroomTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFeatureJobPayNowPageTest">
+                  </a> <!-- verifyFeatureJobPayNowPageTest -->
+                  <span class="method-name">verifyFeatureJobPayNowPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFreeLLoggedInTest">
+                  </a> <!-- verifyFreeLLoggedInTest -->
+                  <span class="method-name">verifyFreeLLoggedInTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyHirePageAgainTest">
+                  </a> <!-- verifyHirePageAgainTest -->
+                  <span class="method-name">verifyHirePageAgainTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyHirePageTest">
+                  </a> <!-- verifyHirePageTest -->
+                  <span class="method-name">verifyHirePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvoiceDetailsPageTest">
+                  </a> <!-- verifyInvoiceDetailsPageTest -->
+                  <span class="method-name">verifyInvoiceDetailsPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvoiceIsPaidTest">
+                  </a> <!-- verifyInvoiceIsPaidTest -->
+                  <span class="method-name">verifyInvoiceIsPaidTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvoicePageTest">
+                  </a> <!-- verifyInvoicePageTest -->
+                  <span class="method-name">verifyInvoicePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvoicePaidTest">
+                  </a> <!-- verifyInvoicePaidTest -->
+                  <span class="method-name">verifyInvoicePaidTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvoicePayNowPageTest">
+                  </a> <!-- verifyInvoicePayNowPageTest -->
+                  <span class="method-name">verifyInvoicePayNowPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvoiceSummaryTest">
+                  </a> <!-- verifyInvoiceSummaryTest -->
+                  <span class="method-name">verifyInvoiceSummaryTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyJobDetailsPageTest">
+                  </a> <!-- verifyJobDetailsPageTest -->
+                  <span class="method-name">verifyJobDetailsPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyJobPostSuccessTest">
+                  </a> <!-- verifyJobPostSuccessTest -->
+                  <span class="method-name">verifyJobPostSuccessTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageFiveTest">
+                  </a> <!-- verifyLoginPageFiveTest -->
+                  <span class="method-name">verifyLoginPageFiveTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageFourTest">
+                  </a> <!-- verifyLoginPageFourTest -->
+                  <span class="method-name">verifyLoginPageFourTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageOneTest">
+                  </a> <!-- verifyLoginPageOneTest -->
+                  <span class="method-name">verifyLoginPageOneTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageSevenTest">
+                  </a> <!-- verifyLoginPageSevenTest -->
+                  <span class="method-name">verifyLoginPageSevenTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageSixTest">
+                  </a> <!-- verifyLoginPageSixTest -->
+                  <span class="method-name">verifyLoginPageSixTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageThreeTest">
+                  </a> <!-- verifyLoginPageThreeTest -->
+                  <span class="method-name">verifyLoginPageThreeTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginPageTwoTest">
+                  </a> <!-- verifyLoginPageTwoTest -->
+                  <span class="method-name">verifyLoginPageTwoTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPostAJobPageTest">
+                  </a> <!-- verifyPostAJobPageTest -->
+                  <span class="method-name">verifyPostAJobPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuoteSubmittedTest">
+                  </a> <!-- verifyQuoteSubmittedTest -->
+                  <span class="method-name">verifyQuoteSubmittedTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Approve_payments-class-passed -->
+          <div class="suite-Approve_payments-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.guru.testing.tests.EMPLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickSignInTest">
+                  </a> <!-- clickSignInTest -->
+                  <span class="method-name">clickSignInTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterUsernameAndPasswordTest(guruemp001@gmail.com, 12345678)">
+                  </a> <!-- enterUsernameAndPasswordTest(guruemp001@gmail.com, 12345678) -->
+                  <span class="method-name">enterUsernameAndPasswordTest</span>
+                  <span class="parameters">(guruemp001@gmail.com, 12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateSecurityTest">
+                  </a> <!-- validateSecurityTest -->
+                  <span class="method-name">validateSecurityTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAndSkipPhoneVerificationTest">
+                  </a> <!-- verifyAndSkipPhoneVerificationTest -->
+                  <span class="method-name">verifyAndSkipPhoneVerificationTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDashboardPageTest">
+                  </a> <!-- verifyDashboardPageTest -->
+                  <span class="method-name">verifyDashboardPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Approve_payments-class-passed -->
+        </div> <!-- panel Approve_payments -->
+        <div panel-name="test-xml-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\mkumar\devworkspace\regression\TestSuites\Payments\Regression_Revoke_Refund_Decline_Payments.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Approve payments&quot;&gt;
+  &lt;parameter name=&quot;password&quot; value=&quot;12345678&quot;/&gt;
+  &lt;parameter name=&quot;thinkTime&quot; value=&quot;2&quot;/&gt;
+  &lt;parameter name=&quot;reportName&quot; value=&quot;APPROVE_PAYMENT&quot;/&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+  &lt;parameter name=&quot;reportDetailLevel&quot; value=&quot;43&quot;/&gt;
+  &lt;parameter name=&quot;waitTime&quot; value=&quot;10&quot;/&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;https://qa.guru.com/login.aspx&quot;/&gt;
+  &lt;parameter name=&quot;implicitWaitTime&quot; value=&quot;10&quot;/&gt;
+  &lt;parameter name=&quot;username&quot; value=&quot;guruemp001@gmail.com&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.guru.framework.testing.helpers.PDFReporter&quot;/&gt;
+    &lt;listener class-name=&quot;com.guru.framework.testing.selenium.BaseTestNGWebDriverListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;Launch application&quot; preserve-order=&quot;true&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.guru.testing.tests.LaunchApplication&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Launch application --&gt;
+  &lt;test name=&quot;Login application&quot; preserve-order=&quot;true&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.guru.testing.tests.EMPLogin&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login application --&gt;
+  &lt;test name=&quot;Approve payments&quot; preserve-order=&quot;true&quot;&gt;
+    &lt;parameter name=&quot;fixedBudget&quot; value=&quot;Under $250&quot;/&gt;
+    &lt;parameter name=&quot;scopeOfWork&quot; value=&quot;Automated Scope of Work&quot;/&gt;
+    &lt;parameter name=&quot;milestoneAmounts&quot; value=&quot;120&quot;/&gt;
+    &lt;parameter name=&quot;revokeRowNum&quot; value=&quot;0&quot;/&gt;
+    &lt;parameter name=&quot;milestoneNames&quot; value=&quot;Auto Mile 1&quot;/&gt;
+    &lt;parameter name=&quot;completedTabName&quot; value=&quot;COMPLETED&quot;/&gt;
+    &lt;parameter name=&quot;noOfMilestones&quot; value=&quot;1&quot;/&gt;
+    &lt;parameter name=&quot;flPassword&quot; value=&quot;12345678&quot;/&gt;
+    &lt;parameter name=&quot;toDate&quot; value=&quot;2017-06-21&quot;/&gt;
+    &lt;parameter name=&quot;pendingTabName&quot; value=&quot;PENDING&quot;/&gt;
+    &lt;parameter name=&quot;fLUsername&quot; value=&quot;gurufree001@gmail.com&quot;/&gt;
+    &lt;parameter name=&quot;adminUsername&quot; value=&quot;small&quot;/&gt;
+    &lt;parameter name=&quot;fromDate&quot; value=&quot;2017-06-20&quot;/&gt;
+    &lt;parameter name=&quot;approveRowNum&quot; value=&quot;0&quot;/&gt;
+    &lt;parameter name=&quot;skill&quot; value=&quot;testing&quot;/&gt;
+    &lt;parameter name=&quot;declineRowNum&quot; value=&quot;0&quot;/&gt;
+    &lt;parameter name=&quot;milestoneDueDates&quot; value=&quot;01-12-2018&quot;/&gt;
+    &lt;parameter name=&quot;jobDetails&quot; value=&quot;Automated Job Details&quot;/&gt;
+    &lt;parameter name=&quot;category&quot; value=&quot;Web, Software &amp; IT&quot;/&gt;
+    &lt;parameter name=&quot;jobType&quot; value=&quot;Web, Software &amp; IT&quot;/&gt;
+    &lt;parameter name=&quot;adminUrl&quot; value=&quot;https://qa.guru.com/admin/login.aspx&quot;/&gt;
+    &lt;parameter name=&quot;flWorkroomIndex&quot; value=&quot;1&quot;/&gt;
+    &lt;parameter name=&quot;adminPassword&quot; value=&quot;password&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.guru.testing.tests.RefundRevokeDecline&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Approve payments --&gt;
+&lt;/suite&gt; &lt;!-- Approve payments --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Approve payments</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Launch application (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Login application (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Approve payments (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Approve payments</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Approve payments</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Approve_payments');
+function tableData_Approve_payments() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(102);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'selectECheckAndAgreeTermsTest')
+data.setCell(0, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(0, 3, 34324);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'enterJobDetailsTest')
+data.setCell(1, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(1, 3, 27026);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyFLLoggedInTest')
+data.setCell(2, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(2, 3, 25008);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyAndSkipPhoneVerificationTest')
+data.setCell(3, 2, 'com.guru.testing.tests.EMPLogin')
+data.setCell(3, 3, 20510);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'signOutEMPTest')
+data.setCell(4, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(4, 3, 15201);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyEmployerLogInTest')
+data.setCell(5, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(5, 3, 14620);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyJobPostSuccessTest')
+data.setCell(6, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(6, 3, 14415);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyEMPLoggedInTest')
+data.setCell(7, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(7, 3, 14269);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verifyFreeLLoggedInTest')
+data.setCell(8, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(8, 3, 13682);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verifyHirePageTest')
+data.setCell(9, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(9, 3, 11667);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyInvoiceDetailsPageTest')
+data.setCell(10, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(10, 3, 11611);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'validateInvoiceDetailsPageTest')
+data.setCell(11, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(11, 3, 11429);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyEMPLogInTest')
+data.setCell(12, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(12, 3, 10290);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'logOutEMPTest')
+data.setCell(13, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(13, 3, 9937);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'validateSecurityTest')
+data.setCell(14, 2, 'com.guru.testing.tests.EMPLogin')
+data.setCell(14, 3, 9805);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'goToJobHirePageTest')
+data.setCell(15, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(15, 3, 9713);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'verifyCreateInvoicePageTest')
+data.setCell(16, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(16, 3, 9393);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'signOutEmployerTest')
+data.setCell(17, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(17, 3, 9352);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'logOutEmployerTest')
+data.setCell(18, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(18, 3, 8442);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'clickSignInTest')
+data.setCell(19, 2, 'com.guru.testing.tests.EMPLogin')
+data.setCell(19, 3, 8162);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'hireTheFLTest')
+data.setCell(20, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(20, 3, 8151);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'logoutAdminTest')
+data.setCell(21, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(21, 3, 7837);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'launchTinyUrlTest')
+data.setCell(22, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(22, 3, 7554);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'verifyFeatureJobPayNowPageTest')
+data.setCell(23, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(23, 3, 7021);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'validateInvoicePayNowPageTest')
+data.setCell(24, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(24, 3, 6734);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'logIntoAdminTest')
+data.setCell(25, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(25, 3, 6574);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'loginToAdminTest')
+data.setCell(26, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(26, 3, 6548);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'signOutFLTest')
+data.setCell(27, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(27, 3, 6459);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'verifyInvoicePaidTest')
+data.setCell(28, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(28, 3, 6381);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'signOutFreeLTest')
+data.setCell(29, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(29, 3, 6362);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'verifyInvoiceIsPaidTest')
+data.setCell(30, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(30, 3, 6356);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'navigateToUrlTest')
+data.setCell(31, 2, 'com.guru.testing.tests.LaunchApplication')
+data.setCell(31, 3, 6244);
+data.setCell(32, 0, 32)
+data.setCell(32, 1, 'clickSendInvoiceTest')
+data.setCell(32, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(32, 3, 6093);
+data.setCell(33, 0, 33)
+data.setCell(33, 1, 'verifyInvoicePayNowPageTest')
+data.setCell(33, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(33, 3, 5947);
+data.setCell(34, 0, 34)
+data.setCell(34, 1, 'clickPostJobTest')
+data.setCell(34, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(34, 3, 5523);
+data.setCell(35, 0, 35)
+data.setCell(35, 1, 'clickApproveTest')
+data.setCell(35, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(35, 3, 5468);
+data.setCell(36, 0, 36)
+data.setCell(36, 1, 'craftMilestoneQuoteTest')
+data.setCell(36, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(36, 3, 5309);
+data.setCell(37, 0, 37)
+data.setCell(37, 1, 'verifyApplyQuoteFormTest')
+data.setCell(37, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(37, 3, 4346);
+data.setCell(38, 0, 38)
+data.setCell(38, 1, 'goToWorkroomTest')
+data.setCell(38, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(38, 3, 4220);
+data.setCell(39, 0, 39)
+data.setCell(39, 1, 'goToPostAJobPageTest')
+data.setCell(39, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(39, 3, 4146);
+data.setCell(40, 0, 40)
+data.setCell(40, 1, 'clickPayInvoiceBtnTest')
+data.setCell(40, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(40, 3, 4085);
+data.setCell(41, 0, 41)
+data.setCell(41, 1, 'clickPayInvoiceTest')
+data.setCell(41, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(41, 3, 4043);
+data.setCell(42, 0, 42)
+data.setCell(42, 1, 'clickDeclineTest')
+data.setCell(42, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(42, 3, 4021);
+data.setCell(43, 0, 43)
+data.setCell(43, 1, 'verifyFLInvoicePageTest')
+data.setCell(43, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(43, 3, 3411);
+data.setCell(44, 0, 44)
+data.setCell(44, 1, 'goToJobHirePageAgainTest')
+data.setCell(44, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(44, 3, 3402);
+data.setCell(45, 0, 45)
+data.setCell(45, 1, 'clickRevokeTest')
+data.setCell(45, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(45, 3, 3364);
+data.setCell(46, 0, 46)
+data.setCell(46, 1, 'goToInvoiceSummaryTest')
+data.setCell(46, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(46, 3, 3068);
+data.setCell(47, 0, 47)
+data.setCell(47, 1, 'goToAcceptApproveTest')
+data.setCell(47, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(47, 3, 2893);
+data.setCell(48, 0, 48)
+data.setCell(48, 1, 'clickPayTabTest')
+data.setCell(48, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(48, 3, 2820);
+data.setCell(49, 0, 49)
+data.setCell(49, 1, 'verifyQuoteSubmittedTest')
+data.setCell(49, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(49, 3, 2359);
+data.setCell(50, 0, 50)
+data.setCell(50, 1, 'enterInvoiceDetailsTest')
+data.setCell(50, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(50, 3, 2210);
+data.setCell(51, 0, 51)
+data.setCell(51, 1, 'goToAcceptApprovePaymentsTest')
+data.setCell(51, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(51, 3, 2208);
+data.setCell(52, 0, 52)
+data.setCell(52, 1, 'sendInvoiceTest')
+data.setCell(52, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(52, 3, 2065);
+data.setCell(53, 0, 53)
+data.setCell(53, 1, 'launchGuruTest')
+data.setCell(53, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(53, 3, 1872);
+data.setCell(54, 0, 54)
+data.setCell(54, 1, 'verifyJobDetailsPageTest')
+data.setCell(54, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(54, 3, 1328);
+data.setCell(55, 0, 55)
+data.setCell(55, 1, 'launchAdminSiteTest')
+data.setCell(55, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(55, 3, 1220);
+data.setCell(56, 0, 56)
+data.setCell(56, 1, 'goToCompletedTabTest')
+data.setCell(56, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(56, 3, 1050);
+data.setCell(57, 0, 57)
+data.setCell(57, 1, 'verifyHirePageAgainTest')
+data.setCell(57, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(57, 3, 1040);
+data.setCell(58, 0, 58)
+data.setCell(58, 1, 'findPendingPaymentTest')
+data.setCell(58, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(58, 3, 968);
+data.setCell(59, 0, 59)
+data.setCell(59, 1, 'verifyAdminApprovePaymentsPage')
+data.setCell(59, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(59, 3, 927);
+data.setCell(60, 0, 60)
+data.setCell(60, 1, 'verifyPostAJobPageTest')
+data.setCell(60, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(60, 3, 878);
+data.setCell(61, 0, 61)
+data.setCell(61, 1, 'goToAdminSiteTest')
+data.setCell(61, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(61, 3, 850);
+data.setCell(62, 0, 62)
+data.setCell(62, 1, 'validateAdminApprovePaymentsPage')
+data.setCell(62, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(62, 3, 817);
+data.setCell(63, 0, 63)
+data.setCell(63, 1, 'navToPendingTabTest')
+data.setCell(63, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(63, 3, 698);
+data.setCell(64, 0, 64)
+data.setCell(64, 1, 'goToPendingTabTest')
+data.setCell(64, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(64, 3, 674);
+data.setCell(65, 0, 65)
+data.setCell(65, 1, 'searchForPendingPaymentTest')
+data.setCell(65, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(65, 3, 625);
+data.setCell(66, 0, 66)
+data.setCell(66, 1, 'verifyInvoiceSummaryTest')
+data.setCell(66, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(66, 3, 511);
+data.setCell(67, 0, 67)
+data.setCell(67, 1, 'clickUnpaidInvoiceTest')
+data.setCell(67, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(67, 3, 380);
+data.setCell(68, 0, 68)
+data.setCell(68, 1, 'enterUsernameAndPasswordTest')
+data.setCell(68, 2, 'com.guru.testing.tests.EMPLogin')
+data.setCell(68, 3, 353);
+data.setCell(69, 0, 69)
+data.setCell(69, 1, 'payUsingEcheckTest')
+data.setCell(69, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(69, 3, 321);
+data.setCell(70, 0, 70)
+data.setCell(70, 1, 'verifyInvoicePageTest')
+data.setCell(70, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(70, 3, 308);
+data.setCell(71, 0, 71)
+data.setCell(71, 1, 'verifyEmployerDashTest')
+data.setCell(71, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(71, 3, 280);
+data.setCell(72, 0, 72)
+data.setCell(72, 1, 'loginAsFLTest')
+data.setCell(72, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(72, 3, 274);
+data.setCell(73, 0, 73)
+data.setCell(73, 1, 'loginAsFreeLTest')
+data.setCell(73, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(73, 3, 256);
+data.setCell(74, 0, 74)
+data.setCell(74, 1, 'verifyEMPDashTest')
+data.setCell(74, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(74, 3, 255);
+data.setCell(75, 0, 75)
+data.setCell(75, 1, 'verifyDashEMPTest')
+data.setCell(75, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(75, 3, 247);
+data.setCell(76, 0, 76)
+data.setCell(76, 1, 'verifyFLWorkroomTest')
+data.setCell(76, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(76, 3, 246);
+data.setCell(77, 0, 77)
+data.setCell(77, 1, 'verifyDashboardPageTest')
+data.setCell(77, 2, 'com.guru.testing.tests.EMPLogin')
+data.setCell(77, 3, 238);
+data.setCell(78, 0, 78)
+data.setCell(78, 1, 'loginAsEMPTest')
+data.setCell(78, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(78, 3, 214);
+data.setCell(79, 0, 79)
+data.setCell(79, 1, 'loginEMPTest')
+data.setCell(79, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(79, 3, 214);
+data.setCell(80, 0, 80)
+data.setCell(80, 1, 'verifyFLDashboardTest')
+data.setCell(80, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(80, 3, 210);
+data.setCell(81, 0, 81)
+data.setCell(81, 1, 'verifyFLDashTest')
+data.setCell(81, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(81, 3, 206);
+data.setCell(82, 0, 82)
+data.setCell(82, 1, 'loginEmployerTest')
+data.setCell(82, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(82, 3, 201);
+data.setCell(83, 0, 83)
+data.setCell(83, 1, 'verifyLoginPageTwoTest')
+data.setCell(83, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(83, 3, 179);
+data.setCell(84, 0, 84)
+data.setCell(84, 1, 'verifyLoginPageOneTest')
+data.setCell(84, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(84, 3, 155);
+data.setCell(85, 0, 85)
+data.setCell(85, 1, 'verifyLoginPageSevenTest')
+data.setCell(85, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(85, 3, 142);
+data.setCell(86, 0, 86)
+data.setCell(86, 1, 'verifyLoginPageThreeTest')
+data.setCell(86, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(86, 3, 140);
+data.setCell(87, 0, 87)
+data.setCell(87, 1, 'verifyLoginPageFiveTest')
+data.setCell(87, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(87, 3, 135);
+data.setCell(88, 0, 88)
+data.setCell(88, 1, 'verifyLoginPageFourTest')
+data.setCell(88, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(88, 3, 129);
+data.setCell(89, 0, 89)
+data.setCell(89, 1, 'verifyLoginPageSixTest')
+data.setCell(89, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(89, 3, 126);
+data.setCell(90, 0, 90)
+data.setCell(90, 1, 'submitQuoteTest')
+data.setCell(90, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(90, 3, 119);
+data.setCell(91, 0, 91)
+data.setCell(91, 1, 'payInvoiceTest')
+data.setCell(91, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(91, 3, 99);
+data.setCell(92, 0, 92)
+data.setCell(92, 1, 'clickPayTest')
+data.setCell(92, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(92, 3, 89);
+data.setCell(93, 0, 93)
+data.setCell(93, 1, 'payTheInvoiceTest')
+data.setCell(93, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(93, 3, 83);
+data.setCell(94, 0, 94)
+data.setCell(94, 1, 'clickFirstViewAndPayTest')
+data.setCell(94, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(94, 3, 83);
+data.setCell(95, 0, 95)
+data.setCell(95, 1, 'verifyAdminHomePageTest')
+data.setCell(95, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(95, 3, 76);
+data.setCell(96, 0, 96)
+data.setCell(96, 1, 'agreeToPayCheckTest')
+data.setCell(96, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(96, 3, 66);
+data.setCell(97, 0, 97)
+data.setCell(97, 1, 'validateAdminHomePageTest')
+data.setCell(97, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(97, 3, 63);
+data.setCell(98, 0, 98)
+data.setCell(98, 1, 'clickApplyTest')
+data.setCell(98, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(98, 3, 58);
+data.setCell(99, 0, 99)
+data.setCell(99, 1, 'verifyAdminLoginPageTest')
+data.setCell(99, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(99, 3, 25);
+data.setCell(100, 0, 100)
+data.setCell(100, 1, 'verifyLoggedOutTest')
+data.setCell(100, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(100, 3, 16);
+data.setCell(101, 0, 101)
+data.setCell(101, 1, 'validateAdminLoginPageTest')
+data.setCell(101, 2, 'com.guru.testing.tests.RefundRevokeDecline')
+data.setCell(101, 3, 9);
+window.suiteTableData['Approve_payments']= { tableData: data, tableDiv: 'times-div-Approve_payments'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <div id="times-div-Approve_payments">
+              </div> <!-- times-div-Approve_payments -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Approve payments</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Approve_payments" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.guru.testing.tests.LaunchApplication</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">startBrowserBeforeSuite(suite, chrome, 10, 2, 5, 0, default, default, C:\browserdrivers)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">startBrowserBeforeTest(suite, chrome, 10, 2, 5, 0, default, default, C:\browserdrivers)</span>
+                <span class="method-start">3851 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">loadObjectMaps</span>
+                <span class="method-start">3856 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">waitTime</span>
+                <span class="method-start">3907 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">navigateToUrlTest(https://qa.guru.com/login.aspx)</span>
+                <span class="method-start">5907 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBroserAfterTest(suite)</span>
+                <span class="method-start">12162 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.guru.testing.tests.EMPLogin</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">enterUsernameAndPasswordTest(guruemp001@gmail.com, 12345678)</span>
+                <span class="method-start">12186 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickSignInTest</span>
+                <span class="method-start">12540 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateSecurityTest</span>
+                <span class="method-start">20705 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyAndSkipPhoneVerificationTest</span>
+                <span class="method-start">30513 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyDashboardPageTest</span>
+                <span class="method-start">51026 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.guru.testing.tests.RefundRevokeDecline</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">goToPostAJobPageTest</span>
+                <span class="method-start">51276 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyPostAJobPageTest</span>
+                <span class="method-start">55425 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterJobDetailsTest(Automated Job Details, Web, Software & IT, testing, Under $250)</span>
+                <span class="method-start">56304 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickPostJobTest</span>
+                <span class="method-start">83332 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFeatureJobPayNowPageTest</span>
+                <span class="method-start">88860 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">agreeToPayCheckTest</span>
+                <span class="method-start">95882 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickPayTest</span>
+                <span class="method-start">95949 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyJobPostSuccessTest</span>
+                <span class="method-start">96040 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToJobHirePageTest</span>
+                <span class="method-start">110456 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyHirePageTest</span>
+                <span class="method-start">120171 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">signOutEMPTest</span>
+                <span class="method-start">131841 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageOneTest</span>
+                <span class="method-start">147044 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginAsFLTest(gurufree001@gmail.com, 12345678)</span>
+                <span class="method-start">147200 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFLLoggedInTest</span>
+                <span class="method-start">147475 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFLDashTest</span>
+                <span class="method-start">172486 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">launchTinyUrlTest</span>
+                <span class="method-start">172693 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyJobDetailsPageTest</span>
+                <span class="method-start">180248 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickApplyTest</span>
+                <span class="method-start">181577 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyApplyQuoteFormTest</span>
+                <span class="method-start">181637 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">craftMilestoneQuoteTest(1, Auto Mile 1, 01-12-2018, 120, Automated Scope of Work)</span>
+                <span class="method-start">185984 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">submitQuoteTest</span>
+                <span class="method-start">191294 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyQuoteSubmittedTest</span>
+                <span class="method-start">191415 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">signOutFLTest</span>
+                <span class="method-start">193775 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageTwoTest</span>
+                <span class="method-start">200237 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginAsEMPTest(guruemp001@gmail.com, 12345678)</span>
+                <span class="method-start">200417 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyEMPLoggedInTest</span>
+                <span class="method-start">200632 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyEMPDashTest</span>
+                <span class="method-start">214904 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToJobHirePageAgainTest</span>
+                <span class="method-start">215160 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyHirePageAgainTest</span>
+                <span class="method-start">218564 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">hireTheFLTest</span>
+                <span class="method-start">219605 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">logOutEMPTest</span>
+                <span class="method-start">227758 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageThreeTest</span>
+                <span class="method-start">237697 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginAsFreeLTest(gurufree001@gmail.com, 12345678)</span>
+                <span class="method-start">237838 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFreeLLoggedInTest</span>
+                <span class="method-start">238095 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFLDashboardTest</span>
+                <span class="method-start">251780 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToWorkroomTest(1)</span>
+                <span class="method-start">251991 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFLWorkroomTest</span>
+                <span class="method-start">256214 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickSendInvoiceTest</span>
+                <span class="method-start">256461 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCreateInvoicePageTest</span>
+                <span class="method-start">262555 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterInvoiceDetailsTest(Web, Software & IT)</span>
+                <span class="method-start">271949 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sendInvoiceTest</span>
+                <span class="method-start">274160 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFLInvoicePageTest</span>
+                <span class="method-start">276228 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">signOutFreeLTest</span>
+                <span class="method-start">279640 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageFourTest</span>
+                <span class="method-start">286003 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginEMPTest(guruemp001@gmail.com, 12345678)</span>
+                <span class="method-start">286133 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyEMPLogInTest</span>
+                <span class="method-start">286350 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyDashEMPTest</span>
+                <span class="method-start">296643 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickPayTabTest</span>
+                <span class="method-start">296891 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyInvoicePageTest</span>
+                <span class="method-start">299713 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickUnpaidInvoiceTest</span>
+                <span class="method-start">300022 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyInvoiceDetailsPageTest</span>
+                <span class="method-start">300405 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickPayInvoiceTest</span>
+                <span class="method-start">312017 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyInvoicePayNowPageTest</span>
+                <span class="method-start">316062 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">selectECheckAndAgreeTermsTest</span>
+                <span class="method-start">322010 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">payInvoiceTest</span>
+                <span class="method-start">356335 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyInvoicePaidTest</span>
+                <span class="method-start">356436 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">signOutEmployerTest</span>
+                <span class="method-start">362818 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageFiveTest</span>
+                <span class="method-start">372172 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">launchAdminSiteTest(https://qa.guru.com/admin/login.aspx)</span>
+                <span class="method-start">372308 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyAdminLoginPageTest</span>
+                <span class="method-start">373533 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginToAdminTest(small, password)</span>
+                <span class="method-start">375527 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyAdminHomePageTest</span>
+                <span class="method-start">382078 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToAcceptApproveTest</span>
+                <span class="method-start">382155 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyAdminApprovePaymentsPage</span>
+                <span class="method-start">385050 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToPendingTabTest(PENDING)</span>
+                <span class="method-start">385978 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">findPendingPaymentTest(2017-06-20, 2017-06-21, 0)</span>
+                <span class="method-start">386653 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickApproveTest(0)</span>
+                <span class="method-start">387622 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToCompletedTabTest(COMPLETED, 2017-06-20, 2017-06-21)</span>
+                <span class="method-start">393092 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickRevokeTest(0)</span>
+                <span class="method-start">394144 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">logoutAdminTest</span>
+                <span class="method-start">397510 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyLoggedOutTest</span>
+                <span class="method-start">405350 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">launchGuruTest(https://qa.guru.com/login.aspx)</span>
+                <span class="method-start">406051 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageSixTest</span>
+                <span class="method-start">407924 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginEmployerTest(guruemp001@gmail.com, 12345678)</span>
+                <span class="method-start">408051 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyEmployerLogInTest</span>
+                <span class="method-start">408254 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyEmployerDashTest</span>
+                <span class="method-start">422877 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToInvoiceSummaryTest</span>
+                <span class="method-start">423157 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyInvoiceSummaryTest</span>
+                <span class="method-start">426227 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickFirstViewAndPayTest</span>
+                <span class="method-start">426740 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateInvoiceDetailsPageTest</span>
+                <span class="method-start">426824 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickPayInvoiceBtnTest</span>
+                <span class="method-start">438254 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateInvoicePayNowPageTest</span>
+                <span class="method-start">442340 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">payUsingEcheckTest</span>
+                <span class="method-start">449075 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">payTheInvoiceTest</span>
+                <span class="method-start">449398 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyInvoiceIsPaidTest</span>
+                <span class="method-start">449484 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">logOutEmployerTest</span>
+                <span class="method-start">455842 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginPageSevenTest</span>
+                <span class="method-start">464286 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToAdminSiteTest(https://qa.guru.com/admin/login.aspx)</span>
+                <span class="method-start">464428 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateAdminLoginPageTest</span>
+                <span class="method-start">465280 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">logIntoAdminTest(small, password)</span>
+                <span class="method-start">466043 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateAdminHomePageTest</span>
+                <span class="method-start">472620 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">goToAcceptApprovePaymentsTest</span>
+                <span class="method-start">472683 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateAdminApprovePaymentsPage</span>
+                <span class="method-start">474892 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">navToPendingTabTest(PENDING)</span>
+                <span class="method-start">475711 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">searchForPendingPaymentTest(2017-06-20, 2017-06-21)</span>
+                <span class="method-start">476410 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickDeclineTest(0)</span>
+                <span class="method-start">477036 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.guru.testing.tests.LaunchApplication</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">closeBrowserAfterSuite(suite)</span>
+                <span class="method-start">481082 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

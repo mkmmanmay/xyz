@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)" preserve-order="true">
+    <classes>
+      <class name="com.guru.testing.page.TestBuyingBids">
+        <methods>
+          <include name="phone"/>
+          <include name="makePayment"/>
+          <include name="security"/>
+          <include name="removePayment"/>
+          <include name="launch"/>
+          <include name="verifyCAEntry"/>
+          <include name="verifyBidsAdded"/>
+          <include name="login"/>
+          <include name="dashboard"/>
+          <include name="buyBids"/>
+        </methods>
+      </class> <!-- com.guru.testing.page.TestBuyingBids -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

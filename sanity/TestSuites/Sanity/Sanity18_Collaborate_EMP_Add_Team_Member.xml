@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sanity Collaborate Emp Add" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="10" />
+	<parameter name="thinkTime" value="5" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY018_COLLABORATE_EMP_ADD_TEAM_MEMBER" />
+	<parameter name="reportDetailLevel" value="43" />
+	<parameter name="url" value="https://qa.guru.com/login.aspx" />
+	<parameter name="username" value="autoempteam@mailinator.com" />
+	<parameter name="password" value="12345678" />
+		
+	<test name="1. Login as Employer. And click 'Post a Job'." preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="clickPostAJobTopNavTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	
+	<test name="2. Post a featured job." preserve-order = "true">
+		<classes>
+			<class name="com.guru.testing.page.PostAJobPageTest">
+				<parameter name="jobTitle" value="AUTOMATION JOB - Do not apply" />
+				<parameter name="jobDetails" value="Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing." />
+				<parameter name="skill" value="testing" />
+				<parameter name="country" value="India" />
+				<parameter name="fixedBudget" value="Under $250" />
+					<methods>
+						<include name="verifyPostAJobPageTest" />
+						<include name="enterRandomJobTitleTest" />
+						<include name="enterJobDescriptionTest" />
+						<include name="clickWebCategoryTest" />
+						<include name="enterKeywordsTest" />
+						<include name="clickCountryRadioButtonTest" />
+						<include name="enterCountryNameTest" />
+						<include name="selectFixedPriceBudgetTest" />
+						<include name="clickFeatureMyJobTest" />
+						<include name="clickPostJobButtonTest" />
+					</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PayNowPageTest">
+			<parameter name="paymentMethod" value="PAY_PAL"/>
+				<methods>
+					<include name="verifyPayForFeaturingJobTest" />
+					<include name="verifyPaymentMethodTest" />
+					<include name="selectAgreeToPayCheckboxTest" />
+					<include name="clickToPayTest" />
+					<include name="verifyJobPostedTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="clickDashboardTopNavTest" />
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="clickRandomJobnamePostedTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.HirePageTest" >
+				<methods>
+					<include name="verifyQuotesPageTest" />
+					<include name="getTinyURLTest" />
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="2.5 Sign out EMP." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="signOutEmployerTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3. Login as FL. Go to Find Jobs page." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LoginPageTest">
+			<parameter name="username" value="gurufreelancer001@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyFLDashboardPageTest" />
+					<include name="launchTinyURLTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.JobDetailsPageTest">
+				<parameter name="agreementType" value="Fixed Price by milestone" />
+				<parameter name="noOfMilestones" value="1"/>
+				<parameter name="milestoneNames" value="Auto Mile 1"/>
+				<parameter name="milestoneDueDates" value="01-12-2018"/>
+				<parameter name="milestoneAmounts" value="50"/>
+				<methods>
+					<include name="verifyJobDetailsPageTest" />					
+					<include name="clickApplyTest" />		
+					<include name="verifyApplyQuotesFormTest" />	
+					<include name="selectAgreementTypeTest" />
+					<include name="enterMilestonesTest" />
+					<include name="clickToSubmitQuoteTest" />
+					<include name="verifyQuoteSubmittedTest" />									
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="3.5 Log out FL" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="signOutFlTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="4. Login as EMP. And Hire the FL." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LoginPageTest">
+			<parameter name="username" value="autoempteam@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="clickRandomJobnamePostedTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.HirePageTest" >
+				<methods>
+					<include name="verifyQuotesPageTest" />
+					<include name="clickHireBtnTest" />
+					<include name="selectAgreementAckCheckboxTest" />
+					<include name="clickHireInHirePopupTest" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="5. Go to Dashboard, and open workroom. Click add a manager link." preserve-order="true">
+		<classes>			
+			<class name="com.guru.testing.page.DashboardPageTest" >
+				<methods>
+					<include name="clickDashboardTopNavTest" />	
+					<include name="verifyEMPDashboardPageTest" />	
+					<include name="clickRandomJobnameWorkroomTest"/>				
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.WorkroomPageTest">
+				<methods>
+					<include name="verifyEMPWorkroomPageTest" />
+					<include name="verifyJobNameTest" />
+					<include name="clickAddAManagerTest" />
+				</methods>
+			</class>	
+			<class name="com.guru.testing.page.ManagePageTest">
+			<parameter name="firstEmail" value="autoflteam@mailinator.com"/>
+			<parameter name="firstRole" value="Manager"/>
+				<methods> 
+					<include name="verifyAddAManagerEMPPageTest" />
+					<include name="enterFirstEmailTest" />
+					<include name="selectFirstRoleTest" />
+					<include name="clickAddTest" />
+					<include name="verifyRequestPendingTextTest"/>
+				</methods>
+			</class>	
+		</classes>
+	</test>
+	
+	<test name="5.5 Sign out EMP." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="signOutEmployerTest" />
+				</methods>
+			</class>			
+		</classes>
+	</test>
+	
+	<test name="6. Launch email domain, and accept invite." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+			<parameter name="url" value="https://www.mailinator.com"/>
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.EmailPageTest">
+			<parameter name="mailId" value="autoflteam"/>
+			<parameter name="pageTitle" value="Sign In to Your Account - Guru" />
+				<methods>
+					<include name="enterMailIdTest" />
+					<include name="clickGoTest" />
+					<include name="verifyMailinatorInboxTest" />
+					<include name="clickYoureInvitedTest" />
+					<include name="clickAcceptBtnTest" />
+					<include name="switchToNewTabTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.LoginPageTest">
+			<parameter name="username" value="autoflteam@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.SwitchBoardPageTest">
+				<methods>
+					<include name="verifySwitchBoardPageTest" />
+					<include name="clickFirstManagerRoleTileTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="signOutEmployerTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="7. Remove yourself from Manager role, and logout." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LoginPageTest">
+			<parameter name="username" value="autoempteam@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="clickMyManagersLinkTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.ManagePageTest">
+				<methods>
+					<include name="verifyMyManagersPageTest" />
+					<include name="clickFirstManagerDropdownTest" />
+					<include name="clickRemoveInDropdownTest" />
+				</methods>
+			</class>
+						
+		</classes>
+	</test>
+	
+	<test name="7.5 Sign out EMP." preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="signOutEmployerTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

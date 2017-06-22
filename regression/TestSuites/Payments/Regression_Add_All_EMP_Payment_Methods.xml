@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Employer Adding Payment Methods Regression" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+		<parameter name="browser" value="chrome" />
+		<parameter name="waitTime" value="5" />
+		<parameter name="thinkTime" value="5" />
+		<parameter name="implicitWaitTime" value="10" />
+		<parameter name="reportName" value="REGRESSION_ADD_ALL_EMP_PAYMENT_METHODS" />
+		<parameter name="reportDetailLevel" value="43" />
+		<parameter name="url" value="http://qa-admin.guru.com/admin" />
+		<parameter name="username" value="small" />
+		<parameter name="password" value="password" />
+	
+	<test name = "Adding Employer Payment Methods">
+		<parameter name="index" value="1" /> <!-- Should always be 1 because new user created appears at top. -->
+		<parameter name="address" value="Delhi" />
+		<parameter name="accountHolderName" value="Automated Name" />
+		<parameter name="routingNumber" value="12223582" /> <!-- No entering all the numbers to click on auto-suggested bank -->
+		<parameter name="accountNumber" value="123456789" />
+		<parameter name="environment" value="qa" /> <!-- Options: qa, qa2 and live. Remember to change username/pass if environment is given as "live" -->
+		<parameter name="title" value="Employer History"/>
+		<parameter name="paypalId" value="gurucomdev_per@gmail.com"/>
+		<parameter name="paypalPass" value="11111111"/>
+		<parameter name="visaNumber" value="4111111111111111"/>
+		<parameter name="visaMonth" value="4 - Apr"/>
+		<parameter name="visaYear" value="2032"/>
+		<parameter name="visaCvv" value="123"/>
+		<parameter name="mcNumber" value="5105105105105100"/>
+		<parameter name="mcMonth" value="4 - Apr"/>
+		<parameter name="mcYear" value="2032"/>
+		<parameter name="mcCvv" value="123"/>
+		<parameter name="amexNumber" value="378282246310005"/>
+		<parameter name="amexMonth" value="4 - Apr"/>
+		<parameter name="amexYear" value="2032"/>
+		<parameter name="amexCvv" value="1234"/>
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.AdminLogin" />
+			<class name="com.guru.testing.tests.CreateNewEMP"/>
+			<class name="com.guru.testing.tests.AddAllEMPPaymentMethods"/>
+		</classes>
+	</test>
+ </suite>

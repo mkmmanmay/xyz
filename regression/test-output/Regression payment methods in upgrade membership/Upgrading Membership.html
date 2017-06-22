@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>TestNG:  Upgrading Membership</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Upgrading Membership</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>35/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Jun 14 12:35:45 IST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>442 seconds (442414 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.addCCTest()'><b>addCCTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Professional, 4111111111111111, 4 - Apr, 2030, 123</td>
+<td></td>
+<td>25</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.FLLogin.clickSignInTest()'><b>clickSignInTest</b><br>Test class: com.guru.testing.tests.FLLogin</td>
+<td></td>
+<td>9</td>
+<td>com.guru.testing.tests.FLLogin@682b2fa</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.completeAddedCCPaymentTest()'><b>completeAddedCCPaymentTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic+</td>
+<td></td>
+<td>4</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.completeAddedPaypalPaymentTest()'><b>completeAddedPaypalPaymentTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Professional</td>
+<td></td>
+<td>8</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.downgradeMembershipTest()'><b>downgradeMembershipTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic, Annual</td>
+<td></td>
+<td>3</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.downgradeUserMembershipTest()'><b>downgradeUserMembershipTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic, Annual</td>
+<td></td>
+<td>2</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.FLLogin.enterUsernameAndPasswordTest()'><b>enterUsernameAndPasswordTest</b><br>Test class: com.guru.testing.tests.FLLogin<br>Parameters: regupgmem@mailinator.com, 12345678</td>
+<td></td>
+<td>0</td>
+<td>com.guru.testing.tests.FLLogin@682b2fa</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.finishPaypalAdditionTest()'><b>finishPaypalAdditionTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: gurucomdev_per@gmail.com, 11111111</td>
+<td></td>
+<td>67</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.goToAdminCRMTest()'><b>goToAdminCRMTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: regupgmem@mailinator.com</td>
+<td></td>
+<td>22</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.goToAdminSiteTest()'><b>goToAdminSiteTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: https://qa-admin.guru.com/admin/login.aspx, small, password</td>
+<td></td>
+<td>2</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.goToUpgradeMemPageTest()'><b>goToUpgradeMemPageTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic</td>
+<td></td>
+<td>6</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.logoutUserTest()'><b>logoutUserTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods</td>
+<td></td>
+<td>7</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.navigateToAdminSiteTest()'><b>navigateToAdminSiteTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Pro History</td>
+<td></td>
+<td>70</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.navigateToMembershipPageTest()'><b>navigateToMembershipPageTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic</td>
+<td></td>
+<td>3</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.LaunchApplication.navigateToUrlTest()'><b>navigateToUrlTest</b><br>Test class: com.guru.testing.tests.LaunchApplication<br>Parameters: http://qa.guru.com/login.aspx</td>
+<td></td>
+<td>12</td>
+<td>com.guru.testing.tests.LaunchApplication@7586beff</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.payUsingAddedCCTest()'><b>payUsingAddedCCTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic+, CREDIT_CARD</td>
+<td></td>
+<td>13</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.payUsingAddedPaypalTest()'><b>payUsingAddedPaypalTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Professional, PAY_PAL</td>
+<td></td>
+<td>11</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.payUsingCATest()'><b>payUsingCATest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic+</td>
+<td></td>
+<td>8</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.payUsingCCTest()'><b>payUsingCCTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Professional</td>
+<td></td>
+<td>3</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.payUsingPaypalTest()'><b>payUsingPaypalTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods</td>
+<td></td>
+<td>19</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.removePaymentMethodsTest()'><b>removePaymentMethodsTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods</td>
+<td></td>
+<td>23</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.selectAddPaypalTest()'><b>selectAddPaypalTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Business</td>
+<td></td>
+<td>11</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.signOutUserTest()'><b>signOutUserTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods</td>
+<td></td>
+<td>8</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.upgradeUsingAddedPaypalTest()'><b>upgradeUsingAddedPaypalTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic+</td>
+<td></td>
+<td>4</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.upgradeUsingCATest()'><b>upgradeUsingCATest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic, Basic+, CASH_ACCOUNT</td>
+<td></td>
+<td>16</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.upgradeUsingCCTest()'><b>upgradeUsingCCTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic+</td>
+<td></td>
+<td>4</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.upgradeUsingPaypalTest()'><b>upgradeUsingPaypalTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Professional</td>
+<td></td>
+<td>4</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.FLLogin.validateSecurityTest()'><b>validateSecurityTest</b><br>Test class: com.guru.testing.tests.FLLogin</td>
+<td></td>
+<td>13</td>
+<td>com.guru.testing.tests.FLLogin@682b2fa</td></tr>
+<tr>
+<td title='com.guru.testing.tests.FLLogin.verifyAndSkipPhoneVerificationTest()'><b>verifyAndSkipPhoneVerificationTest</b><br>Test class: com.guru.testing.tests.FLLogin</td>
+<td></td>
+<td>10</td>
+<td>com.guru.testing.tests.FLLogin@682b2fa</td></tr>
+<tr>
+<td title='com.guru.testing.tests.FLLogin.verifyDashboardPageTest()'><b>verifyDashboardPageTest</b><br>Test class: com.guru.testing.tests.FLLogin</td>
+<td></td>
+<td>0</td>
+<td>com.guru.testing.tests.FLLogin@682b2fa</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.verifyMembershipDowngradedTest()'><b>verifyMembershipDowngradedTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic</td>
+<td></td>
+<td>8</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.verifyMembershipResetTest()'><b>verifyMembershipResetTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Basic</td>
+<td></td>
+<td>7</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.verifyMembershipUpgradedTest()'><b>verifyMembershipUpgradedTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Business</td>
+<td></td>
+<td>5</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.verifyPaypalPaySuccessTest()'><b>verifyPaypalPaySuccessTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Business</td>
+<td></td>
+<td>10</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.UpgradeMemAllPayMethods.verifyUpgradedMembershipTest()'><b>verifyUpgradedMembershipTest</b><br>Test class: com.guru.testing.tests.UpgradeMemAllPayMethods<br>Parameters: Professional</td>
+<td></td>
+<td>4</td>
+<td>com.guru.testing.tests.UpgradeMemAllPayMethods@3b69e7d1</td></tr>
+</table><p>
+</body>
+</html>

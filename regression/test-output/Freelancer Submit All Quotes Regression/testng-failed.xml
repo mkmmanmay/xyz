@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Freelancer Submit All Quotes Regression]">
+  <parameter name="scopeOfWork" value="Automated Scope of Work"/>
+  <parameter name="milestoneNames" value="First Mile"/>
+  <parameter name="reportName" value="REGRESSION_ADD_ALL_FL_TRANSFER_METHODS"/>
+  <parameter name="noOfMilestones" value="1"/>
+  <parameter name="reportDetailLevel" value="43"/>
+  <parameter name="fifthJobIndex" value="5"/>
+  <parameter name="password" value="password"/>
+  <parameter name="noOfRecurring" value="2"/>
+  <parameter name="rate" value="10.5"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="safepayOption" value="FUND_NEXT_MILESTONE_AND_ENABLE_AUTOPAY"/>
+  <parameter name="thirdAgreement" value="Recurring payments"/>
+  <parameter name="milestoneDueDates" value="01-12-2018"/>
+  <parameter name="implicitWaitTime" value="10"/>
+  <parameter name="milestoneAmounts" value="50"/>
+  <parameter name="hours" value="10"/>
+  <parameter name="address" value="Delhi"/>
+  <parameter name="firstJobIndex" value="1"/>
+  <parameter name="secondAgreement" value="Hourly by time tracked"/>
+  <parameter name="fifthAgreement" value="Placeholder bid"/>
+  <parameter name="fourthJobIndex" value="4"/>
+  <parameter name="index" value="1"/>
+  <parameter name="url" value="http://qa-admin.guru.com/admin"/>
+  <parameter name="recurringDurations" value="Weekly|Biweekly"/>
+  <parameter name="recurringRates" value="50|120"/>
+  <parameter name="recurringDescs" value="Recurring Desc 1|Recurring Desc 2"/>
+  <parameter name="thinkTime" value="5"/>
+  <parameter name="fourthAgreement" value="Tasks"/>
+  <parameter name="thirdJobIndex" value="3"/>
+  <parameter name="waitTime" value="5"/>
+  <parameter name="secondJobIndex" value="2"/>
+  <parameter name="username" value="small"/>
+  <listeners>
+    <listener class-name="com.guru.framework.testing.helpers.PDFReporter"/>
+    <listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener"/>
+  </listeners>
+  <test name="Submitting all types of Quotes(failed)" preserve-order="true">
+    <parameter name="scopeOfWork" value="Automated Scope of Work"/>
+    <parameter name="milestoneNames" value="First Mile"/>
+    <parameter name="reportName" value="REGRESSION_ADD_ALL_FL_TRANSFER_METHODS"/>
+    <parameter name="noOfMilestones" value="1"/>
+    <parameter name="reportDetailLevel" value="43"/>
+    <parameter name="fifthJobIndex" value="5"/>
+    <parameter name="password" value="password"/>
+    <parameter name="noOfRecurring" value="2"/>
+    <parameter name="rate" value="10.5"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="safepayOption" value="FUND_NEXT_MILESTONE_AND_ENABLE_AUTOPAY"/>
+    <parameter name="thirdAgreement" value="Recurring payments"/>
+    <parameter name="milestoneDueDates" value="01-12-2018"/>
+    <parameter name="implicitWaitTime" value="10"/>
+    <parameter name="milestoneAmounts" value="50"/>
+    <parameter name="hours" value="10"/>
+    <parameter name="address" value="Delhi"/>
+    <parameter name="firstJobIndex" value="1"/>
+    <parameter name="secondAgreement" value="Hourly by time tracked"/>
+    <parameter name="fifthAgreement" value="Placeholder bid"/>
+    <parameter name="fourthJobIndex" value="4"/>
+    <parameter name="index" value="1"/>
+    <parameter name="url" value="http://qa-admin.guru.com/admin"/>
+    <parameter name="recurringDurations" value="Weekly|Biweekly"/>
+    <parameter name="recurringRates" value="50|120"/>
+    <parameter name="recurringDescs" value="Recurring Desc 1|Recurring Desc 2"/>
+    <parameter name="thinkTime" value="5"/>
+    <parameter name="fourthAgreement" value="Tasks"/>
+    <parameter name="thirdJobIndex" value="3"/>
+    <parameter name="waitTime" value="5"/>
+    <parameter name="secondJobIndex" value="2"/>
+    <parameter name="username" value="small"/>
+    <classes>
+      <class name="com.guru.testing.tests.LaunchApplication">
+        <methods>
+          <include name="startBrowserBeforeTest"/>
+          <include name="waitTime"/>
+          <include name="closeBrowserAfterSuite"/>
+          <include name="closeBroserAfterTest"/>
+          <include name="loadObjectMaps"/>
+          <include name="startBrowserBeforeSuite"/>
+        </methods>
+      </class> <!-- com.guru.testing.tests.LaunchApplication -->
+      <class name="com.guru.testing.tests.SubmitAllTypeOfQuotes">
+        <methods>
+          <include name="moveToFindJobsTest"/>
+          <include name="craftFourthQuoteTest"/>
+          <include name="navToFindJobsTest"/>
+          <include name="goToFifthJobTest"/>
+          <include name="switchToFindJobsTest"/>
+          <include name="craftThirdQuoteTest"/>
+          <include name="craftFirstQuoteTest"/>
+          <include name="submitThirdQuoteTest"/>
+          <include name="navigateToFindJobsTest"/>
+          <include name="goToFirstJobTest"/>
+          <include name="submitFourthQuoteTest"/>
+          <include name="goToThirdJobTest"/>
+          <include name="goToFourthJobTest"/>
+          <include name="craftFifthQuoteTest"/>
+          <include name="submitSecondQuoteTest"/>
+          <include name="submitFifthQuoteTest"/>
+        </methods>
+      </class> <!-- com.guru.testing.tests.SubmitAllTypeOfQuotes -->
+    </classes>
+  </test> <!-- Submitting all types of Quotes(failed) -->
+</suite> <!-- Failed suite [Freelancer Submit All Quotes Regression] -->

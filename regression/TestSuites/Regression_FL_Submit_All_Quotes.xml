@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Freelancer Submit All Quotes Regression" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+		<parameter name="browser" value="chrome" />
+		<parameter name="waitTime" value="5" />
+		<parameter name="thinkTime" value="5" />
+		<parameter name="implicitWaitTime" value="10" />
+		<parameter name="reportName" value="REGRESSION_ADD_ALL_FL_TRANSFER_METHODS" />
+		<parameter name="reportDetailLevel" value="43" />
+		<parameter name="url" value="http://qa-admin.guru.com/admin" />
+		<parameter name="username" value="small" />
+		<parameter name="password" value="password" />
+		<parameter name="index" value="1" /> <!-- Should always be 1 because new user created appears at top. -->
+		<parameter name="address" value="Delhi" />
+		<parameter name="jobIndex" value="1" />
+		<parameter name="noOfMilestones" value="1" />
+		<parameter name="milestoneNames" value="First Mile" /> <!-- Separate Multiple Milestones by "|" symbol. -->
+		<parameter name="milestoneDueDates" value="01-12-2018" /> <!-- Separate Multiple DueDates by "|" symbol. -->
+		<parameter name="milestoneAmounts" value="50" /> <!-- Separate Multiple Amounts by "|" symbol. -->
+		<parameter name="safepayOption" value="FUND_NEXT_MILESTONE_AND_ENABLE_AUTOPAY" />
+		<parameter name="scopeOfWork" value="Automated Scope of Work" />
+		<parameter name="secondAgreement" value="Hourly by time tracked" />
+		<parameter name="hours" value="10" />
+		<parameter name="rate" value="10.5" />
+		<parameter name="thirdAgreement" value="Recurring payments" />
+		<parameter name="noOfRecurring" value="2" />
+		<parameter name="recurringDescs" value="Recurring Desc 1|Recurring Desc 2" /> <!-- Separate Multiple Descriptions by "|" symbol. -->
+		<parameter name="recurringDurations" value="Weekly|Biweekly" /> <!-- Separate Multiple Durations by "|" symbol. -->
+		<parameter name="recurringRates" value="50|120" /> <!-- Separate Multiple Rates by "|" symbol. -->
+		<parameter name="recurringDueDates" value="01-10-2018|01-12-2018" />
+		<parameter name="fourthAgreement" value="Tasks" />
+		<parameter name="fifthAgreement" value="Placeholder bid" />
+		
+	<test name = "Submitting all types of Quotes">
+		<classes>
+		
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.AdminLogin" />
+			<class name="com.guru.testing.tests.CreateNewFL" />
+			<class name="com.guru.testing.tests.SubmitAllTypeOfQuotes"/>
+		</classes>
+	</test>
+ </suite>

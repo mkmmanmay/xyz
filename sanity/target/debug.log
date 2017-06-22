@@ -1,0 +1,44 @@
+2017-06-16 10:15:14,772 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadObjectMaps(): file:/C:/Users/mkumar/devworkspace/sanity/target/test-classes/com/guru/testing/objectmap
+2017-06-16 10:15:14,775 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminCRMPageObjectMap
+2017-06-16 10:15:14,777 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminHomePageObjectMap
+2017-06-16 10:15:14,778 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminLoginPageObjectMap
+2017-06-16 10:15:14,779 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.BidsPageObjectMap
+2017-06-16 10:15:14,780 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.CashAccPageObjectMap
+2017-06-16 10:15:14,781 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.CommonObjectMap
+2017-06-16 10:15:14,783 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.DashboardPageObjectMap
+2017-06-16 10:15:14,785 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.EditProfilePageObjectMap
+2017-06-16 10:15:14,786 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.EmailPageObjectMap
+2017-06-16 10:15:14,787 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.FindGurusPageObjectMap
+2017-06-16 10:15:14,788 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.FindJobsPageObjectMap
+2017-06-16 10:15:14,789 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.FLProfilePageObjectMap
+2017-06-16 10:15:14,792 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.HirePageObjectMap
+2017-06-16 10:15:14,793 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.HomePageObjectMap
+2017-06-16 10:15:14,794 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.InvoicePageObjectMap
+2017-06-16 10:15:14,796 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.JobDetailsPageObjectMap
+2017-06-16 10:15:14,797 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.JobsPageObjectMap
+2017-06-16 10:15:14,798 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.LoginPageObjectMap
+2017-06-16 10:15:14,799 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.ManagePageObjectMap
+2017-06-16 10:15:14,800 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.MembershipPageObjectMap
+2017-06-16 10:15:14,801 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PaymentsCashAccPageObjectMap
+2017-06-16 10:15:14,802 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PaymentsInvoicePageObjectMap
+2017-06-16 10:15:14,803 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PaymentsTransferPageObjectMap
+2017-06-16 10:15:14,804 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PayNowPageObjectMap
+2017-06-16 10:15:14,805 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PhoneVerificationPageObjectMap
+2017-06-16 10:15:14,807 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PostAJobPageObjectMap
+2017-06-16 10:15:14,808 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.QuotesPageObjectMap
+2017-06-16 10:15:14,809 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.Reports1099PageObjectMap
+2017-06-16 10:15:14,810 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.SecurityQuestionsPageObjectMap
+2017-06-16 10:15:14,811 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.SwitchBoardPageObjectMap
+2017-06-16 10:15:14,812 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.TransactionsPageObjectMap
+2017-06-16 10:15:14,815 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.WorkroomPageObjectMap
+2017-06-16 10:15:59,718 [DEBUG] com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest(): Verification of Phone Verification page returned false.
+2017-06-16 10:17:53,138 [DEBUG] com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest(): Verification of Phone Verification page returned false.
+2017-06-16 10:18:46,435 [DEBUG] com.guru.testing.page.SecurityQuestionsPageTest:verifyingSecurityQuestionsPageTest(): Verification of Security Questions returned false.
+2017-06-16 10:18:46,436 [DEBUG] com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest(): Possibly the page didn't appear because the session hasn't expired from before.
+2017-06-16 10:18:51,556 [DEBUG] com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest(): Verification of Phone Verification page returned false.
+2017-06-16 10:20:12,750 [DEBUG] com.guru.testing.page.SecurityQuestionsPageTest:verifyingSecurityQuestionsPageTest(): Verification of Security Questions returned false.
+2017-06-16 10:20:12,751 [DEBUG] com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest(): Possibly the page didn't appear because the session hasn't expired from before.
+2017-06-16 10:20:17,875 [DEBUG] com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest(): Verification of Phone Verification page returned false.
+2017-06-16 10:21:17,864 [DEBUG] com.guru.testing.page.SecurityQuestionsPageTest:verifyingSecurityQuestionsPageTest(): Verification of Security Questions returned false.
+2017-06-16 10:21:17,864 [DEBUG] com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest(): Possibly the page didn't appear because the session hasn't expired from before.
+2017-06-16 10:21:22,983 [DEBUG] com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest(): Verification of Phone Verification page returned false.

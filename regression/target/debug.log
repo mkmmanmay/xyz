@@ -1,0 +1,42 @@
+2017-06-21 13:02:19,227 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadObjectMaps(): file:/C:/Users/mkumar/devworkspace/main/target/classes/com/guru/testing/objectmap
+2017-06-21 13:02:19,231 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminApprovePaymentsObjectMap
+2017-06-21 13:02:19,233 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminCRMPageObjectMap
+2017-06-21 13:02:19,234 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminHomePageObjectMap
+2017-06-21 13:02:19,236 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminLoginPageObjectMap
+2017-06-21 13:02:19,237 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminManageTestUsersPageObjectMap
+2017-06-21 13:02:19,238 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.AdminPayrollSummaryPageObjectMap
+2017-06-21 13:02:19,239 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.BidsPageObjectMap
+2017-06-21 13:02:19,240 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.CashAccPageObjectMap
+2017-06-21 13:02:19,241 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.CommonObjectMap
+2017-06-21 13:02:19,242 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.DashboardPageObjectMap
+2017-06-21 13:02:19,243 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.EditProfilePageObjectMap
+2017-06-21 13:02:19,244 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.EmailPageObjectMap
+2017-06-21 13:02:19,246 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.EMPPaymentPageObjectMap
+2017-06-21 13:02:19,247 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.FindGurusPageObjectMap
+2017-06-21 13:02:19,247 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.FindJobsPageObjectMap
+2017-06-21 13:02:19,248 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.FLProfilePageObjectMap
+2017-06-21 13:02:19,249 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.HirePageObjectMap
+2017-06-21 13:02:19,250 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.HomePageObjectMap
+2017-06-21 13:02:19,251 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.InvoicePageObjectMap
+2017-06-21 13:02:19,252 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.JobDetailsPageObjectMap
+2017-06-21 13:02:19,253 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.JobsPageObjectMap
+2017-06-21 13:02:19,254 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.LoginPageObjectMap
+2017-06-21 13:02:19,255 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.ManagePageObjectMap
+2017-06-21 13:02:19,255 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.MembershipPageObjectMap
+2017-06-21 13:02:19,256 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PaymentsCashAccPageObjectMap
+2017-06-21 13:02:19,257 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PaymentsInvoicePageObjectMap
+2017-06-21 13:02:19,258 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PaymentsTransferPageObjectMap
+2017-06-21 13:02:19,259 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PayNowPageObjectMap
+2017-06-21 13:02:19,260 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PhoneVerificationPageObjectMap
+2017-06-21 13:02:19,261 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.PostAJobPageObjectMap
+2017-06-21 13:02:19,262 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.QuotesPageObjectMap
+2017-06-21 13:02:19,263 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.Reports1099PageObjectMap
+2017-06-21 13:02:19,263 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.SecurityQuestionsPageObjectMap
+2017-06-21 13:02:19,264 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.SwitchBoardPageObjectMap
+2017-06-21 13:02:19,265 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.ThirdPartyPageObjectMap
+2017-06-21 13:02:19,266 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.TransactionsPageObjectMap
+2017-06-21 13:02:19,268 [DEBUG] com.guru.framework.testing.helpers.ObjectMapHelper:loadTheFiles(): com.guru.testing.objectmap.WorkroomPageObjectMap
+2017-06-21 13:02:58,290 [DEBUG] com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest(): Verification of Phone Verification page returned false.
+2017-06-21 13:04:23,454 [DEBUG] com.guru.testing.page.HirePageTest:verifyHirePageTest(): No quotes submitted for this job.
+2017-06-21 13:05:15,094 [DEBUG] com.guru.framework.testing.browser.BrowserAction:scrollWindow(): Scrolling the window to horizontal offset (X-axis) by 0 co-ordinates and vertical offset (Y-axis) by 4000 co-ordinates.
+2017-06-21 13:07:17,514 [DEBUG] com.guru.testing.page.InvoicePageTest:verifyInvoiceDetailsTest(): Invoice not safepay secured, so dispute button didn't appear

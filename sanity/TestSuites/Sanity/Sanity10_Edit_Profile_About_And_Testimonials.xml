@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Edit Profile_About and Testimonials Sanity" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter"/>
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="15" />
+	<parameter name="thinkTime" value="5" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY10_EDIT_PROFILE_ABOUT_AND_TESTIMONIALS" />
+	<parameter name="reportDetailLevel" value="107" />
+		<parameter name="url" value="https://qa.guru.com/login.aspx" />
+	 <parameter name="username" value="autotesterfl2@mailinator.com" />
+	<parameter name="password" value="12345678" />
+	
+	<test name="1. Navigate to edit profile">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyFLDashboardPageTest" />
+					<include name="clickFLOwnerDropdownOptionsTest" />
+					<include name="clickEditProfileTest" />
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+	<test name = "7. Go to 'Testimonials' and Verify no new Testimonial added when Clicked on Add and Cancel in the pop-up immediately after" preserve-order = "true">	
+		<classes>
+			<class name="com.guru.testing.page.EditProfilePageTest">
+				<methods>	
+					<include name="clickTestimonialsTest" />
+					<include name="verifyTestimonialsSectionTest" />
+					<include name="getTestimonialCountBeforeTest" />
+					<include name="clickAddTestimonialTest" />
+					<include name="clickCancelTestimonialTest" />
+					<include name="getTestimonialCountAfterTest" />
+					<include name="verifyCountUnchangedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name = "8. Checking with invalid reviewer name and max character limit of name field" preserve-order = "true">	
+		<classes>
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="reviewerName" value="#@#@@@@@@@@@@@@@@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$@#########" />
+			<parameter name="testimonial" value="This is a test Description added by Automation. For automation testing purpose only. Guru Automation Team." />
+			<parameter name="characterLimit" value="50" />
+				<methods>
+					<include name="clickAddTestimonialTest" />
+					<include name="enterReviewerNameTest" />
+					<include name="enterTestimonalTest" />
+					<include name="verifyInvalidInputTest" />
+					<include name="verifyNameCharacterLimitTest" />
+					<include name="clickCancelTestimonialTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name = "9. Save Testimonial with valid data" preserve-order = "true">	
+		<classes>
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="reviewerName" value="Automation Reviewer" />
+			<parameter name="testimonial" value="This is a test Description added by Automation. For automation testing purpose only. Guru Automation Team." />
+				<methods>
+					<include name="getTestimonialCountBeforeTest" />
+					<include name="clickAddTestimonialTest" />
+					<include name="enterReviewerNameTest" />
+					<include name="enterTestimonalTest" />
+					<include name="verifyNoInvalidInputTest" />
+					<include name="clickAddInPopupTest" />
+					<include name="verifyNoErrorMsgTest" />
+					<include name="getTestimonialCountAfterTest" />
+					<include name="verifyCountIncreasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name = "10. Hover over added testimonial; edit and save new data." preserve-order = "true">	
+		<classes>
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="reviewerName" value="Automation Revieweredit" />
+			<parameter name="testimonial" value="Edit: This is a test Description added by Automation. For automation testing purpose only. Guru Automation Team." />
+			<parameter name="testimonialNo" value="1" />
+				<methods>
+					<include name="getTestimonialCountBeforeTest" />
+					<include name="hoverAndEditTestimonialByNumTest" />
+					<include name="enterReviewerNameTest" />
+					<include name="enterTestimonalTest" />
+					<include name="verifyNoInvalidInputTest" />
+					<include name="clickAddInPopupTest" />
+					<include name="verifyNoErrorTestimonialTest" />
+					<include name="getTestimonialCountAfterTest" />
+					<include name="verifyCountUnchangedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name = "11. Delete Testimonial" preserve-order = "true">	
+		<classes>
+		<parameter name="testimonialNo" value="1" />
+			<class name="com.guru.testing.page.EditProfilePageTest">
+				<methods>
+					<include name="hoverAndDeleteTestimonialByNumTest" />
+					<include name="clickYesDeleteTestimonTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="verify 3 files with unsuported extension are not uploaded">
+		<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="clickFLOwnerDropdownOptionsTest" />
+					<include name="clickEditProfileTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.EditProfilePageTest">
+				<parameter name="invalidFiles" value="C:\TestData\file1.exe|C:\TestData\file2.dll|C:\TestData\file3.mts" />
+				<parameter name="errorMsg" value="Unsupported File type." />
+				<parameter name="fileCount" value="0" />
+					<methods>
+						<include name="verifyEditProfileTest" />
+						<include name="scrollWindowToAttachFilesAndVideosTest" />						
+						<include name="clickAddFilesTest" />
+						<include name="verifyBrowseFilesModalTest" />					
+						<include name="clickBrowseFilesTest" />
+						<include name="addInvalidFileTypesTest" />
+						<include name="clickUploadMoreTest" />
+						<include name="addInvalidFileTypes2Test" />
+						<include name="verifyFilesLoadedTest" />
+						<include name="verifyErrorMsgTest" />	
+						<include name="clickCancelOnAttachFilesPopUpTest" />		
+					</methods>
+			</class>
+		</classes>
+	</test>
+	
+	 <test name="2. Validate 3 files with more than  10MB size is not uploaded">
+		<classes>				
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="morethan10MBFile" value="C:\TestData\file4.ppt" />
+			<parameter name="errorMsg" value="File is too large." />
+			<parameter name="fileCount" value="1" />			
+				<methods>
+					<include name="reloadAndVerifyFilesButtonTest" />
+					<include name="clickAddFilesTest" />
+					<include name="verifyBrowseFilesModalTest" />	
+					<include name="clickBrowseFilesTest" />
+					<include name="addMoreThan10MBFileTest" />
+					<include name="verifyFilesLoadedTest" />
+					<include name="clickUploadTest" />
+					<include name="verifyErrorMsgTest" />	
+					<include name="clickDoneInAttachFilesTest" />		
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="3. Validate adding 2 valid file types with same name and different extensions">
+		<classes>
+				
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="files" value="C:\TestData\file5.docx|C:\TestData\file5.png" />
+			<parameter name="fileCount" value="2" />
+				<methods>
+					<include name="reloadAndVerifyFilesButtonTest" />
+					<include name="clickAddFilesTest" />
+					<include name="verifyBrowseFilesModalTest" />	
+					<include name="clickBrowseFilesTest" />
+					<include name="addFilesTest" />
+					<include name="verifyNoErrorMessageTest" />
+					<include name="deleteAllFilesFromPopUpTest" />		
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="4. Validate adding 2 valid file types with different name and different extensions">
+		<classes>
+				
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="files" value="C:\TestData\file5.docx|C:\TestData\file6.png" />
+			<parameter name="fileCount" value="2" />		
+				<methods>
+					<include name="clickUploadMoreTest" />
+					<include name="addFilesTest" />
+					<include name="verifyNoErrorMessageTest" />
+					<include name="deleteAllFilesFromPopUpTest" />		
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="5. Validate adding 2 valid file types with same name and same extensions">
+		<classes>
+				
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="files" value="C:\TestData\file5.docx|C:\TestData\file5.docx" />	
+			<parameter name="fileCount" value="2" />		
+				<methods>
+					<include name="clickUploadMoreTest" />
+					<include name="addFilesTest" />
+					<include name="verifyNoDuplicateFilesUploadTest" />
+					<include name="deleteAllFilesFromPopUpTest" />
+					<include name="clickUploadMore1Test" />	
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="6. Validate adding 3 valid file types of different sizes,table columns, bin image, total files loaded and total on adding 1 more file">
+		<classes>
+				
+			<class name="com.guru.testing.page.EditProfilePageTest">
+			<parameter name="files" value="C:\TestData\file5.docx|C:\TestData\file5.png|C:\TestData\file6.png" />
+			<parameter name="fileCount" value="3" />
+			<parameter name="file" value="C:\TestData\file7.txt" />
+			<parameter name="fileName" value="file5.docx|file5.png|file6.png|file7.txt" />
+			<parameter name="totalCount" value="4" />
+			<parameter name="attachSuccessText" value="Successfully Attached" />				
+				<methods>
+					<include name="addFilesTest" />
+					<include name="verifyAttachFilesPopupTable" />
+					<include name="verifyAllBinImageTest" />
+					<include name="verifyFilesLoadedTest" />
+					<include name="clickUploadMoreTest" />					
+					<include name="addSingleFileTest" />					
+					<include name="verifyTotalFilesLoadedTest" />
+					<include name="clickUploadTest" />
+					<include name="verifySuccessfullyAttachedTest" />
+					<include name="clickDoneInAttachFilesTest" />
+					<include name="verifyFilesUploadedOnEditProfileTest" />
+					<include name="deleteAllEditProfileFilesTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	
+	
+ </suite>
+	
+	

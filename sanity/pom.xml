@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.guru.testing</groupId>
+  <artifactId>sanity</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>sanity</name>
+  <description>This contains test suites for Sanity of Guru application</description>
+  
+  <dependencies>
+	<dependency>
+		<groupId>com.guru.framework.testing</groupId>
+		<artifactId>framework</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<scope>compile</scope>
+	</dependency>
+</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<id>selenium-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<parallel>methods</parallel>
+					<threadCount>10</threadCount>
+					<mainClass>com.guru.framework.testing.testng.run.Runner</mainClass>
+					<classpathScope>test</classpathScope>
+					<arguments>
+						<argument>build=3</argument>
+						<argument>browser=${browser}</argument>
+						<argument>url=${url}</argument>
+						<argument>username=${username}</argument>
+						<argument>password=${password}</argument>
+						<argument>reportName=${reportName}</argument>
+						<argument>reportDetailLevel=${reportDetailLevel}</argument>
+						<!-- <argument>mailTo=${mailTo}</argument> -->
+						<argument>suite-template=${suiteName}</argument>
+						<argument>print=true</argument>
+						<argument>suite-name-parameter=browser</argument>
+						<argument>suite-name-parameter=url</argument>
+						<argument>suite-name-parameter=username</argument>
+						<argument>suite-name-parameter=password</argument>
+						<argument>suite-name-parameter=reportName</argument>
+						<argument>suite-name-parameter=reportDetailLevel</argument>
+						<argument>suite-strategy=Sequential</argument>
+						<argument>runner-single=true</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<skipTests>true</skipTests>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
+</project>

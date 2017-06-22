@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Find Gurus Sanity" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="20" />
+	<parameter name="thinkTime" value="5" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY01_FIND_GURUS" />
+	<parameter name="reportDetailLevel" value="107" />
+	<parameter name="url" value="http://qa.guru.com" />
+	 <parameter name="username" value="autotesteremp1@mailinator.com" />
+	<parameter name="password" value="12345678" />
+
+	<test name="1. Verify Find Gurus Page" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.HomePageTest">
+				<methods>
+					<include name="verifyHomePageTest" />
+					<include name="clickFindAGuruTopNavTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.FindGurusPageTest">
+				<methods>
+					<include name="verifyFindGurusPageTest" />				
+					<include name="verifyRefinementsTest" />
+					<include name="verifyServicesWithPortfolioIsUncheckedTest" />
+					<include name="clickPostAJobFreeLinkTest" />				
+				</methods>
+			</class>
+	</classes>
+	</test>
+	
+	<test name="2. Check sorting options and refinements" preserve-order="true">	
+	<classes>			
+			<class name="com.guru.testing.page.PostAJobPageTest">
+				<methods>
+					<include name="verifyPostAJobPageTest" />
+					<include name="navigateToFindAGuruTest" />		
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.FindGurusPageTest">
+			<parameter name="country" value="United States"/>
+			<parameter name="sortOption" value="REVIEW_HIGHEST_FIRST"/>
+			<parameter name="jobIndexToCompare" value="1"/><!-- Index between 1-20.'n' to compare n-1 is lower for review highest first -->
+			
+				<methods>
+					<include name="verifyFindGurusPageTest" />
+					<include name="verifyGetQuotesCheckBoxIsUncheckedTest" />
+					<include name="verifyGetQuotesButtonTest" />
+					<include name="clickSortingOptionsTest" />
+					<include name="sortByTest" />
+					<include name="verifySortResultsTest" />
+					<include name="refineByCountryTest" />
+					<include name="verifyCountryRefinedResultsTest" />					
+					<include name="clickSignInTest" />
+					
+				</methods>
+			</class>
+			</classes>
+		</test>
+			
+		<test name="3. Verify Find gurus on sign in" preserve-order="true">
+		<classes>	
+			<class name="com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+				<include name="verifyEMPDashboardPageTest" />				
+				<include name="clickSearchIconTopPanelTest" />
+				</methods>
+			</class>	
+		<class name="com.guru.testing.page.FindGurusPageTest">
+			<methods>
+				<include name="verifyFindGurusPageTest" />
+				<include name="verifyPaginationTest" />
+				<include name="verifyMyGurusRefinementTest" />
+			</methods>
+		</class>		
+		</classes>
+
+	</test>
+	<test name="4. Sign out and verify login page" preserve-order="true">
+	<classes>
+		<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutEmployerTest" />
+			</methods>
+		</class>
+		
+		<class name="com.guru.testing.page.LoginPageTest">
+			<methods>
+				<include name="verifyLoginPageTest" />
+			</methods>
+		</class>	
+	
+	</classes>
+	</test>
+
+ </suite>
+	
+	

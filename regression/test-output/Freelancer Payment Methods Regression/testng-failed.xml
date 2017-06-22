@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Freelancer Payment Methods Regression]">
+  <parameter name="reportName" value="REGRESSION_ADD_ALL_FL_TRANSFER_METHODS"/>
+  <parameter name="pageTitle" value="Sign In to Your Account - Guru"/>
+  <parameter name="reportDetailLevel" value="43"/>
+  <parameter name="index" value="1"/>
+  <parameter name="teamScreenNames" value="Tamica Rushing TestEmp-Wai Sung TestFl"/>
+  <parameter name="emailUrl" value="https://www.mailinator.com"/>
+  <parameter name="url" value="http://qa.guru.com/login.aspx"/>
+  <parameter name="userRoles" value="Consultant-Manager"/>
+  <parameter name="password" value="12345678"/>
+  <parameter name="thinkTime" value="5"/>
+  <parameter name="userEmails" value="guru.emp.WwRjhJe01Ag@mailinator.com-guru.fl.gK5agJe01Ag@mailinator.com"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="waitTime" value="5"/>
+  <parameter name="implicitWaitTime" value="10"/>
+  <parameter name="username" value="regaddteamfl@mailinator.com"/>
+  <listeners>
+    <listener class-name="com.guru.framework.testing.helpers.PDFReporter"/>
+    <listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener"/>
+  </listeners>
+  <test name="Adding Freelancer Transfer Methods(failed)" preserve-order="true">
+    <parameter name="reportName" value="REGRESSION_ADD_ALL_FL_TRANSFER_METHODS"/>
+    <parameter name="pageTitle" value="Sign In to Your Account - Guru"/>
+    <parameter name="reportDetailLevel" value="43"/>
+    <parameter name="index" value="1"/>
+    <parameter name="teamScreenNames" value="Tamica Rushing TestEmp-Wai Sung TestFl"/>
+    <parameter name="emailUrl" value="https://www.mailinator.com"/>
+    <parameter name="url" value="http://qa.guru.com/login.aspx"/>
+    <parameter name="userRoles" value="Consultant-Manager"/>
+    <parameter name="password" value="12345678"/>
+    <parameter name="thinkTime" value="5"/>
+    <parameter name="userEmails" value="guru.emp.WwRjhJe01Ag@mailinator.com-guru.fl.gK5agJe01Ag@mailinator.com"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="waitTime" value="5"/>
+    <parameter name="implicitWaitTime" value="10"/>
+    <parameter name="username" value="regaddteamfl@mailinator.com"/>
+    <classes>
+      <class name="com.guru.testing.tests.AddTeamMemberFL">
+        <methods>
+          <include name="addTeamMemberTest"/>
+          <include name="goBacktoDashboardTest"/>
+          <include name="signOutSecondMemberTest"/>
+          <include name="verifyRequestSentTest"/>
+          <include name="verifySwitchBoardTwoTest"/>
+          <include name="verifySwitchBoardOneTest"/>
+          <include name="AcceptInviteOneTest" invocation-numbers="0"/>
+          <include name="navigateToInboxTwoTest"/>
+          <include name="AcceptInviteTwoTest"/>
+          <include name="removeMembersAddedTest"/>
+          <include name="loginFLTest"/>
+          <include name="verifyTeamMembersAddedTest"/>
+          <include name="navigateToInboxOneTest"/>
+          <include name="goToAWorkroomTest"/>
+          <include name="signOutFirstMemberTest"/>
+          <include name="goToAWorkroomAgainTest"/>
+        </methods>
+      </class> <!-- com.guru.testing.tests.AddTeamMemberFL -->
+      <class name="com.guru.testing.tests.LaunchApplication">
+        <methods>
+          <include name="startBrowserBeforeTest"/>
+          <include name="waitTime"/>
+          <include name="closeBrowserAfterSuite"/>
+          <include name="closeBroserAfterTest"/>
+          <include name="loadObjectMaps"/>
+          <include name="startBrowserBeforeSuite"/>
+        </methods>
+      </class> <!-- com.guru.testing.tests.LaunchApplication -->
+    </classes>
+  </test> <!-- Adding Freelancer Transfer Methods(failed) -->
+</suite> <!-- Failed suite [Freelancer Payment Methods Regression] -->

@@ -1,0 +1,106 @@
+<suite name="SUITE_1" verbose="10">
+	<listeners>
+		<listener class-name="com.guru.framework.testing.Listener1" />
+		<listener class-name="com.guru.framework.testing.Listener2" />
+		<listener class-name="com.guru.framework.testing.Listener3" />
+		<listener class-name="com.guru.framework.testing.Listener4" />
+	</listeners>
+
+	<parameter name="suite_parameter_1" value="value1" />
+	<parameter name="suite_parameter_2" value="value2" />
+	<parameter name="suite_parameter_3" value="value3" />
+	<parameter name="suite_parameter_4" value="value4" />
+	<parameter name="suite_parameter_5" value="value5" />
+	<parameter name="suite_parameter_6" value="value6" />
+
+	<test verbose="10" name="Test_1" preserve-order="true">
+		<parameter name="test1_parameter_1" value="value11" />
+		<parameter name="test1_parameter_2" value="value12" />
+		<parameter name="test1_parameter_3" value="value13" />
+		<classes>
+			<class name="com.guru.testing.page.Test1Class1" />
+			<class name="com.guru.testing.page.Test1Class2" />
+			<class name="com.guru.testing.page.Test1Class3" />
+			<class name="com.guru.testing.page.Test1Class4" />
+		</classes>
+	</test>
+
+	<test verbose="10" name="Test_2" preserve-order="true">
+		<parameter name="test2_parameter_1" value="value21" />
+		<classes>
+			<class name="com.guru.testing.page.Test2Class1" />
+			<class name="com.guru.testing.page.Test2Class2" />
+		</classes>
+	</test>
+	
+	<test verbose="10" name="Test_3" preserve-order="true">		
+		<classes>
+			<class name="com.guru.testing.page.Test3Class1" />
+			<class name="com.guru.testing.page.Test3Class2" />
+			<class name="com.guru.testing.page.Test3Class3" />
+			<class name="com.guru.testing.page.Test3Class4" />
+		</classes>
+	</test>
+	
+	<test verbose="10" name="Test_4" preserve-order="true">
+		<parameter name="test4_parameter_1" value="value41" />
+		<parameter name="test4_parameter_2" value="value42" />
+		<classes>
+			<class name="com.guru.testing.page.Test4Class1" />
+		</classes>
+	</test>
+	
+	<test verbose="10" name="Test_5" preserve-order="true">
+		<parameter name="test5_parameter_1" value="value51" />
+		<parameter name="test5_parameter_2" value="value52" />
+		<parameter name="test5_parameter_3" value="value53" />
+		<classes>
+			<class name="com.guru.testing.page.Test5Class1" />
+			<class name="com.guru.testing.page.Test5Class2" />
+			<class name="com.guru.testing.page.Test5Class3" />
+			<class name="com.guru.testing.page.Test5Class4" />
+		</classes>
+	</test>	
+	<test verbose="10" name="Test_6" preserve-order="true">
+		<parameter name="test6_parameter_1" value="value61" />
+		<parameter name="test6_parameter_2" value="value62" />
+		<parameter name="test6_parameter_3" value="value63" />
+		<classes>
+			<class name="com.guru.testing.page.Test6Class1" />
+			<class name="com.guru.testing.page.Test6Class2" />
+			<class name="com.guru.testing.page.Test6Class3" />
+			<class name="com.guru.testing.page.Test6Class4" />
+		</classes>
+	</test>	
+	<test verbose="10" name="Test_7" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.Test7Class1" />
+			<class name="com.guru.testing.page.Test7Class2" />
+			<class name="com.guru.testing.page.Test7Class3" />
+			<class name="com.guru.testing.page.Test7Class4" />
+		</classes>
+	</test>	
+	<test verbose="10" name="Test_8" preserve-order="true">
+		<parameter name="test8_parameter_1" value="value81" />
+		<parameter name="test8_parameter_2" value="value82" />
+		<parameter name="test8_parameter_3" value="value83" />
+		<classes>
+			<class name="com.guru.testing.page.Test8Class1" />
+			<class name="com.guru.testing.page.Test8Class2" />
+			<class name="com.guru.testing.page.Test8Class3" />
+			<class name="com.guru.testing.page.Test8Class4" />
+		</classes>
+	</test>	
+	
+	<test verbose="10" name="Test_9" preserve-order="true">
+		<parameter name="test9_parameter_1" value="value91" />
+		<parameter name="test9_parameter_2" value="value92" />
+		<parameter name="test9_parameter_3" value="value93" />
+		<classes>
+			<class name="com.guru.testing.page.Test9Class1" />
+			<class name="com.guru.testing.page.Test9Class2" />
+			<class name="com.guru.testing.page.Test9Class3" />
+			<class name="com.guru.testing.page.Test9Class4" />
+		</classes>
+	</test>	
+</suite>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Post a job, Submit a Quote and Hire a freelancer Sanity" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="5" />
+	<parameter name="thinkTime" value="5" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY13_POSTJOB_SUBMITQUOTE_HIREFL" />
+	<parameter name="reportDetailLevel" value="107" />
+	<parameter name="url" value="http://qa.guru.com" />
+	 <parameter name="username" value="autoflsubmitquote@mailinator.com" />
+	<parameter name="password" value="12345678" />
+
+	<test name = "1. Navigate to Post a Job(Free) page" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.HomePageTest">
+				<methods>
+					<include name="verifyHomePageTest" />
+					<include name="clickPostAJobTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PostAJobPageTest">
+			<parameter name="username" value="autoemsubmitquote@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<parameter name="jobTitle" value="AUTOMATION JOB - Don't apply-" />
+				<parameter name="jobDetails" value="Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing." />
+				<parameter name="skill" value="testing" />
+				<parameter name="country" value="India" />
+				<parameter name="fixedBudget" value="Under $250" />
+					<methods>
+						<include name="verifyPostAJobPageTest" />
+						<include name="enterRandomJobTitleTest" />
+						<include name="enterJobDescriptionTest" />
+						<include name="clickWebCategoryTest" />
+						<include name="enterKeywordsTest" />
+						<include name="clickCountryRadioButtonTest" />
+						<include name="enterCountryNameTest" />
+						<include name="selectFixedPriceBudgetTest" />
+						<include name="clickFeatureMyJobTest" />
+						<include name="enterUsernameTest" />
+						<include name="enterPasswordTest" />
+						<include name="clickPostJobButtonTest" />
+					</methods>
+			</class>
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<methods>
+					<include name="verifyPhoneVerificationPageTest" />
+					<include name="verifySkipThisForNowLinkTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.PayNowPageTest">
+			<parameter name="paymentMethod" value="CASH_ACCOUNT"/>
+				<methods>
+					<include name="verifyPayForFeaturingJobTest" />
+					<include name="verifyPaymentMethodTest" />
+					<include name="clickUseCAfunds" />
+					<include name="selectAgreeToPayCheckboxTest" />
+					<include name="clickToPayTest" />
+					<include name="verifyJobPostedTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="clickDashboardTopNavTest" />
+					<include name="verifyEMPDashboardPageTest" />
+					<include name="clickRandomJobnamePostedTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.HirePageTest" >
+				<methods>
+					<include name="verifyQuotesPageTest" />
+					<include name="getTinyURLTest" />
+				</methods>
+			</class>
+			</classes>	
+			</test>
+	<test name = "2.  " preserve-order="true">
+	<classes>		
+			<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutEmployerTest" />
+			</methods>
+			</class>
+		
+			<class name="com.guru.testing.page.LoginPageTest">
+			<methods>
+				<include name="verifyLoginPageTest" />
+			</methods>
+			</class>
+		</classes> 
+	</test>
+
+
+	<test name = "2.  Login as Freelancer,  Verify FL has Professional membership and has more than 5 bids" preserve-order="true">
+		<classes>
+			<class name = "com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<include name="verifyPhoneVerificationPageTest" />
+				<include name="verifySkipThisForNowLinkTest" />
+			</class>
+			
+			<class name="com.guru.testing.page.DashboardPageTest">
+			<parameter name="currentMembership" value="Professional"/>	
+				<methods>
+					<include name="verifyFLDashboardPageTest" />
+					<include name="verifyCurrentMembershipTest" />
+					<include name="clickFLOwnerDropdownOptionsTest" />
+					<include name="clickBuyBidsTest" />		
+				</methods>
+			</class>
+			<class name = "com.guru.testing.page.BidsPageTest" >
+				<methods>
+					<include name="verifyBidsPageTest" />
+					<include name="getBidsCountBeforeTest" />
+					<include name="verifyOrAddSufficientBidsTest" />
+				</methods>
+			</class>	
+		</classes>
+	</test>
+	
+	<test name = "3. Search job by name and apply to 1st job on Find jobs page" preserve-order="true">
+
+		 <classes>
+		<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="launchTinyURLTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.JobDetailsPageTest">
+				<parameter name="noOfMilestones" value="1"/>
+				<parameter name="milestoneNames" value="Req"/>
+				<parameter name="milestoneDueDates" value="01-12-2019"/>
+				<parameter name="milestoneAmounts" value="50"/>
+				<parameter name="safepayOption" value="MANUAL_PAYMENTS"/>
+				<parameter name="paymentSchedule" value="14 days"/>
+				<parameter name="statusUpdates" value="Monthly"/>
+				<parameter name="scopeOfWork" value=" Please do not accept manually.This is an Automation Quote."/>
+				<parameter name="portfolioName" value="One"/>
+				<parameter name="morethan10MBFile" value="C:\TestData\file4.ppt" />
+				<parameter name="errorMsg" value="The attached file exceed the 10MB limit." />
+				<parameter name="files" value="C:\TestData\file5.png" />
+				<parameter name="askQuestion" value="Testing question?"/>								
+				<methods>
+					<include name="verifyJobDetailsPageTest" />	
+					<include name="enterQuestionTest" />	
+					<include name="clickAskQuestionTest" />
+					<include name="verifyQuestionAskedTest" />	
+					<include name="enterQuestion2Test" />
+					<include name="deleteQuestionTest" />	
+					<include name="verifyQuestionDeletedTest" />					
+					<include name="clickApplyTest" />		
+					<include name="verifyApplyQuotesFormTest" />	
+					<include name="enterMilestonesTest" />	
+					<include name="selectSafePayOptionTest" />	
+					<include name="selectPaymentScheduleTest" />						
+					<include name="selectStatusUpdatesOptionTest" />					
+					<include name="enterScopeOfWorkTest" />	
+					<include name="clickAttachFilesTest" />	
+					<include name="verifyPortfolioIsPresentTest" />
+					<include name="clickComputerTabOnAttachFilesTest" />
+					<include name="clickSelectFilesToUploadTest" />
+					<include name="addMoreThan10MBFileTest" />
+					<include name="verifyErrorMsgTest" />
+					<include name="addValidFilesTest" />
+					<include name="clickFinishedTest" />			
+					<include name="clickToSubmitQuoteTest" />
+					<include name="verifyQuoteSubmittedTest" />
+					<include name="clickQuotesTabTest" />								
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.QuotesPageTest">
+			<methods>
+					<include name="verifyFLQuotesPageTest" />					
+					<include name="clickAllQuotesTest" />		
+					<include name="verifyQuoteIsPresentTest"/>
+			</methods>
+			</class>		
+	</classes>
+	</test>			
+			
+	<test name = "4. Send a message from quotes page and verify the message in the thread and bids are dedcuted" preserve-order="true">
+	<classes>
+			<class name="com.guru.testing.page.QuotesPageTest">
+			<parameter name="messageText" value="Test Msg-"/>
+			<methods>
+					<include name="selectJobAppliedByNameTest"/>
+					<include name="verifyQuoteLoadedTest"/>
+					<include name="hideQuoteTest"/>
+					<include name="enterMsgTest"/>
+					<include name="clickSendTest"/>
+					<include name="verifyMsgSentThreadTest"/>
+			</methods>
+			</class>
+			<class name = "com.guru.testing.page.DashboardPageTest" >
+			<parameter name="currentMembership" value="Professional"/>	
+				<methods>
+					<include name="clickFLOwnerDropdownOptionsTest" />
+					<include name="clickBuyBidsTest" />
+				</methods>
+			</class>
+			<class name = "com.guru.testing.page.BidsPageTest" >
+			<parameter name="messageText" value="Test Msg-"/>			
+				<methods>
+					<include name="verifyBidsPageTest" />
+					<include name="getBidsCountAfterTest" />
+					<include name="compareBidsCountAfterSpentTest" />
+					<include name="verifyBidsDeductedTest" />					
+				</methods>
+			</class>
+	</classes>
+	</test>
+	
+	<test name="5. Logout, verify guru login page and  Login to with an employer">
+	<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutFlTest" />
+			</methods>
+			</class>
+			<class name = "com.guru.testing.page.LoginPageTest">
+			<parameter name="username" value="autoemsubmitquote@mailinator.com" />
+			<parameter name="password" value="12345678" />
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			
+			
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<include name="verifyPhoneVerificationPageTest" />
+				<include name="verifySkipThisForNowLinkTest" />
+			</class>
+			</classes>
+			</test>
+	
+	<test name="6. Verify quote is present and hire the FL">
+	<classes>			
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEmpDashboardPageTest" />
+					<include name="selectLatestJobQuoteTest" />
+				</methods>
+			</class>
+			<class name="com.guru.testing.page.HirePageTest">
+			<parameter name="hireIndex" value="1" />
+				<methods>
+					<include name="verifyQuotesPageTest" />
+					<include name="clickHireInQuotesByIndexTest" />
+					<include name="verifyJobNameByTokenTest" />					
+					<include name="verifyMilestoneAgreementPopUpTest" />
+					<include name="selectAgreementAckCheckboxTest" />
+					<include name="clickHireInHirePopupTest" />	
+					<include name="verifyFLHiredTest" />				
+				</methods>
+			</class>
+			
+			</classes>
+			</test>
+			
+			
+			<test name="7. Logout, verify guru login page and Login to with a freelancer ">
+			<classes>
+			<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutEmployerTest" />
+			</methods>
+			</class>
+			<class name = "com.guru.testing.page.LoginPageTest">
+				<methods>
+					<include name="verifyLoginPageTest" />
+					<include name="enterEmailOrUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickSignInButtonTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.SecurityQuestionsPageTest">
+				<methods>
+					<include name="validateSecurityQuestionsPageTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PhoneVerificationPageTest">
+				<include name="verifyPhoneVerificationPageTest" />
+				<include name="verifySkipThisForNowLinkTest" />
+			</class>
+			</classes>
+			</test>
+		<test name="8.Verify freelancer is hired">
+			<classes>			
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+					<include name="verifyEmpDashboardPageTest" />
+					<include name="verifyHiredInPostedJobTest" />
+				</methods>
+			</class>
+			
+			</classes>
+			</test>
+			
+				
+
+</suite>

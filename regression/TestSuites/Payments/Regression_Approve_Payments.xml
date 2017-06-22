@@ -1,0 +1,48 @@
+<suite name="Approve payments" verbose="1" preserve-order="true">
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener
+			class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="10" />
+	<parameter name="thinkTime" value="2" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="APPROVE_PAYMENT" />
+	<parameter name="reportDetailLevel" value="43" />
+	<parameter name="url" value="https://qa.guru.com/admin/login.aspx" />
+	<parameter name="username" value="small" />
+	<parameter name="password" value="password" />
+
+
+
+	<test name="Launch application" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication" />
+		</classes>
+	</test>
+
+
+	<test  name="Login application" preserve-order="true">
+		<classes>
+			<class name="com.guru.testing.tests.AdminLogin" />
+		</classes>
+	</test>
+
+
+	<test name="Approve payments" preserve-order="true">
+		<parameter name="tabName" value="PENDING" />
+		<parameter name="type" value="SAFEPAY" />
+		<parameter name="paymentType" value="" />
+		<parameter name="searchText" value="1211407" />
+		<parameter name="fromDate" value="2017-06-08" />
+		<parameter name="toDate" value="2017-06-12" />
+		<parameter name="approveRowNum" value="0" />
+		
+		<classes>
+			<class name="com.guru.testing.tests.ApproveTransactions" />
+		</classes>
+	</test>
+
+</suite>

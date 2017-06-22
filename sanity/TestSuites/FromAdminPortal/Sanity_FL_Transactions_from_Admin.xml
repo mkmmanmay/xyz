@@ -1,0 +1,163 @@
+<suite name="Transactions Sanity for Freelancer from Admin page" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="10" />
+	<parameter name="thinkTime" value="2" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY_FL_TRANSACTIONS_FROM_ADMIN" />
+	<parameter name="reportDetailLevel" value="43" />
+	<parameter name="url" value="https://admin.guru.com/admin/login.aspx" />
+	 <parameter name="username" value="qateam" />
+	<parameter name="password" value="Tester123!" />	
+
+	<test name="1. Goto Account from admin site for employer and Verify Transactions UI">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminLoginPageTest">
+				<methods>
+					<include name="verifyAdminLoginPageTest" />
+					<include name="enterUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickLoginTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminHomePageTest">
+				
+				<methods>
+					<include name="verifyAdminHomePageTest" />
+					<include name="clickCRMAccountSearch" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminCRMPageTest">
+			 <parameter name="searchKeyword" value="451744" />
+			<parameter name="searchFLBy" value="Guru ID" />
+			<methods>
+				<include name="verifyCRMAccountSearchPageTest" />
+				<include name="enterFLSearchKeywordTest" />
+				<include name="selectFLSearchbyTest" />				
+				<include name="clickFLSearchTest" />								
+				<include name="verifyFLSearchResultsTest" />
+				<include name="gotoAccountTest" />
+				<include name="switchToAccountPageTest" />
+				</methods>
+			</class>
+					
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+				<include name="verifyFLDashboardPageTest" />				
+				<include name="clickPayTabTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.InvoicePageTest">
+				<methods>
+				<include name="verifyInvoicePageTest" />				
+				<include name="clickFLTransactionsTabTest" />
+				</methods>
+			</class>		
+			
+		<class name="com.guru.testing.page.TransactionsPageTest">		
+			<methods>
+				<include name="verifyTransactionsPageTest" />
+				<include name="verifyCalendarTest" />
+				<include name="closeCalendarTest" />												
+			</methods>
+			</class> 			
+		</classes>
+	</test>
+	
+	<test name="2. Verify Calendar Controls, Sort by payment, Print and Download options ">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">			
+			<parameter name="noDataDateRange" value="25-02-2017|02-03-2017" />
+			<parameter name="fromDateAfterToDate" value="23-02-2017|01-02-2017" />			
+			<parameter name="dateRangeMoreThanAYear" value="01-02-2015|01-02-2016" />
+			<parameter name="validDataDateRange" value="01-02-2007|01-12-2007" />			
+			<parameter name="noDataText" value="You have no transaction in this date range." />
+			<parameter name="rangeMoreThanYearText" value="Please select a date range that does not exceed 12 months." />
+			<methods>
+				<include name="verifyDefaultDateRangeTest" />
+				<include name="applyDateRangeNoDataTest" />	
+				<include name="clickFilter1Test" />	
+				<include name="verifyWhenNoDataPresentTest" />															
+				<include name="applyAndVerifyFutureToDateIsDisabledTest" />				
+				<include name="applyAndVerifyFromDateAfterToDateIsDisabledTest" />
+				<include name="closeCalendarTest" />				
+				<include name="applyDateRangeMoreThanAYearTest" />			
+				<include name="clickFilter2Test" />				
+				<include name="verifyDateRangeMoreThanAYearTest" />				
+				<include name="reloadAndVerifyDateRangeTest" />
+				<include name="applyDateRangeValidDataTest" />
+				<include name="clickFilter3Test" />
+				<include name="verifyDataIsLoadedTest" />	
+				<include name="verifyReportingByOptionsTest" />
+				<include name="verifyDownloadOptionsTest" />
+				<include name="closeDownloadOptionTest" />							
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+
+		<test name="3. Verify Sort by Employer Name. Apply and verify sort by payment method">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<methods>
+				<include name="verifyReportByEmployerTest" />
+				<include name="applyReportByPaymentMethodTest" />
+				<include name="verifyReportByPaymentMethodTest" />
+				<include name="verifySortByPaymentMethodTest" />
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+	
+	<test name="5. Download report by PDF and Verify Print ">
+	<classes>
+			<class name="com.guru.testing.page.TransactionsPageTest">
+			<parameter name="fileType" value="PDF"/>
+			<parameter name="filePath" value="C:\Users\ISharma\Downloads"/>
+			<methods>
+				<include name="downloadReportByTest" />
+<!-- 				<include name="verifyFileDownloadByTest" /> -->
+				<include name="clickPrintButtonTest" />
+				<include name="verifyPrintWindowTest" />
+			</methods>
+		</class>
+	</classes>
+	</test>
+	
+	
+	<test name="7. Download report by CSV and Verify Print ">
+	<classes>
+		<class name="com.guru.testing.page.TransactionsPageTest">
+			<parameter name="fileType" value="CSV" />
+			<methods>
+				<include name="downloadReportByTest" />
+			</methods>
+		</class>
+		<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutFlTest" />
+			</methods>
+		</class>
+		<class name="com.guru.testing.page.LoginPageTest">
+			<methods>
+				<include name="verifyLoginPageTest" />
+			</methods>
+		</class>
+	</classes>
+	</test> 
+	</suite>

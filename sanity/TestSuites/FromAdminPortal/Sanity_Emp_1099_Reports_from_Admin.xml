@@ -1,0 +1,140 @@
+<suite name="1099 Reports Sanity for Employer from Admin page" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="waitTime" value="10" />
+	<parameter name="thinkTime" value="2" />
+	<parameter name="implicitWaitTime" value="10" />
+	<parameter name="reportName" value="SANITY_EMP_1099_REPORTS_FROM_ADMIN" />
+	<parameter name="reportDetailLevel" value="43" />
+	<parameter name="url" value="https://admin.guru.com/admin/login.aspx" />
+	 <parameter name="username" value="small" />
+	<parameter name="password" value="password" />
+	
+	<test name="1. Goto Account from admin site for employer and Verify 1099 Reports UI">
+		<classes>
+			<class name="com.guru.testing.page.LaunchApplicationPageTest">
+				<methods>
+					<include name="navigateToUrlTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminLoginPageTest">
+				<methods>
+					<include name="verifyAdminLoginPageTest" />
+					<include name="enterUsernameTest" />
+					<include name="enterPasswordTest" />
+					<include name="clickLoginTest" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminHomePageTest">
+				
+				<methods>
+					<include name="verifyAdminHomePageTest" />
+					<include name="clickCRMAccountSearch" />
+				</methods>
+			</class>
+
+			<class name="com.guru.testing.page.AdminCRMPageTest">
+			 <parameter name="searchKeyword" value="149861" />
+			<parameter name="searchEmpBy" value="Employer ID" />
+			<methods>
+				<include name="verifyCRMAccountSearchPageTest" />
+				<include name="enterEmpSearchKeywordTest" />
+				<include name="selectEmpSearchbyTest" />
+				
+				<include name="clickEmpSearchTest" />
+								
+				<include name="verifyEmpSearchResultsTest" />
+				<include name="gotoAccountTest" />
+				<include name="switchToAccountPageTest" />
+				</methods>
+			</class>
+					
+			<class name="com.guru.testing.page.DashboardPageTest">
+				<methods>
+				<include name="verifyEMPDashboardPageTest" />				
+				<include name="clickPayTabTest" />
+				</methods>
+			</class>
+			
+			<class name="com.guru.testing.page.PaymentsInvoicePageTest">
+				<methods>
+				<include name="verifyInvoicePageTest" />				
+				<include name="click1099ReportsTabTest" />
+				</methods>
+			</class>		
+			
+		<class name="com.guru.testing.page.Reports1099PageTest">		
+			<methods>
+				<include name="verify1099ReportsPageTest" />
+				<include name="verifyDefaultYearTest" />							
+				<include name="verifyPriorYearsInDropDownTest" />
+				<include name="closePriorYearDropDownTest" />
+				<include name="verifyDownloadOptionsTest" />
+				 <include name="closeDownloadDropDownTest" />
+				<include name="verifyPrintButtonIsPresentTest" />											
+			</methods>
+			</class> 			
+		</classes>
+	</test>
+	
+	<test name="2. Apply Filter and verify data for US Guru, Non US Guru and Not Requested tables ">
+	<classes>
+			<class name="com.guru.testing.page.Reports1099PageTest">		
+			<parameter name="year" value="2015" />	
+			<parameter name="noDataText" value="No 1099 report is currently available." />
+			<methods>				
+				<include name="applyPriorYearFilterTest" />
+				<include name="verifyServiceRequestedForUSGuruTest" />
+				<include name="scrollWindowForNonUSGuruTest" />
+				<include name="verifyServiceRequestedForNonUSGuruTest" />
+				<include name="scrollWindowForNotRequestedTest" />
+				<include name="verifyServiceNotRequestedTest" />
+					
+			</methods>
+		</class>
+	
+	</classes>
+	</test>
+	
+	<test name="3. Download report by PDF and Verify Print ">
+	<classes>
+			<class name="com.guru.testing.page.Reports1099PageTest">
+			<parameter name="fileType" value="PDF"/>
+			<methods>
+				<include name="downloadReportByTest" />
+				<include name="clickPrintButtonTest" />
+				<include name="verifyPrintWindowTest" />
+			</methods>
+		</class>
+	</classes>
+	</test>
+	
+	<test name="4. Download report by CSV and Logout">
+	<classes>
+			<class name="com.guru.testing.page.Reports1099PageTest">
+			<parameter name="fileType" value="CSV"/>
+			<methods>
+				<include name="downloadReportByTest" />
+			</methods>
+		</class>
+		<class name="com.guru.testing.page.DashboardPageTest">
+			<methods>
+				<include name="signOutEmployerTest" />
+			</methods>
+		</class>
+		
+		<class name="com.guru.testing.page.LoginPageTest">
+			<methods>
+				<include name="verifyLoginPageTest" />
+			</methods>
+		</class>
+		
+	</classes>
+	</test> 
+	</suite>

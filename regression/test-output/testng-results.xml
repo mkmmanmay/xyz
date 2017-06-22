@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="3" total="102" passed="99">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Approve payments" duration-ms="477209" started-at="2017-06-21T12:40:04Z" finished-at="2017-06-21T12:48:02Z">
+    <groups>
+    </groups>
+    <test name="Launch application" duration-ms="8315" started-at="2017-06-21T12:40:04Z" finished-at="2017-06-21T12:40:13Z">
+      <class name="com.guru.testing.tests.LaunchApplication">
+        <test-method status="PASS" signature="startBrowserBeforeTest(java.lang.String, java.lang.String, int, int, int, int, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="startBrowserBeforeTest" is-config="true" duration-ms="1" started-at="2017-06-21T12:40:04Z" finished-at="2017-06-21T12:40:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[suite]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[default]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[default]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[C:\browserdrivers]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- startBrowserBeforeTest -->
+        <test-method status="PASS" signature="loadObjectMaps()[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="loadObjectMaps" is-config="true" duration-ms="49" started-at="2017-06-21T12:40:04Z" finished-at="2017-06-21T12:40:05Z">
+        </test-method> <!-- loadObjectMaps -->
+        <test-method status="PASS" signature="waitTime()[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="waitTime" is-config="true" duration-ms="2000" started-at="2017-06-21T12:40:05Z" finished-at="2017-06-21T12:40:07Z">
+        </test-method> <!-- waitTime -->
+        <test-method status="PASS" signature="navigateToUrlTest(java.lang.String)[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="navigateToUrlTest" duration-ms="6244" started-at="2017-06-21T12:40:07Z" finished-at="2017-06-21T12:40:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://qa.guru.com/login.aspx]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- navigateToUrlTest -->
+        <test-method status="PASS" signature="closeBroserAfterTest(java.lang.String)[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="closeBroserAfterTest" is-config="true" duration-ms="1" started-at="2017-06-21T12:40:13Z" finished-at="2017-06-21T12:40:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[suite]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- closeBroserAfterTest -->
+      </class> <!-- com.guru.testing.tests.LaunchApplication -->
+    </test> <!-- Launch application -->
+    <test name="Login application" duration-ms="39080" started-at="2017-06-21T12:40:13Z" finished-at="2017-06-21T12:40:52Z">
+      <class name="com.guru.testing.tests.EMPLogin">
+        <test-method status="PASS" signature="enterUsernameAndPasswordTest(java.lang.String, java.lang.String)[pri:0, instance:com.guru.testing.tests.EMPLogin@3b0090a4]" name="enterUsernameAndPasswordTest" duration-ms="353" started-at="2017-06-21T12:40:13Z" finished-at="2017-06-21T12:40:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[guruemp001@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- enterUsernameAndPasswordTest -->
+        <test-method status="PASS" signature="clickSignInTest()[pri:0, instance:com.guru.testing.tests.EMPLogin@3b0090a4]" name="clickSignInTest" duration-ms="8162" started-at="2017-06-21T12:40:13Z" depends-on-methods="com.guru.testing.tests.EMPLogin.enterUsernameAndPasswordTest" finished-at="2017-06-21T12:40:21Z">
+        </test-method> <!-- clickSignInTest -->
+        <test-method status="PASS" signature="validateSecurityTest()[pri:0, instance:com.guru.testing.tests.EMPLogin@3b0090a4]" name="validateSecurityTest" duration-ms="9805" started-at="2017-06-21T12:40:21Z" depends-on-methods="com.guru.testing.tests.EMPLogin.clickSignInTest" finished-at="2017-06-21T12:40:31Z">
+        </test-method> <!-- validateSecurityTest -->
+        <test-method status="PASS" signature="verifyAndSkipPhoneVerificationTest()[pri:0, instance:com.guru.testing.tests.EMPLogin@3b0090a4]" name="verifyAndSkipPhoneVerificationTest" duration-ms="20510" started-at="2017-06-21T12:40:31Z" depends-on-methods="com.guru.testing.tests.EMPLogin.validateSecurityTest" finished-at="2017-06-21T12:40:52Z">
+        </test-method> <!-- verifyAndSkipPhoneVerificationTest -->
+        <test-method status="PASS" signature="verifyDashboardPageTest()[pri:0, instance:com.guru.testing.tests.EMPLogin@3b0090a4]" name="verifyDashboardPageTest" duration-ms="238" started-at="2017-06-21T12:40:52Z" depends-on-methods="com.guru.testing.tests.EMPLogin.verifyAndSkipPhoneVerificationTest" finished-at="2017-06-21T12:40:52Z">
+        </test-method> <!-- verifyDashboardPageTest -->
+      </class> <!-- com.guru.testing.tests.EMPLogin -->
+    </test> <!-- Login application -->
+    <test name="Approve payments" duration-ms="429782" started-at="2017-06-21T12:40:52Z" finished-at="2017-06-21T12:48:02Z">
+      <class name="com.guru.testing.tests.LaunchApplication">
+        <test-method status="PASS" signature="startBrowserBeforeSuite(java.lang.String, java.lang.String, int, int, int, int, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="startBrowserBeforeSuite" is-config="true" duration-ms="3848" started-at="2017-06-21T12:40:01Z" finished-at="2017-06-21T12:40:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[suite]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[default]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[default]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[C:\browserdrivers]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- startBrowserBeforeSuite -->
+        <test-method status="PASS" signature="closeBrowserAfterSuite(java.lang.String)[pri:0, instance:com.guru.testing.tests.LaunchApplication@795cd85e]" name="closeBrowserAfterSuite" is-config="true" duration-ms="2718" started-at="2017-06-21T12:48:02Z" finished-at="2017-06-21T12:48:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[suite]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- closeBrowserAfterSuite -->
+      </class> <!-- com.guru.testing.tests.LaunchApplication -->
+      <class name="com.guru.testing.tests.RefundRevokeDecline">
+        <test-method status="PASS" signature="goToPostAJobPageTest()[pri:0, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToPostAJobPageTest" duration-ms="4146" started-at="2017-06-21T12:40:52Z" finished-at="2017-06-21T12:40:56Z">
+        </test-method> <!-- goToPostAJobPageTest -->
+        <test-method status="PASS" signature="verifyPostAJobPageTest()[pri:1, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyPostAJobPageTest" duration-ms="878" started-at="2017-06-21T12:40:56Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToPostAJobPageTest" finished-at="2017-06-21T12:40:57Z">
+        </test-method> <!-- verifyPostAJobPageTest -->
+        <test-method status="PASS" signature="enterJobDetailsTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="enterJobDetailsTest" duration-ms="27026" started-at="2017-06-21T12:40:57Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToPostAJobPageTest" finished-at="2017-06-21T12:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Automated Job Details]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Web, Software & IT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[testing]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Under $250]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- enterJobDetailsTest -->
+        <test-method status="PASS" signature="clickPostJobTest()[pri:3, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickPostJobTest" duration-ms="5523" started-at="2017-06-21T12:41:24Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.enterJobDetailsTest" finished-at="2017-06-21T12:41:29Z">
+        </test-method> <!-- clickPostJobTest -->
+        <test-method status="PASS" signature="verifyFeatureJobPayNowPageTest()[pri:4, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFeatureJobPayNowPageTest" duration-ms="7021" started-at="2017-06-21T12:41:29Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPostJobTest" finished-at="2017-06-21T12:41:36Z">
+        </test-method> <!-- verifyFeatureJobPayNowPageTest -->
+        <test-method status="PASS" signature="agreeToPayCheckTest()[pri:5, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="agreeToPayCheckTest" duration-ms="66" started-at="2017-06-21T12:41:36Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPostJobTest" finished-at="2017-06-21T12:41:37Z">
+        </test-method> <!-- agreeToPayCheckTest -->
+        <test-method status="PASS" signature="clickPayTest()[pri:6, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickPayTest" duration-ms="89" started-at="2017-06-21T12:41:37Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.agreeToPayCheckTest" finished-at="2017-06-21T12:41:37Z">
+        </test-method> <!-- clickPayTest -->
+        <test-method status="PASS" signature="verifyJobPostSuccessTest()[pri:7, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyJobPostSuccessTest" duration-ms="14415" started-at="2017-06-21T12:41:37Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayTest" finished-at="2017-06-21T12:41:51Z">
+        </test-method> <!-- verifyJobPostSuccessTest -->
+        <test-method status="PASS" signature="goToJobHirePageTest()[pri:8, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToJobHirePageTest" duration-ms="9713" started-at="2017-06-21T12:41:51Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayTest" finished-at="2017-06-21T12:42:01Z">
+        </test-method> <!-- goToJobHirePageTest -->
+        <test-method status="PASS" signature="verifyHirePageTest()[pri:9, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyHirePageTest" duration-ms="11667" started-at="2017-06-21T12:42:01Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToJobHirePageTest" finished-at="2017-06-21T12:42:12Z">
+        </test-method> <!-- verifyHirePageTest -->
+        <test-method status="PASS" signature="signOutEMPTest()[pri:10, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="signOutEMPTest" duration-ms="15201" started-at="2017-06-21T12:42:12Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToJobHirePageTest" finished-at="2017-06-21T12:42:28Z">
+        </test-method> <!-- signOutEMPTest -->
+        <test-method status="PASS" signature="verifyLoginPageOneTest()[pri:11, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageOneTest" duration-ms="155" started-at="2017-06-21T12:42:28Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutEMPTest" finished-at="2017-06-21T12:42:28Z">
+        </test-method> <!-- verifyLoginPageOneTest -->
+        <test-method status="PASS" signature="loginAsFLTest(java.lang.String, java.lang.String)[pri:12, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="loginAsFLTest" duration-ms="274" started-at="2017-06-21T12:42:28Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutEMPTest" finished-at="2017-06-21T12:42:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[gurufree001@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- loginAsFLTest -->
+        <test-method status="PASS" signature="verifyFLLoggedInTest()[pri:13, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFLLoggedInTest" duration-ms="25008" started-at="2017-06-21T12:42:28Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginAsFLTest" finished-at="2017-06-21T12:42:53Z">
+        </test-method> <!-- verifyFLLoggedInTest -->
+        <test-method status="PASS" signature="verifyFLDashTest()[pri:14, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFLDashTest" duration-ms="206" started-at="2017-06-21T12:42:53Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyFLLoggedInTest" finished-at="2017-06-21T12:42:53Z">
+        </test-method> <!-- verifyFLDashTest -->
+        <test-method status="PASS" signature="launchTinyUrlTest()[pri:15, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="launchTinyUrlTest" duration-ms="7554" started-at="2017-06-21T12:42:53Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyFLLoggedInTest" finished-at="2017-06-21T12:43:01Z">
+        </test-method> <!-- launchTinyUrlTest -->
+        <test-method status="PASS" signature="verifyJobDetailsPageTest()[pri:16, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyJobDetailsPageTest" duration-ms="1328" started-at="2017-06-21T12:43:01Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.launchTinyUrlTest" finished-at="2017-06-21T12:43:02Z">
+        </test-method> <!-- verifyJobDetailsPageTest -->
+        <test-method status="PASS" signature="clickApplyTest()[pri:17, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickApplyTest" duration-ms="58" started-at="2017-06-21T12:43:02Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.launchTinyUrlTest" finished-at="2017-06-21T12:43:02Z">
+        </test-method> <!-- clickApplyTest -->
+        <test-method status="PASS" signature="verifyApplyQuoteFormTest()[pri:18, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyApplyQuoteFormTest" duration-ms="4346" started-at="2017-06-21T12:43:02Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickApplyTest" finished-at="2017-06-21T12:43:07Z">
+        </test-method> <!-- verifyApplyQuoteFormTest -->
+        <test-method status="PASS" signature="craftMilestoneQuoteTest(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:19, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="craftMilestoneQuoteTest" duration-ms="5309" started-at="2017-06-21T12:43:07Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickApplyTest" finished-at="2017-06-21T12:43:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Auto Mile 1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[01-12-2018]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[120]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Automated Scope of Work]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- craftMilestoneQuoteTest -->
+        <test-method status="PASS" signature="submitQuoteTest()[pri:20, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="submitQuoteTest" duration-ms="119" started-at="2017-06-21T12:43:12Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.craftMilestoneQuoteTest" finished-at="2017-06-21T12:43:12Z">
+        </test-method> <!-- submitQuoteTest -->
+        <test-method status="PASS" signature="verifyQuoteSubmittedTest()[pri:21, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyQuoteSubmittedTest" duration-ms="2359" started-at="2017-06-21T12:43:12Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.submitQuoteTest" finished-at="2017-06-21T12:43:14Z">
+        </test-method> <!-- verifyQuoteSubmittedTest -->
+        <test-method status="PASS" signature="signOutFLTest()[pri:22, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="signOutFLTest" duration-ms="6459" started-at="2017-06-21T12:43:14Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.submitQuoteTest" finished-at="2017-06-21T12:43:21Z">
+        </test-method> <!-- signOutFLTest -->
+        <test-method status="PASS" signature="verifyLoginPageTwoTest()[pri:23, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageTwoTest" duration-ms="179" started-at="2017-06-21T12:43:21Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutFLTest" finished-at="2017-06-21T12:43:21Z">
+        </test-method> <!-- verifyLoginPageTwoTest -->
+        <test-method status="PASS" signature="loginAsEMPTest(java.lang.String, java.lang.String)[pri:24, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="loginAsEMPTest" duration-ms="214" started-at="2017-06-21T12:43:21Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutFLTest" finished-at="2017-06-21T12:43:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[guruemp001@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- loginAsEMPTest -->
+        <test-method status="PASS" signature="verifyEMPLoggedInTest()[pri:25, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyEMPLoggedInTest" duration-ms="14269" started-at="2017-06-21T12:43:21Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginAsEMPTest" finished-at="2017-06-21T12:43:36Z">
+        </test-method> <!-- verifyEMPLoggedInTest -->
+        <test-method status="PASS" signature="verifyEMPDashTest()[pri:26, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyEMPDashTest" duration-ms="255" started-at="2017-06-21T12:43:36Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyEMPLoggedInTest" finished-at="2017-06-21T12:43:36Z">
+        </test-method> <!-- verifyEMPDashTest -->
+        <test-method status="PASS" signature="goToJobHirePageAgainTest()[pri:27, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToJobHirePageAgainTest" duration-ms="3402" started-at="2017-06-21T12:43:36Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyEMPLoggedInTest" finished-at="2017-06-21T12:43:39Z">
+        </test-method> <!-- goToJobHirePageAgainTest -->
+        <test-method status="PASS" signature="verifyHirePageAgainTest()[pri:28, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyHirePageAgainTest" duration-ms="1040" started-at="2017-06-21T12:43:39Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToJobHirePageAgainTest" finished-at="2017-06-21T12:43:40Z">
+        </test-method> <!-- verifyHirePageAgainTest -->
+        <test-method status="PASS" signature="hireTheFLTest()[pri:29, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="hireTheFLTest" duration-ms="8151" started-at="2017-06-21T12:43:40Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToJobHirePageAgainTest" finished-at="2017-06-21T12:43:48Z">
+        </test-method> <!-- hireTheFLTest -->
+        <test-method status="PASS" signature="logOutEMPTest()[pri:30, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="logOutEMPTest" duration-ms="9937" started-at="2017-06-21T12:43:48Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.hireTheFLTest" finished-at="2017-06-21T12:43:58Z">
+        </test-method> <!-- logOutEMPTest -->
+        <test-method status="PASS" signature="verifyLoginPageThreeTest()[pri:31, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageThreeTest" duration-ms="140" started-at="2017-06-21T12:43:58Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logOutEMPTest" finished-at="2017-06-21T12:43:58Z">
+        </test-method> <!-- verifyLoginPageThreeTest -->
+        <test-method status="PASS" signature="loginAsFreeLTest(java.lang.String, java.lang.String)[pri:32, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="loginAsFreeLTest" duration-ms="256" started-at="2017-06-21T12:43:58Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logOutEMPTest" finished-at="2017-06-21T12:43:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[gurufree001@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- loginAsFreeLTest -->
+        <test-method status="PASS" signature="verifyFreeLLoggedInTest()[pri:33, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFreeLLoggedInTest" duration-ms="13682" started-at="2017-06-21T12:43:59Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginAsFreeLTest" finished-at="2017-06-21T12:44:12Z">
+        </test-method> <!-- verifyFreeLLoggedInTest -->
+        <test-method status="PASS" signature="verifyFLDashboardTest()[pri:34, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFLDashboardTest" duration-ms="210" started-at="2017-06-21T12:44:12Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyFreeLLoggedInTest" finished-at="2017-06-21T12:44:13Z">
+        </test-method> <!-- verifyFLDashboardTest -->
+        <test-method status="PASS" signature="goToWorkroomTest(int)[pri:35, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToWorkroomTest" duration-ms="4220" started-at="2017-06-21T12:44:13Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyFreeLLoggedInTest" finished-at="2017-06-21T12:44:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- goToWorkroomTest -->
+        <test-method status="PASS" signature="verifyFLWorkroomTest()[pri:36, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFLWorkroomTest" duration-ms="246" started-at="2017-06-21T12:44:17Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToWorkroomTest" finished-at="2017-06-21T12:44:17Z">
+        </test-method> <!-- verifyFLWorkroomTest -->
+        <test-method status="PASS" signature="clickSendInvoiceTest()[pri:37, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickSendInvoiceTest" duration-ms="6093" started-at="2017-06-21T12:44:17Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToWorkroomTest" finished-at="2017-06-21T12:44:23Z">
+        </test-method> <!-- clickSendInvoiceTest -->
+        <test-method status="PASS" signature="verifyCreateInvoicePageTest()[pri:38, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyCreateInvoicePageTest" duration-ms="9393" started-at="2017-06-21T12:44:23Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickSendInvoiceTest" finished-at="2017-06-21T12:44:33Z">
+        </test-method> <!-- verifyCreateInvoicePageTest -->
+        <test-method status="PASS" signature="enterInvoiceDetailsTest(java.lang.String)[pri:39, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="enterInvoiceDetailsTest" duration-ms="2210" started-at="2017-06-21T12:44:33Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickSendInvoiceTest" finished-at="2017-06-21T12:44:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Web, Software & IT]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- enterInvoiceDetailsTest -->
+        <test-method status="PASS" signature="sendInvoiceTest()[pri:40, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="sendInvoiceTest" duration-ms="2065" started-at="2017-06-21T12:44:35Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.enterInvoiceDetailsTest" finished-at="2017-06-21T12:44:37Z">
+        </test-method> <!-- sendInvoiceTest -->
+        <test-method status="PASS" signature="verifyFLInvoicePageTest()[pri:41, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyFLInvoicePageTest" duration-ms="3411" started-at="2017-06-21T12:44:37Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.sendInvoiceTest" finished-at="2017-06-21T12:44:40Z">
+        </test-method> <!-- verifyFLInvoicePageTest -->
+        <test-method status="PASS" signature="signOutFreeLTest()[pri:42, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="signOutFreeLTest" duration-ms="6362" started-at="2017-06-21T12:44:40Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.sendInvoiceTest" finished-at="2017-06-21T12:44:47Z">
+        </test-method> <!-- signOutFreeLTest -->
+        <test-method status="PASS" signature="verifyLoginPageFourTest()[pri:43, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageFourTest" duration-ms="129" started-at="2017-06-21T12:44:47Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutFreeLTest" finished-at="2017-06-21T12:44:47Z">
+        </test-method> <!-- verifyLoginPageFourTest -->
+        <test-method status="PASS" signature="loginEMPTest(java.lang.String, java.lang.String)[pri:44, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="loginEMPTest" duration-ms="214" started-at="2017-06-21T12:44:47Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutFreeLTest" finished-at="2017-06-21T12:44:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[guruemp001@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- loginEMPTest -->
+        <test-method status="PASS" signature="verifyEMPLogInTest()[pri:45, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyEMPLogInTest" duration-ms="10290" started-at="2017-06-21T12:44:47Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginEMPTest" finished-at="2017-06-21T12:44:57Z">
+        </test-method> <!-- verifyEMPLogInTest -->
+        <test-method status="PASS" signature="verifyDashEMPTest()[pri:46, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyDashEMPTest" duration-ms="247" started-at="2017-06-21T12:44:57Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyEMPLogInTest" finished-at="2017-06-21T12:44:57Z">
+        </test-method> <!-- verifyDashEMPTest -->
+        <test-method status="PASS" signature="clickPayTabTest()[pri:47, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickPayTabTest" duration-ms="2820" started-at="2017-06-21T12:44:57Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyEMPLogInTest" finished-at="2017-06-21T12:45:00Z">
+        </test-method> <!-- clickPayTabTest -->
+        <test-method status="PASS" signature="verifyInvoicePageTest()[pri:48, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyInvoicePageTest" duration-ms="308" started-at="2017-06-21T12:45:00Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayTabTest" finished-at="2017-06-21T12:45:01Z">
+        </test-method> <!-- verifyInvoicePageTest -->
+        <test-method status="PASS" signature="clickUnpaidInvoiceTest()[pri:49, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickUnpaidInvoiceTest" duration-ms="380" started-at="2017-06-21T12:45:01Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayTabTest" finished-at="2017-06-21T12:45:01Z">
+        </test-method> <!-- clickUnpaidInvoiceTest -->
+        <test-method status="PASS" signature="verifyInvoiceDetailsPageTest()[pri:50, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyInvoiceDetailsPageTest" duration-ms="11611" started-at="2017-06-21T12:45:01Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickUnpaidInvoiceTest" finished-at="2017-06-21T12:45:13Z">
+        </test-method> <!-- verifyInvoiceDetailsPageTest -->
+        <test-method status="PASS" signature="clickPayInvoiceTest()[pri:51, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickPayInvoiceTest" duration-ms="4043" started-at="2017-06-21T12:45:13Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickUnpaidInvoiceTest" finished-at="2017-06-21T12:45:17Z">
+        </test-method> <!-- clickPayInvoiceTest -->
+        <test-method status="PASS" signature="verifyInvoicePayNowPageTest()[pri:52, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyInvoicePayNowPageTest" duration-ms="5947" started-at="2017-06-21T12:45:17Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayInvoiceTest" finished-at="2017-06-21T12:45:23Z">
+        </test-method> <!-- verifyInvoicePayNowPageTest -->
+        <test-method status="PASS" signature="selectECheckAndAgreeTermsTest()[pri:53, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="selectECheckAndAgreeTermsTest" duration-ms="34324" started-at="2017-06-21T12:45:23Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayInvoiceTest" finished-at="2017-06-21T12:45:57Z">
+        </test-method> <!-- selectECheckAndAgreeTermsTest -->
+        <test-method status="PASS" signature="payInvoiceTest()[pri:54, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="payInvoiceTest" duration-ms="99" started-at="2017-06-21T12:45:57Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.selectECheckAndAgreeTermsTest" finished-at="2017-06-21T12:45:57Z">
+        </test-method> <!-- payInvoiceTest -->
+        <test-method status="PASS" signature="verifyInvoicePaidTest()[pri:55, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyInvoicePaidTest" duration-ms="6381" started-at="2017-06-21T12:45:57Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.payInvoiceTest" finished-at="2017-06-21T12:46:03Z">
+        </test-method> <!-- verifyInvoicePaidTest -->
+        <test-method status="PASS" signature="signOutEmployerTest()[pri:56, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="signOutEmployerTest" duration-ms="9352" started-at="2017-06-21T12:46:03Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.payInvoiceTest" finished-at="2017-06-21T12:46:13Z">
+        </test-method> <!-- signOutEmployerTest -->
+        <test-method status="PASS" signature="verifyLoginPageFiveTest()[pri:57, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageFiveTest" duration-ms="135" started-at="2017-06-21T12:46:13Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutEmployerTest" finished-at="2017-06-21T12:46:13Z">
+        </test-method> <!-- verifyLoginPageFiveTest -->
+        <test-method status="PASS" signature="launchAdminSiteTest(java.lang.String)[pri:58, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="launchAdminSiteTest" duration-ms="1220" started-at="2017-06-21T12:46:13Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.signOutEmployerTest" finished-at="2017-06-21T12:46:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://qa.guru.com/admin/login.aspx]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- launchAdminSiteTest -->
+        <test-method status="FAIL" signature="verifyAdminLoginPageTest()[pri:59, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyAdminLoginPageTest" duration-ms="25" started-at="2017-06-21T12:46:14Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.launchAdminSiteTest" finished-at="2017-06-21T12:46:14Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[java.lang.NullPointerException]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: java.lang.NullPointerException
+	at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)
+	at com.guru.testing.tests.RefundRevokeDecline.verifyAdminLoginPageTest(RefundRevokeDecline.java:426)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:702)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1113)
+	at org.testng.TestNG.run(TestNG.java:1025)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.NullPointerException
+	at com.guru.framework.testing.browser.BrowserAccess.getLocalizationText(BrowserAccess.java:71)
+	at com.guru.framework.testing.browser.BrowserWait.waitUntilText(BrowserWait.java:336)
+	at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:17)
+	... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+        </test-method> <!-- verifyAdminLoginPageTest -->
+        <test-method status="PASS" signature="loginToAdminTest(java.lang.String, java.lang.String)[pri:60, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="loginToAdminTest" duration-ms="6548" started-at="2017-06-21T12:46:16Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.launchAdminSiteTest" finished-at="2017-06-21T12:46:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[small]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[password]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- loginToAdminTest -->
+        <test-method status="PASS" signature="verifyAdminHomePageTest()[pri:61, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyAdminHomePageTest" duration-ms="76" started-at="2017-06-21T12:46:23Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginToAdminTest" finished-at="2017-06-21T12:46:23Z">
+        </test-method> <!-- verifyAdminHomePageTest -->
+        <test-method status="PASS" signature="goToAcceptApproveTest()[pri:62, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToAcceptApproveTest" duration-ms="2893" started-at="2017-06-21T12:46:23Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginToAdminTest" finished-at="2017-06-21T12:46:26Z">
+        </test-method> <!-- goToAcceptApproveTest -->
+        <test-method status="PASS" signature="verifyAdminApprovePaymentsPage()[pri:63, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyAdminApprovePaymentsPage" duration-ms="927" started-at="2017-06-21T12:46:26Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToAcceptApproveTest" finished-at="2017-06-21T12:46:27Z">
+        </test-method> <!-- verifyAdminApprovePaymentsPage -->
+        <test-method status="PASS" signature="goToPendingTabTest(java.lang.String)[pri:64, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToPendingTabTest" duration-ms="674" started-at="2017-06-21T12:46:27Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToAcceptApproveTest" finished-at="2017-06-21T12:46:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PENDING]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- goToPendingTabTest -->
+        <test-method status="PASS" signature="findPendingPaymentTest(java.lang.String, java.lang.String, java.lang.String)[pri:65, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="findPendingPaymentTest" duration-ms="968" started-at="2017-06-21T12:46:27Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToPendingTabTest" finished-at="2017-06-21T12:46:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2017-06-20]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2017-06-21]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- findPendingPaymentTest -->
+        <test-method status="PASS" signature="clickApproveTest(int)[pri:66, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickApproveTest" duration-ms="5468" started-at="2017-06-21T12:46:28Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.findPendingPaymentTest" finished-at="2017-06-21T12:46:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- clickApproveTest -->
+        <test-method status="PASS" signature="goToCompletedTabTest(java.lang.String, java.lang.String, java.lang.String)[pri:67, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToCompletedTabTest" duration-ms="1050" started-at="2017-06-21T12:46:34Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickApproveTest" finished-at="2017-06-21T12:46:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[COMPLETED]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2017-06-20]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2017-06-21]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- goToCompletedTabTest -->
+        <test-method status="PASS" signature="clickRevokeTest(int)[pri:68, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickRevokeTest" duration-ms="3364" started-at="2017-06-21T12:46:35Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToCompletedTabTest" finished-at="2017-06-21T12:46:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- clickRevokeTest -->
+        <test-method status="PASS" signature="logoutAdminTest()[pri:69, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="logoutAdminTest" duration-ms="7837" started-at="2017-06-21T12:46:38Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickRevokeTest" finished-at="2017-06-21T12:46:46Z">
+        </test-method> <!-- logoutAdminTest -->
+        <test-method status="FAIL" signature="verifyLoggedOutTest()[pri:70, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoggedOutTest" duration-ms="16" started-at="2017-06-21T12:46:46Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logoutAdminTest" finished-at="2017-06-21T12:46:46Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[java.lang.NullPointerException]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: java.lang.NullPointerException
+	at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)
+	at com.guru.testing.tests.RefundRevokeDecline.verifyLoggedOutTest(RefundRevokeDecline.java:513)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:702)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1113)
+	at org.testng.TestNG.run(TestNG.java:1025)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.NullPointerException
+	at com.guru.framework.testing.browser.BrowserAccess.getLocalizationText(BrowserAccess.java:71)
+	at com.guru.framework.testing.browser.BrowserWait.waitUntilText(BrowserWait.java:336)
+	at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:17)
+	... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+        </test-method> <!-- verifyLoggedOutTest -->
+        <test-method status="PASS" signature="launchGuruTest(java.lang.String)[pri:71, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="launchGuruTest" duration-ms="1872" started-at="2017-06-21T12:46:47Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logoutAdminTest" finished-at="2017-06-21T12:46:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://qa.guru.com/login.aspx]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- launchGuruTest -->
+        <test-method status="PASS" signature="verifyLoginPageSixTest()[pri:72, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageSixTest" duration-ms="126" started-at="2017-06-21T12:46:49Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.launchGuruTest" finished-at="2017-06-21T12:46:49Z">
+        </test-method> <!-- verifyLoginPageSixTest -->
+        <test-method status="PASS" signature="loginEmployerTest(java.lang.String, java.lang.String)[pri:73, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="loginEmployerTest" duration-ms="201" started-at="2017-06-21T12:46:49Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.launchGuruTest" finished-at="2017-06-21T12:46:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[guruemp001@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- loginEmployerTest -->
+        <test-method status="PASS" signature="verifyEmployerLogInTest()[pri:74, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyEmployerLogInTest" duration-ms="14620" started-at="2017-06-21T12:46:49Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.loginEmployerTest" finished-at="2017-06-21T12:47:03Z">
+        </test-method> <!-- verifyEmployerLogInTest -->
+        <test-method status="PASS" signature="verifyEmployerDashTest()[pri:75, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyEmployerDashTest" duration-ms="280" started-at="2017-06-21T12:47:03Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyEmployerLogInTest" finished-at="2017-06-21T12:47:04Z">
+        </test-method> <!-- verifyEmployerDashTest -->
+        <test-method status="PASS" signature="goToInvoiceSummaryTest()[pri:76, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToInvoiceSummaryTest" duration-ms="3068" started-at="2017-06-21T12:47:04Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.verifyEmployerLogInTest" finished-at="2017-06-21T12:47:07Z">
+        </test-method> <!-- goToInvoiceSummaryTest -->
+        <test-method status="PASS" signature="verifyInvoiceSummaryTest()[pri:77, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyInvoiceSummaryTest" duration-ms="511" started-at="2017-06-21T12:47:07Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToInvoiceSummaryTest" finished-at="2017-06-21T12:47:07Z">
+        </test-method> <!-- verifyInvoiceSummaryTest -->
+        <test-method status="PASS" signature="clickFirstViewAndPayTest()[pri:78, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickFirstViewAndPayTest" duration-ms="83" started-at="2017-06-21T12:47:07Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToInvoiceSummaryTest" finished-at="2017-06-21T12:47:07Z">
+        </test-method> <!-- clickFirstViewAndPayTest -->
+        <test-method status="PASS" signature="validateInvoiceDetailsPageTest()[pri:79, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="validateInvoiceDetailsPageTest" duration-ms="11429" started-at="2017-06-21T12:47:07Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickFirstViewAndPayTest" finished-at="2017-06-21T12:47:19Z">
+        </test-method> <!-- validateInvoiceDetailsPageTest -->
+        <test-method status="PASS" signature="clickPayInvoiceBtnTest()[pri:80, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickPayInvoiceBtnTest" duration-ms="4085" started-at="2017-06-21T12:47:19Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickFirstViewAndPayTest" finished-at="2017-06-21T12:47:23Z">
+        </test-method> <!-- clickPayInvoiceBtnTest -->
+        <test-method status="PASS" signature="validateInvoicePayNowPageTest()[pri:81, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="validateInvoicePayNowPageTest" duration-ms="6734" started-at="2017-06-21T12:47:23Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayInvoiceBtnTest" finished-at="2017-06-21T12:47:30Z">
+        </test-method> <!-- validateInvoicePayNowPageTest -->
+        <test-method status="PASS" signature="payUsingEcheckTest()[pri:84, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="payUsingEcheckTest" duration-ms="321" started-at="2017-06-21T12:47:30Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.clickPayInvoiceBtnTest" finished-at="2017-06-21T12:47:30Z">
+        </test-method> <!-- payUsingEcheckTest -->
+        <test-method status="PASS" signature="payTheInvoiceTest()[pri:85, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="payTheInvoiceTest" duration-ms="83" started-at="2017-06-21T12:47:30Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.payUsingEcheckTest" finished-at="2017-06-21T12:47:30Z">
+        </test-method> <!-- payTheInvoiceTest -->
+        <test-method status="PASS" signature="verifyInvoiceIsPaidTest()[pri:86, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyInvoiceIsPaidTest" duration-ms="6356" started-at="2017-06-21T12:47:30Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.payTheInvoiceTest" finished-at="2017-06-21T12:47:36Z">
+        </test-method> <!-- verifyInvoiceIsPaidTest -->
+        <test-method status="PASS" signature="logOutEmployerTest()[pri:87, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="logOutEmployerTest" duration-ms="8442" started-at="2017-06-21T12:47:36Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.payTheInvoiceTest" finished-at="2017-06-21T12:47:45Z">
+        </test-method> <!-- logOutEmployerTest -->
+        <test-method status="PASS" signature="verifyLoginPageSevenTest()[pri:88, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="verifyLoginPageSevenTest" duration-ms="142" started-at="2017-06-21T12:47:45Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logOutEmployerTest" finished-at="2017-06-21T12:47:45Z">
+        </test-method> <!-- verifyLoginPageSevenTest -->
+        <test-method status="PASS" signature="goToAdminSiteTest(java.lang.String)[pri:89, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToAdminSiteTest" duration-ms="850" started-at="2017-06-21T12:47:45Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logOutEmployerTest" finished-at="2017-06-21T12:47:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://qa.guru.com/admin/login.aspx]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- goToAdminSiteTest -->
+        <test-method status="FAIL" signature="validateAdminLoginPageTest()[pri:90, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="validateAdminLoginPageTest" duration-ms="9" started-at="2017-06-21T12:47:46Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToAdminSiteTest" finished-at="2017-06-21T12:47:46Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[java.lang.NullPointerException]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: java.lang.NullPointerException
+	at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:23)
+	at com.guru.testing.tests.RefundRevokeDecline.validateAdminLoginPageTest(RefundRevokeDecline.java:627)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:702)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1113)
+	at org.testng.TestNG.run(TestNG.java:1025)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.NullPointerException
+	at com.guru.framework.testing.browser.BrowserAccess.getLocalizationText(BrowserAccess.java:71)
+	at com.guru.framework.testing.browser.BrowserWait.waitUntilText(BrowserWait.java:336)
+	at com.guru.testing.page.AdminLoginPageTest.verifyAdminLoginPage(AdminLoginPageTest.java:17)
+	... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+        </test-method> <!-- validateAdminLoginPageTest -->
+        <test-method status="PASS" signature="logIntoAdminTest(java.lang.String, java.lang.String)[pri:91, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="logIntoAdminTest" duration-ms="6574" started-at="2017-06-21T12:47:47Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToAdminSiteTest" finished-at="2017-06-21T12:47:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[small]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[password]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- logIntoAdminTest -->
+        <test-method status="PASS" signature="validateAdminHomePageTest()[pri:92, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="validateAdminHomePageTest" duration-ms="63" started-at="2017-06-21T12:47:53Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logIntoAdminTest" finished-at="2017-06-21T12:47:53Z">
+        </test-method> <!-- validateAdminHomePageTest -->
+        <test-method status="PASS" signature="goToAcceptApprovePaymentsTest()[pri:93, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="goToAcceptApprovePaymentsTest" duration-ms="2208" started-at="2017-06-21T12:47:53Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.logIntoAdminTest" finished-at="2017-06-21T12:47:55Z">
+        </test-method> <!-- goToAcceptApprovePaymentsTest -->
+        <test-method status="PASS" signature="validateAdminApprovePaymentsPage()[pri:94, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="validateAdminApprovePaymentsPage" duration-ms="817" started-at="2017-06-21T12:47:56Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToAcceptApprovePaymentsTest" finished-at="2017-06-21T12:47:56Z">
+        </test-method> <!-- validateAdminApprovePaymentsPage -->
+        <test-method status="PASS" signature="navToPendingTabTest(java.lang.String)[pri:95, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="navToPendingTabTest" duration-ms="698" started-at="2017-06-21T12:47:56Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.goToAcceptApprovePaymentsTest" finished-at="2017-06-21T12:47:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PENDING]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- navToPendingTabTest -->
+        <test-method status="PASS" signature="searchForPendingPaymentTest(java.lang.String, java.lang.String)[pri:96, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="searchForPendingPaymentTest" duration-ms="625" started-at="2017-06-21T12:47:57Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.navToPendingTabTest" finished-at="2017-06-21T12:47:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2017-06-20]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2017-06-21]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- searchForPendingPaymentTest -->
+        <test-method status="PASS" signature="clickDeclineTest(int)[pri:97, instance:com.guru.testing.tests.RefundRevokeDecline@3bf7ca37]" name="clickDeclineTest" duration-ms="4021" started-at="2017-06-21T12:47:58Z" depends-on-methods="com.guru.testing.tests.RefundRevokeDecline.searchForPendingPaymentTest" finished-at="2017-06-21T12:48:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- clickDeclineTest -->
+      </class> <!-- com.guru.testing.tests.RefundRevokeDecline -->
+    </test> <!-- Approve payments -->
+  </suite> <!-- Approve payments -->
+</testng-results>

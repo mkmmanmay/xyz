@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>TestNG:  Posting Jobs.</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Posting Jobs.</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>22/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Jun 14 10:12:55 IST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>546 seconds (546808 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.guru.testing.tests.EMPLogin.clickSignInTest()'><b>clickSignInTest</b><br>Test class: com.guru.testing.tests.EMPLogin</td>
+<td></td>
+<td>20</td>
+<td>com.guru.testing.tests.EMPLogin@10683d9d</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.completeAddedCCPaymentTest()'><b>completeAddedCCPaymentTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>13</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.enterJobDetailsTest()'><b>enterJobDetailsTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing., Web, Software & IT, testing, Under $250</td>
+<td></td>
+<td>19</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.EMPLogin.enterUsernameAndPasswordTest()'><b>enterUsernameAndPasswordTest</b><br>Test class: com.guru.testing.tests.EMPLogin<br>Parameters: regpostjob@mailinator.com, 12345678</td>
+<td></td>
+<td>1</td>
+<td>com.guru.testing.tests.EMPLogin@10683d9d</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.goToPostAJobPageTest()'><b>goToPostAJobPageTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>7</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.LaunchApplication.navigateToUrlTest()'><b>navigateToUrlTest</b><br>Test class: com.guru.testing.tests.LaunchApplication<br>Parameters: http://qa.guru.com/login.aspx</td>
+<td></td>
+<td>13</td>
+<td>com.guru.testing.tests.LaunchApplication@7586beff</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.payUsingAddedCCTest()'><b>payUsingAddedCCTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: CREDIT_CARD</td>
+<td></td>
+<td>9</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.payUsingAddedPayPalTest()'><b>payUsingAddedPayPalTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: PAY_PAL</td>
+<td></td>
+<td>22</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.payUsingCATest()'><b>payUsingCATest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>17</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.payUsingCCTest()'><b>payUsingCCTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: 4111111111111111, 4 - Apr, 2030, 123, Delhi</td>
+<td></td>
+<td>21</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.payUsingPaypalTest()'><b>payUsingPaypalTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: gurucomdev_per@gmail.com, 11111111</td>
+<td></td>
+<td>104</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.postJobAddedCCTest()'><b>postJobAddedCCTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing., Web, Software & IT, testing, Under $250</td>
+<td></td>
+<td>44</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.postJobAddedPaypalTest()'><b>postJobAddedPaypalTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing., Web, Software & IT, testing, Under $250</td>
+<td></td>
+<td>32</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.postJobCCTest()'><b>postJobCCTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing., Web, Software & IT, testing, Under $250</td>
+<td></td>
+<td>22</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.postJobPaypalTest()'><b>postJobPaypalTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods<br>Parameters: Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing., Web, Software & IT, testing, Under $250</td>
+<td></td>
+<td>22</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.removePaymentsTest()'><b>removePaymentsTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>45</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.EMPLogin.validateSecurityTest()'><b>validateSecurityTest</b><br>Test class: com.guru.testing.tests.EMPLogin</td>
+<td></td>
+<td>37</td>
+<td>com.guru.testing.tests.EMPLogin@10683d9d</td></tr>
+<tr>
+<td title='com.guru.testing.tests.EMPLogin.verifyAndSkipPhoneVerificationTest()'><b>verifyAndSkipPhoneVerificationTest</b><br>Test class: com.guru.testing.tests.EMPLogin</td>
+<td></td>
+<td>10</td>
+<td>com.guru.testing.tests.EMPLogin@10683d9d</td></tr>
+<tr>
+<td title='com.guru.testing.tests.EMPLogin.verifyDashboardPageTest()'><b>verifyDashboardPageTest</b><br>Test class: com.guru.testing.tests.EMPLogin</td>
+<td></td>
+<td>0</td>
+<td>com.guru.testing.tests.EMPLogin@10683d9d</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.verifyJobPostSuccessCATest()'><b>verifyJobPostSuccessCATest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>41</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.verifyJobPostSuccessCCTest()'><b>verifyJobPostSuccessCCTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>14</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+<tr>
+<td title='com.guru.testing.tests.PostAJobAllPayMethods.verifyJobPostSuccessPaypalTest()'><b>verifyJobPostSuccessPaypalTest</b><br>Test class: com.guru.testing.tests.PostAJobAllPayMethods</td>
+<td></td>
+<td>20</td>
+<td>com.guru.testing.tests.PostAJobAllPayMethods@3b69e7d1</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">1. Login as Employer. And click 'Post a Job'.</td><td class="numi">10</td><td class="numi">10</td><td class="numi">0</td><td class="numi">0</td><td class="numi">53.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">2. Post a featured job.</td><td class="numi">20</td><td class="numi">20</td><td class="numi">0</td><td class="numi">0</td><td class="numi">79.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">2.5 Sign out EMP.</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">4.7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">3. Login as FL. Go to the job posted, and submit quote.</td><td class="numi">16</td><td class="numi">16</td><td class="numi">0</td><td class="numi">0</td><td class="numi">50.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">3.5 Log out FL</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">6.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">4. Login as EMP. And Hire the FL. go to Workroom, and verify navigation tabs in it. Go to File folder, and added file(s) </td><td class="numi">22</td><td class="numi">22</td><td class="numi">0</td><td class="numi">0</td><td class="numi">87.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">4.5 Log out EMP</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">4.7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">5. Login as FL. Go to workroom and verify the file uploaded by emp is shown in file folders. Go back to status page, and send invoice.</td><td class="numi">21</td><td class="numi">21</td><td class="numi">0</td><td class="numi">0</td><td class="numi">57.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">5.5 Log out FL</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">5.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">6. Login as EMP. Go to workroom, and verify outstanding invoice amount</td><td class="numi">12</td><td class="numi">12</td><td class="numi">0</td><td class="numi">0</td><td class="numi">26.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="total"><td>Total</td>
+<td class="numi">105</td><td class="numi">105</td><td class="numi">0</td><td class="numi">0</td><td class="numi">377.3 seconds</td><td colspan="2">&nbsp;</td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">1. Login as Employer. And click 'Post a Job'. &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m1"><b>clickPostAJobTopNavTest</b>  </a></td><td class="numi">1</td><td>1497588365113</td><td class="numi">3506</td></tr>
+<tr class="passedeven"><td rowspan="3">com.guru.testing.page.LoginPageTest<td><a href="#m2"><b>clickSignInButtonTest</b>  </a></td><td class="numi">1</td><td>1497588324383</td><td class="numi">20463</td></tr><tr class="passedeven"><td><a href="#m3"><b>enterEmailOrUsernameTest</b>  </a></td><td class="numi">1</td><td>1497588324173</td><td class="numi">115</td></tr><tr class="passedeven"><td><a href="#m4"><b>enterPasswordTest</b>  </a></td><td class="numi">1</td><td>1497588324289</td><td class="numi">93</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.LaunchApplicationPageTest<td><a href="#m5"><b>navigateToUrlTest</b>  </a></td><td class="numi">1</td><td>1497588319818</td><td class="numi">4198</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.SecurityQuestionsPageTest<td><a href="#m6"><b>validateSecurityQuestionsPageTest</b>  </a></td><td class="numi">1</td><td>1497588344847</td><td class="numi">9712</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m7"><b>verifyEMPDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1497588364863</td><td class="numi">249</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m8"><b>verifyLoginPageTest</b>  </a></td><td class="numi">1</td><td>1497588324024</td><td class="numi">148</td></tr>
+<tr class="passedodd"><td rowspan="2">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m9"><b>verifyPhoneVerificationPageTest</b>  </a></td><td class="numi">1</td><td>1497588354560</td><td class="numi">5159</td></tr><tr class="passedodd"><td><a href="#m10"><b>verifySkipThisForNowLinkTest</b>  </a></td><td class="numi">1</td><td>1497588359726</td><td class="numi">5135</td></tr>
+<tr><th colspan="4">2. Post a featured job. &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.PostAJobPageTest<td><a href="#m11"><b>clickCountryRadioButtonTest</b>  </a></td><td class="numi">1</td><td>1497588387581</td><td class="numi">99</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m12"><b>clickDashboardTopNavTest</b>  </a></td><td class="numi">1</td><td>1497588420395</td><td class="numi">2409</td></tr>
+<tr class="passedodd"><td rowspan="2">com.guru.testing.page.PostAJobPageTest<td><a href="#m13"><b>clickFeatureMyJobTest</b>  </a></td><td class="numi">1</td><td>1497588393191</td><td class="numi">62</td></tr><tr class="passedodd"><td><a href="#m14"><b>clickPostJobButtonTest</b>  </a></td><td class="numi">1</td><td>1497588393254</td><td class="numi">15749</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m15"><b>clickRandomJobnamePostedTest</b>  </a></td><td class="numi">1</td><td>1497588423008</td><td class="numi">6727</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.PayNowPageTest<td><a href="#m16"><b>clickToPayTest</b>  </a></td><td class="numi">1</td><td>1497588410327</td><td class="numi">105</td></tr>
+<tr class="passedeven"><td rowspan="5">com.guru.testing.page.PostAJobPageTest<td><a href="#m17"><b>clickWebCategoryTest</b>  </a></td><td class="numi">1</td><td>1497588376443</td><td class="numi">119</td></tr><tr class="passedeven"><td><a href="#m18"><b>enterCountryNameTest</b>  </a></td><td class="numi">1</td><td>1497588387681</td><td class="numi">5346</td></tr><tr class="passedeven"><td><a href="#m19"><b>enterJobDescriptionTest</b>  </a></td><td class="numi">1</td><td>1497588369906</td><td class="numi">6536</td></tr><tr class="passedeven"><td><a href="#m20"><b>enterKeywordsTest</b>  </a></td><td class="numi">1</td><td>1497588376562</td><td class="numi">11018</td></tr><tr class="passedeven"><td><a href="#m21"><b>enterRandomJobTitleTest</b>  </a></td><td class="numi">1</td><td>1497588369613</td><td class="numi">292</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.HirePageTest<td><a href="#m22"><b>getTinyURLTest</b>  </a></td><td class="numi">1</td><td>1497588435185</td><td class="numi">13351</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.PayNowPageTest<td><a href="#m23"><b>selectAgreeToPayCheckboxTest</b>  </a></td><td class="numi">1</td><td>1497588410235</td><td class="numi">91</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.PostAJobPageTest<td><a href="#m24"><b>selectFixedPriceBudgetTest</b>  </a></td><td class="numi">1</td><td>1497588393027</td><td class="numi">163</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m25"><b>verifyEMPDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1497588422805</td><td class="numi">203</td></tr>
+<tr class="passedodd"><td rowspan="3">com.guru.testing.page.PayNowPageTest<td><a href="#m26"><b>verifyJobPostedTest</b>  </a></td><td class="numi">1</td><td>1497588410433</td><td class="numi">9961</td></tr><tr class="passedodd"><td><a href="#m27"><b>verifyPayForFeaturingJobTest</b>  </a></td><td class="numi">1</td><td>1497588409005</td><td class="numi">1032</td></tr><tr class="passedodd"><td><a href="#m28"><b>verifyPaymentMethodTest</b>  </a></td><td class="numi">1</td><td>1497588410037</td><td class="numi">197</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.PostAJobPageTest<td><a href="#m29"><b>verifyPostAJobPageTest</b>  </a></td><td class="numi">1</td><td>1497588368677</td><td class="numi">936</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.HirePageTest<td><a href="#m30"><b>verifyQuotesPageTest</b>  </a></td><td class="numi">1</td><td>1497588429737</td><td class="numi">5447</td></tr>
+<tr><th colspan="4">2.5 Sign out EMP. &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m31"><b>signOutEmployerTest</b>  </a></td><td class="numi">1</td><td>1497588448585</td><td class="numi">4654</td></tr>
+<tr><th colspan="4">3. Login as FL. Go to the job posted, and submit quote. &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m32"><b>clickApplyTest</b>  </a></td><td class="numi">1</td><td>1497588487089</td><td class="numi">52</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m33"><b>clickSignInButtonTest</b>  </a></td><td class="numi">1</td><td>1497588453597</td><td class="numi">3223</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m34"><b>clickToSubmitQuoteTest</b>  </a></td><td class="numi">1</td><td>1497588497626</td><td class="numi">86</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m35"><b>enterEmailOrUsernameTest</b>  </a></td><td class="numi">1</td><td>1497588453377</td><td class="numi">123</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m36"><b>enterMilestonesTest</b>  </a></td><td class="numi">1</td><td>1497588495979</td><td class="numi">1646</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m37"><b>enterPasswordTest</b>  </a></td><td class="numi">1</td><td>1497588453501</td><td class="numi">96</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m38"><b>launchTinyURLTest</b>  </a></td><td class="numi">1</td><td>1497588478520</td><td class="numi">7092</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m39"><b>selectAgreementTypeTest</b>  </a></td><td class="numi">1</td><td>1497588495903</td><td class="numi">75</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.SecurityQuestionsPageTest<td><a href="#m40"><b>validateSecurityQuestionsPageTest</b>  </a></td><td class="numi">1</td><td>1497588456821</td><td class="numi">11198</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m41"><b>verifyApplyQuotesFormTest</b>  </a></td><td class="numi">1</td><td>1497588487142</td><td class="numi">8760</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m42"><b>verifyFLDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1497588478262</td><td class="numi">257</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m43"><b>verifyJobDetailsPageTest</b>  </a></td><td class="numi">1</td><td>1497588485613</td><td class="numi">1475</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m44"><b>verifyLoginPageTest</b>  </a></td><td class="numi">1</td><td>1497588453254</td><td class="numi">123</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m45"><b>verifyPhoneVerificationPageTest</b>  </a></td><td class="numi">1</td><td>1497588468021</td><td class="numi">5118</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.JobDetailsPageTest<td><a href="#m46"><b>verifyQuoteSubmittedTest</b>  </a></td><td class="numi">1</td><td>1497588497713</td><td class="numi">6309</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m47"><b>verifySkipThisForNowLinkTest</b>  </a></td><td class="numi">1</td><td>1497588473141</td><td class="numi">5119</td></tr>
+<tr><th colspan="4">3.5 Log out FL &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m48"><b>signOutFlTest</b>  </a></td><td class="numi">1</td><td>1497588504074</td><td class="numi">6879</td></tr>
+<tr><th colspan="4">4. Login as EMP. And Hire the FL. go to Workroom, and verify navigation tabs in it. Go to File folder, and added file(s)  &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="3">com.guru.testing.page.WorkroomPageTest<td><a href="#m49"><b>clickAddFilesFFTest</b>  </a></td><td class="numi">1</td><td>1497588569797</td><td class="numi">405</td></tr><tr class="passedodd"><td><a href="#m50"><b>clickFileFoldersEMPTest</b>  </a></td><td class="numi">1</td><td>1497588565886</td><td class="numi">3065</td></tr><tr class="passedodd"><td><a href="#m51"><b>clickFinishedTest</b>  </a></td><td class="numi">1</td><td>1497588587985</td><td class="numi">10196</td></tr>
+<tr class="passedeven"><td rowspan="2">com.guru.testing.page.HirePageTest<td><a href="#m52"><b>clickHireBtnTest</b>  </a></td><td class="numi">1</td><td>1497588545591</td><td class="numi">518</td></tr><tr class="passedeven"><td><a href="#m53"><b>clickHireInHirePopupTest</b>  </a></td><td class="numi">1</td><td>1497588546181</td><td class="numi">6381</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m54"><b>clickRandomJobnamePostedTest</b>  </a></td><td class="numi">1</td><td>1497588536945</td><td class="numi">2951</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.WorkroomPageTest<td><a href="#m55"><b>clickSelectFilesTest</b>  </a></td><td class="numi">1</td><td>1497588570203</td><td class="numi">80</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m56"><b>clickSignInButtonTest</b>  </a></td><td class="numi">1</td><td>1497588511319</td><td class="numi">10014</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.HirePageTest<td><a href="#m57"><b>clickWorkRoomLinkTest</b>  </a></td><td class="numi">1</td><td>1497588552564</td><td class="numi">8095</td></tr>
+<tr class="passedodd"><td rowspan="2">com.guru.testing.page.LoginPageTest<td><a href="#m58"><b>enterEmailOrUsernameTest</b>  </a></td><td class="numi">1</td><td>1497588511106</td><td class="numi">121</td></tr><tr class="passedodd"><td><a href="#m59"><b>enterPasswordTest</b>  </a></td><td class="numi">1</td><td>1497588511228</td><td class="numi">91</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.HirePageTest<td><a href="#m60"><b>selectAgreementAckCheckboxTest</b>  </a></td><td class="numi">1</td><td>1497588546109</td><td class="numi">71</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.WorkroomPageTest<td><a href="#m61"><b>uploadFileTest</b>  </a></td><td class="numi">1</td><td>1497588570283</td><td class="numi">17701</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.SecurityQuestionsPageTest<td><a href="#m62"><b>validateSecurityQuestionsPageTest</b>  </a></td><td class="numi">1</td><td>1497588521334</td><td class="numi">5102</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m63"><b>verifyEMPDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1497588536678</td><td class="numi">267</td></tr>
+<tr class="passedeven"><td rowspan="3">com.guru.testing.page.WorkroomPageTest<td><a href="#m64"><b>verifyEMPStatusUpdatesTabTest</b>  </a></td><td class="numi">1</td><td>1497588560660</td><td class="numi">5226</td></tr><tr class="passedeven"><td><a href="#m65"><b>verifyFileAddedPublicFFTest</b>  </a></td><td class="numi">1</td><td>1497588598182</td><td class="numi">89</td></tr><tr class="passedeven"><td><a href="#m66"><b>verifyFileFoldersTest</b>  </a></td><td class="numi">1</td><td>1497588568952</td><td class="numi">844</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m67"><b>verifyLoginPageTest</b>  </a></td><td class="numi">1</td><td>1497588510976</td><td class="numi">129</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m68"><b>verifyPhoneVerificationPageTest</b>  </a></td><td class="numi">1</td><td>1497588526438</td><td class="numi">5118</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.HirePageTest<td><a href="#m69"><b>verifyQuotesPageTest</b>  </a></td><td class="numi">1</td><td>1497588539898</td><td class="numi">5692</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m70"><b>verifySkipThisForNowLinkTest</b>  </a></td><td class="numi">1</td><td>1497588531558</td><td class="numi">5119</td></tr>
+<tr><th colspan="4">4.5 Log out EMP &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m71"><b>signOutEmployerTest</b>  </a></td><td class="numi">1</td><td>1497588598287</td><td class="numi">4687</td></tr>
+<tr><th colspan="4">5. Login as FL. Go to workroom and verify the file uploaded by emp is shown in file folders. Go back to status page, and send invoice. &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="3">com.guru.testing.page.WorkroomPageTest<td><a href="#m72"><b>clickEmployerTabTest</b>  </a></td><td class="numi">1</td><td>1497588635019</td><td class="numi">2683</td></tr><tr class="passedodd"><td><a href="#m73"><b>clickFileFoldersFLTest</b>  </a></td><td class="numi">1</td><td>1497588631361</td><td class="numi">2670</td></tr><tr class="passedodd"><td><a href="#m74"><b>clickFirstMileSendInvTest</b>  </a></td><td class="numi">1</td><td>1497588640587</td><td class="numi">65</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m75"><b>clickHiredRandomJobFLTest</b>  </a></td><td class="numi">1</td><td>1497588623212</td><td class="numi">7934</td></tr>
+<tr class="passedodd"><td rowspan="2">com.guru.testing.page.InvoicePageTest<td><a href="#m76"><b>clickPreviewInvoiceTest</b>  </a></td><td class="numi">1</td><td>1497588648814</td><td class="numi">2168</td></tr><tr class="passedodd"><td><a href="#m77"><b>clickSendInvoiceTest</b>  </a></td><td class="numi">1</td><td>1497588650983</td><td class="numi">2060</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m78"><b>clickSignInButtonTest</b>  </a></td><td class="numi">1</td><td>1497588603343</td><td class="numi">4298</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.InvoicePageTest<td><a href="#m79"><b>copyInvTotalOnCreateInvTest</b>  </a></td><td class="numi">1</td><td>1497588648717</td><td class="numi">23</td></tr>
+<tr class="passedeven"><td rowspan="2">com.guru.testing.page.LoginPageTest<td><a href="#m80"><b>enterEmailOrUsernameTest</b>  </a></td><td class="numi">1</td><td>1497588603141</td><td class="numi">113</td></tr><tr class="passedeven"><td><a href="#m81"><b>enterPasswordTest</b>  </a></td><td class="numi">1</td><td>1497588603255</td><td class="numi">88</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.InvoicePageTest<td><a href="#m82"><b>selectKindOfJobTest</b>  </a></td><td class="numi">1</td><td>1497588648740</td><td class="numi">74</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.SecurityQuestionsPageTest<td><a href="#m83"><b>validateSecurityQuestionsPageTest</b>  </a></td><td class="numi">1</td><td>1497588607641</td><td class="numi">5110</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.InvoicePageTest<td><a href="#m84"><b>verifyCreateInvoicePageTest</b>  </a></td><td class="numi">1</td><td>1497588640652</td><td class="numi">8065</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m85"><b>verifyFLDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1497588622986</td><td class="numi">226</td></tr>
+<tr class="passedodd"><td rowspan="3">com.guru.testing.page.WorkroomPageTest<td><a href="#m86"><b>verifyFLStatusUpdatesTabTest</b>  </a></td><td class="numi">1</td><td>1497588637703</td><td class="numi">2884</td></tr><tr class="passedodd"><td><a href="#m87"><b>verifyFLWorkroomPageTest</b>  </a></td><td class="numi">1</td><td>1497588631147</td><td class="numi">214</td></tr><tr class="passedodd"><td><a href="#m88"><b>verifyFileAddedPublicFFTest</b>  </a></td><td class="numi">1</td><td>1497588634031</td><td class="numi">987</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.InvoicePageTest<td><a href="#m89"><b>verifyInvoicePageTest</b>  </a></td><td class="numi">1</td><td>1497588653044</td><td class="numi">7747</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m90"><b>verifyLoginPageTest</b>  </a></td><td class="numi">1</td><td>1497588603014</td><td class="numi">127</td></tr>
+<tr class="passedeven"><td rowspan="2">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m91"><b>verifyPhoneVerificationPageTest</b>  </a></td><td class="numi">1</td><td>1497588612753</td><td class="numi">5123</td></tr><tr class="passedeven"><td><a href="#m92"><b>verifySkipThisForNowLinkTest</b>  </a></td><td class="numi">1</td><td>1497588617877</td><td class="numi">5108</td></tr>
+<tr><th colspan="4">5.5 Log out FL &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m93"><b>signOutFlTest</b>  </a></td><td class="numi">1</td><td>1497588660817</td><td class="numi">5019</td></tr>
+<tr><th colspan="4">6. Login as EMP. Go to workroom, and verify outstanding invoice amount &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m94"><b>clickRandomJobnameWorkroomTest</b>  </a></td><td class="numi">1</td><td>1497588688335</td><td class="numi">2871</td></tr>
+<tr class="passedeven"><td rowspan="3">com.guru.testing.page.LoginPageTest<td><a href="#m95"><b>clickSignInButtonTest</b>  </a></td><td class="numi">1</td><td>1497588666206</td><td class="numi">6543</td></tr><tr class="passedeven"><td><a href="#m96"><b>enterEmailOrUsernameTest</b>  </a></td><td class="numi">1</td><td>1497588665976</td><td class="numi">138</td></tr><tr class="passedeven"><td><a href="#m97"><b>enterPasswordTest</b>  </a></td><td class="numi">1</td><td>1497588666115</td><td class="numi">91</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.WorkroomPageTest<td><a href="#m98"><b>getOutstandingInvAmountTest</b>  </a></td><td class="numi">1</td><td>1497588691994</td><td class="numi">30</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.SecurityQuestionsPageTest<td><a href="#m99"><b>validateSecurityQuestionsPageTest</b>  </a></td><td class="numi">1</td><td>1497588672750</td><td class="numi">5115</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.DashboardPageTest<td><a href="#m100"><b>verifyEMPDashboardPageTest</b>  </a></td><td class="numi">1</td><td>1497588688087</td><td class="numi">248</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.WorkroomPageTest<td><a href="#m101"><b>verifyEMPWorkroomPageTest</b>  </a></td><td class="numi">1</td><td>1497588691208</td><td class="numi">786</td></tr>
+<tr class="passedodd"><td rowspan="1">com.guru.testing.page.LoginPageTest<td><a href="#m102"><b>verifyLoginPageTest</b>  </a></td><td class="numi">1</td><td>1497588665851</td><td class="numi">124</td></tr>
+<tr class="passedeven"><td rowspan="1">com.guru.testing.page.WorkroomPageTest<td><a href="#m103"><b>verifyOutstandingInvAmountTest</b>  </a></td><td class="numi">1</td><td>1497588692025</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="2">com.guru.testing.page.PhoneVerificationPageTest<td><a href="#m104"><b>verifyPhoneVerificationPageTest</b>  </a></td><td class="numi">1</td><td>1497588677866</td><td class="numi">5117</td></tr><tr class="passedodd"><td><a href="#m105"><b>verifySkipThisForNowLinkTest</b>  </a></td><td class="numi">1</td><td>1497588682984</td><td class="numi">5102</td></tr>
+</table>
+<h1>1. Login as Employer. And click 'Post a Job'.</h1>
+<a id="m1"></a><h2>com.guru.testing.page.LaunchApplicationPageTest:navigateToUrlTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">https://qa.guru.com/login.aspx</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>com.guru.testing.page.DashboardPageTest:clickPostAJobTopNavTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.guru.testing.page.LoginPageTest:enterPasswordTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.guru.testing.page.LoginPageTest:verifyLoginPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>com.guru.testing.page.LoginPageTest:clickSignInButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>com.guru.testing.page.DashboardPageTest:verifyEMPDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifySkipThisForNowLinkTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m10"></a><h2>com.guru.testing.page.LoginPageTest:enterEmailOrUsernameTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemployer001@mailinator.com</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>2. Post a featured job.</h1>
+<a id="m11"></a><h2>com.guru.testing.page.DashboardPageTest:clickDashboardTopNavTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m12"></a><h2>com.guru.testing.page.DashboardPageTest:clickRandomJobnamePostedTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m13"></a><h2>com.guru.testing.page.PostAJobPageTest:clickFeatureMyJobTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m14"></a><h2>com.guru.testing.page.PayNowPageTest:verifyPaymentMethodTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">PAY_PAL</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m15"></a><h2>com.guru.testing.page.PostAJobPageTest:clickPostJobButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m16"></a><h2>com.guru.testing.page.PostAJobPageTest:enterKeywordsTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">testing</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m17"></a><h2>com.guru.testing.page.PostAJobPageTest:enterRandomJobTitleTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m18"></a><h2>com.guru.testing.page.PostAJobPageTest:clickWebCategoryTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m19"></a><h2>com.guru.testing.page.HirePageTest:verifyQuotesPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m20"></a><h2>com.guru.testing.page.PostAJobPageTest:enterCountryNameTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">India</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m21"></a><h2>com.guru.testing.page.PayNowPageTest:clickToPayTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m22"></a><h2>com.guru.testing.page.HirePageTest:getTinyURLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m23"></a><h2>com.guru.testing.page.PostAJobPageTest:verifyPostAJobPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m24"></a><h2>com.guru.testing.page.PostAJobPageTest:enterJobDescriptionTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing. Test Project Title, testing.</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m25"></a><h2>com.guru.testing.page.PostAJobPageTest:selectFixedPriceBudgetTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">Under $250</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m26"></a><h2>com.guru.testing.page.PostAJobPageTest:clickCountryRadioButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m27"></a><h2>com.guru.testing.page.PayNowPageTest:verifyJobPostedTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m28"></a><h2>com.guru.testing.page.PayNowPageTest:selectAgreeToPayCheckboxTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m29"></a><h2>com.guru.testing.page.PayNowPageTest:verifyPayForFeaturingJobTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m30"></a><h2>com.guru.testing.page.DashboardPageTest:verifyEMPDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>2.5 Sign out EMP.</h1>
+<a id="m31"></a><h2>com.guru.testing.page.DashboardPageTest:signOutEmployerTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>3. Login as FL. Go to the job posted, and submit quote.</h1>
+<a id="m32"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifySkipThisForNowLinkTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m33"></a><h2>com.guru.testing.page.JobDetailsPageTest:selectAgreementTypeTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">Fixed Price by milestone</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m34"></a><h2>com.guru.testing.page.JobDetailsPageTest:enterMilestonesTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th><th style="padding-left:1em;padding-right:1em">Parameter #2</th><th style="padding-left:1em;padding-right:1em">Parameter #3</th><th style="padding-left:1em;padding-right:1em">Parameter #4</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">1</td>
+<td style="padding-left:.5em;padding-right:2em">Auto Mile 1</td>
+<td style="padding-left:.5em;padding-right:2em">01-12-2018</td>
+<td style="padding-left:.5em;padding-right:2em">50</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m35"></a><h2>com.guru.testing.page.JobDetailsPageTest:clickToSubmitQuoteTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m36"></a><h2>com.guru.testing.page.LoginPageTest:clickSignInButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m37"></a><h2>com.guru.testing.page.LoginPageTest:enterPasswordTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m38"></a><h2>com.guru.testing.page.JobDetailsPageTest:verifyApplyQuotesFormTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m39"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m40"></a><h2>com.guru.testing.page.JobDetailsPageTest:verifyJobDetailsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m41"></a><h2>com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m42"></a><h2>com.guru.testing.page.DashboardPageTest:launchTinyURLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m43"></a><h2>com.guru.testing.page.JobDetailsPageTest:verifyQuoteSubmittedTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m44"></a><h2>com.guru.testing.page.LoginPageTest:verifyLoginPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m45"></a><h2>com.guru.testing.page.DashboardPageTest:verifyFLDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m46"></a><h2>com.guru.testing.page.JobDetailsPageTest:clickApplyTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m47"></a><h2>com.guru.testing.page.LoginPageTest:enterEmailOrUsernameTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">gurufreelancer001@mailinator.com</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>3.5 Log out FL</h1>
+<a id="m48"></a><h2>com.guru.testing.page.DashboardPageTest:signOutFlTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>4. Login as EMP. And Hire the FL. go to Workroom, and verify navigation tabs in it. Go to File folder, and added file(s) </h1>
+<a id="m49"></a><h2>com.guru.testing.page.WorkroomPageTest:clickSelectFilesTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m50"></a><h2>com.guru.testing.page.LoginPageTest:enterPasswordTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m51"></a><h2>com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m52"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyEMPStatusUpdatesTabTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m53"></a><h2>com.guru.testing.page.HirePageTest:clickWorkRoomLinkTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m54"></a><h2>com.guru.testing.page.WorkroomPageTest:clickFileFoldersEMPTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m55"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifySkipThisForNowLinkTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m56"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m57"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyFileAddedPublicFFTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">img1.jpg</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m58"></a><h2>com.guru.testing.page.WorkroomPageTest:clickAddFilesFFTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m59"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyFileFoldersTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m60"></a><h2>com.guru.testing.page.LoginPageTest:clickSignInButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m61"></a><h2>com.guru.testing.page.HirePageTest:verifyQuotesPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m62"></a><h2>com.guru.testing.page.HirePageTest:selectAgreementAckCheckboxTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m63"></a><h2>com.guru.testing.page.WorkroomPageTest:uploadFileTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">C:\TestData\img1.jpg</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m64"></a><h2>com.guru.testing.page.LoginPageTest:enterEmailOrUsernameTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemployer001@mailinator.com</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m65"></a><h2>com.guru.testing.page.HirePageTest:clickHireBtnTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m66"></a><h2>com.guru.testing.page.WorkroomPageTest:clickFinishedTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m67"></a><h2>com.guru.testing.page.LoginPageTest:verifyLoginPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m68"></a><h2>com.guru.testing.page.DashboardPageTest:clickRandomJobnamePostedTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m69"></a><h2>com.guru.testing.page.DashboardPageTest:verifyEMPDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m70"></a><h2>com.guru.testing.page.HirePageTest:clickHireInHirePopupTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>4.5 Log out EMP</h1>
+<a id="m71"></a><h2>com.guru.testing.page.DashboardPageTest:signOutEmployerTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>5. Login as FL. Go to workroom and verify the file uploaded by emp is shown in file folders. Go back to status page, and send invoice.</h1>
+<a id="m72"></a><h2>com.guru.testing.page.LoginPageTest:enterPasswordTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m73"></a><h2>com.guru.testing.page.InvoicePageTest:verifyCreateInvoicePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m74"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifySkipThisForNowLinkTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m75"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyFLWorkroomPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m76"></a><h2>com.guru.testing.page.DashboardPageTest:verifyFLDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m77"></a><h2>com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m78"></a><h2>com.guru.testing.page.DashboardPageTest:clickHiredRandomJobFLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m79"></a><h2>com.guru.testing.page.InvoicePageTest:selectKindOfJobTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">Web, Software & IT</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m80"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyFileAddedPublicFFTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">img1.jpg</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m81"></a><h2>com.guru.testing.page.InvoicePageTest:clickSendInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m82"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyFLStatusUpdatesTabTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m83"></a><h2>com.guru.testing.page.WorkroomPageTest:clickFileFoldersFLTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m84"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m85"></a><h2>com.guru.testing.page.WorkroomPageTest:clickFirstMileSendInvTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m86"></a><h2>com.guru.testing.page.WorkroomPageTest:clickEmployerTabTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m87"></a><h2>com.guru.testing.page.LoginPageTest:verifyLoginPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m88"></a><h2>com.guru.testing.page.InvoicePageTest:copyInvTotalOnCreateInvTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m89"></a><h2>com.guru.testing.page.LoginPageTest:clickSignInButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m90"></a><h2>com.guru.testing.page.InvoicePageTest:clickPreviewInvoiceTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m91"></a><h2>com.guru.testing.page.LoginPageTest:enterEmailOrUsernameTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">gurufreelancer001@mailinator.com</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m92"></a><h2>com.guru.testing.page.InvoicePageTest:verifyInvoicePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>5.5 Log out FL</h1>
+<a id="m93"></a><h2>com.guru.testing.page.DashboardPageTest:signOutFlTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>6. Login as EMP. Go to workroom, and verify outstanding invoice amount</h1>
+<a id="m94"></a><h2>com.guru.testing.page.LoginPageTest:verifyLoginPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m95"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifySkipThisForNowLinkTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m96"></a><h2>com.guru.testing.page.LoginPageTest:clickSignInButtonTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m97"></a><h2>com.guru.testing.page.PhoneVerificationPageTest:verifyPhoneVerificationPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m98"></a><h2>com.guru.testing.page.DashboardPageTest:verifyEMPDashboardPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m99"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyOutstandingInvAmountTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">2.5</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m100"></a><h2>com.guru.testing.page.DashboardPageTest:clickRandomJobnameWorkroomTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m101"></a><h2>com.guru.testing.page.WorkroomPageTest:getOutstandingInvAmountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m102"></a><h2>com.guru.testing.page.WorkroomPageTest:verifyEMPWorkroomPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m103"></a><h2>com.guru.testing.page.SecurityQuestionsPageTest:validateSecurityQuestionsPageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m104"></a><h2>com.guru.testing.page.LoginPageTest:enterEmailOrUsernameTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">guruemployer001@mailinator.com</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m105"></a><h2>com.guru.testing.page.LoginPageTest:enterPasswordTest</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">12345678</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
