@@ -20,12 +20,28 @@ public enum AdminCRMPageObjectMap {
 	ADMIN_CRM_PAGE_EMP_VIEW_CREDIT_CARDS_PLINK("View Credit Cards()"),
 	ADMIN_CRM_PAGE_VIEW_PAYONEER_ACCOUNTS_PLINK("View Payoneer Account ()"),
 	ADMIN_CRM_PAGE_VERIFY_PLINK("Verify"),
+	ADMIN_CRM_PAGE_CREDIT_FL_ACCOUNT_PLINK("Credit Pro Account"),
+	ADMIN_CRM_PAGE_DEBIT_FL_ACCOUNT_PLINK("Debit Pro Account"),
+	ADMIN_CRM_PAGE_CREDIT_EMP_ACCOUNT_PLINK("Credit Emp Account"),
+	ADMIN_CRM_PAGE_DEBIT_EMP_ACCOUNT_PLINK("Debit Emp Account"),
 	ADMIN_CRM_PAGE_MEMBERSHIP_TYPE_DROPDOWN_XPATH("//select[@name='lstMembershipType']"),
 	ADMIN_CRM_PAGE_MEMBERSHIP_DURATION_DROPDOWN_XPATH("//select[@name='lstMembershipDuration']"),
 	ADMIN_CRM_PAGE_MEMBERSHIP_UPGRADE_BUTTON_XPATH("//input[@name='btnChangeMembershipLevel']"),
 	ADMIN_CRM_PAGE_USER_ID_XPATH("((//td//*[contains(text(), 'ID')])[2]/parent::span/parent::td/following-sibling::td)[1]"),
-	ADMIN_CRM_PAGE_USER_EMAIL_XPATH("(//td//*[contains(text(), 'Primary Email')]/parent::span/parent::td/following-sibling::td//a)[1]")
+	ADMIN_CRM_PAGE_USER_EMAIL_XPATH("(//td//*[contains(text(), 'Primary Email')]/parent::span/parent::td/following-sibling::td//a)[1]"),
 	
+	
+	// -------------- CREDIT ACCOUNT ------------------
+	ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_UNPAID_CASH_ACCOUNT_LIST_TABLE_ID("safepayList"),
+	ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_AMOUNT_TO_PAY_TEXTBOX_ID("txtCashAmountToPay"),
+	ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_WIRE_NUMBER_TEXTBOX_ID("txtCashWireNumber"),
+	ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_ACCEPT_BUTTON_XPATH("//input[@value='Accept']"),
+	ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_PAYMENT_SUCCESS_TOAST_MESSAGE_XPATH("//p[contains(@class, 'module_toast')][contains(text(), 'Payment successfully accepted')]"),
+	
+	// ---------------- DEBIT ACCOUNT ------------------
+	ADMIN_CRM_PAGE_AMOUNT_TO_DEBIT_TEXTBOX_ID("DebitAmount"),
+	ADMIN_CRM_PAGE_DEBIT_NOTE_TEXTBOX_ID("DebitNote"),
+	ADMIN_CRM_PAGE_DEBIT_ACCOUNT_NOW_BUTTON_XPATH("//input[@value='Debit Account Now']"),
 	;
 	
 	

@@ -53,7 +53,7 @@
 		<parameter name="revokeRowNum" value="0" />
 		<parameter name="declineRowNum" value="0" />
 		<classes>
-			<class name="com.guru.testing.tests.RefundDeclinePayments" />
+			<class name="com.guru.testing.tests.RevokeDeclinePayments" />
 		</classes>
 	</test>
 

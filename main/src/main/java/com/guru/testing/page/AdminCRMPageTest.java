@@ -42,6 +42,69 @@ public class AdminCRMPageTest {
 		}
 	}
 	
+	@Test
+	@Parameters({"userType", "searchKeyword"})
+	@Documentation(step = "Enter the keyword in search textbox", expected = "Search keyword should be entered in the textbox")
+	public static void enterSearchKeywordTest(String userType, String searchKeyword) throws Exception {
+		ScriptLogger.info();
+		try {
+			if(userType.contains("Freelancer")) {
+				BrowserAction.enterFieldValue(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_FL_INPUT_TEXTBOX_XPATH, searchKeyword);
+			} else if(userType.contains("Employer")) {
+				BrowserAction.enterFieldValue(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_EMP_INPUT_TEXTBOX_XPATH, searchKeyword);
+			}
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters({"userType", "searchBy"})
+	@Documentation(step = "Select searchBy option for user.", expected = "Searchby option should be selected")
+	public static void selectSearchByTest(String userType, String searchBy) throws Exception {
+		ScriptLogger.info();
+		try {
+			if(userType.contains("Freelancer")) {
+				selectFLSearchbyTest(searchBy);
+			} else if(userType.contains("Employer")) {
+				selectEmpSearchbyTest(searchBy);
+			}
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters({"userType"})
+	@Documentation(step = "click Search button.", expected = "Should be able to click")
+	public static void clickSearchBtnTest(String userType) throws Exception {
+		ScriptLogger.info();
+		try {
+			if(userType.contains("Freelancer")) {
+				BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_FL_SEARCH_BUTTON_XPATH);
+			} else if(userType.contains("Employer")) {
+				BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_EMP_SEARCH_BUTTON_XPATH);
+			}
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters({"userType", "searchKeyword"})
+	@Documentation(step = "Verify search results after search is clicked for employer", expected = "Employer History page should be loaded and searched keyword should be present for employer")
+	public static void verifySearchResultsTest(String userType, String searchKeyword) throws Exception {
+		ScriptLogger.info();
+		try {
+			if(userType.contains("Employer")) {
+				verifyEmpSearchResultsTest(searchKeyword);
+			} else if(userType.contains("Freelancer")) {
+				verifyFLSearchResultsTest(searchKeyword);
+			}
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "User History page is not loaded. It's possible also that the user isn't in the database, or there's a need to re-evaluate the search criteria.");
+		}
+	}
 	
 	@Test
 	@Parameters("searchKeyword")
@@ -145,7 +208,8 @@ public class AdminCRMPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserWait.waitUntilPageTitle("Employer History");
-			BrowserWait.waitUntilText("Customer Relations Management - Employer History",searchKeyword, 30);
+			BrowserWait.waitUntilText("Customer Relations Management - Employer History", 30);
+			BrowserWait.waitUntilText(searchKeyword);
 			BrowserWait.waitUntilText("Name / Contact Info","IDs / Sign in Info","Account Status","Employer Statistics","Reward Program","Promo History");
 		} catch (Exception e) {
 			throw new HTMLElementNotFoundException(e,"Employer History page is not loaded");
@@ -162,7 +226,7 @@ public class AdminCRMPageTest {
 			BrowserWait.waitUntilText("Customer Relations Management - Professional History",searchKeyword, 30);
 			BrowserWait.waitUntilText("Name / Contact Info","IDs / Sign in Info","Account Status","Pro Statistics");
 		} catch (Exception e) {
-			throw new HTMLElementNotFoundException(e,"Employer History page is not loaded");
+			throw new HTMLElementNotFoundException(e,"Freelancer History page is not loaded");
 		}
 	}
 		
@@ -242,6 +306,7 @@ public class AdminCRMPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_PAYMENT_TAB_PLINK);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			throw new ScriptException(e);
 		}
@@ -253,10 +318,180 @@ public class AdminCRMPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_PAYMENT_W9_TAB_PLINK);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			throw new ScriptException(e);
 		}
 	}
+	
+	// --------------- CREDIT DEBIT USER METHODS --------------
+	// ------------------------- END --------------------------
+	
+	@Test
+	@Parameters("userType")
+	@Documentation(step = "Click Credit Account for a user", expected = "Credit account link should be clicked")
+	public static void clickCreditAccountTest(String userType) throws Exception {
+		ScriptLogger.info();
+		try {
+			if(userType.contains("Freelancer")) {
+				clickCreditProAccountTest();
+			} else if(userType.contains("Employer")) {
+				clickCreditEmpAccountTest();
+			}
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters("userType")
+	@Documentation(step = "Click Debit Account for a user", expected = "Debit account link should be clicked")
+	public static void clickDebitAccountTest(String userType) throws Exception {
+		ScriptLogger.info();
+		try {
+			if(userType.contains("Freelancer")) {
+				clickDebitProAccountTest();
+			} else if(userType.contains("Employer")) {
+				clickDebitEmpAccountTest();
+			}
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click Credit Account for a Fl", expected = "Credit account link should be clicked")
+	public static void clickCreditProAccountTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_FL_ACCOUNT_PLINK);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_UNPAID_CASH_ACCOUNT_LIST_TABLE_ID, 30);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click Debit Account for a Fl", expected = "Debit account link should be clicked")
+	public static void clickDebitProAccountTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_FL_ACCOUNT_PLINK);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_AMOUNT_TO_DEBIT_TEXTBOX_ID, 30);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_NOTE_TEXTBOX_ID);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click Credit Account for an EMP", expected = "Credit account link should be clicked")
+	public static void clickCreditEmpAccountTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_EMP_ACCOUNT_PLINK);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_UNPAID_CASH_ACCOUNT_LIST_TABLE_ID, 30);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click Debit Account for an EMP", expected = "Debit account link should be clicked")
+	public static void clickDebitEmpAccountTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_EMP_ACCOUNT_PLINK);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_AMOUNT_TO_DEBIT_TEXTBOX_ID, 30);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_NOTE_TEXTBOX_ID);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters("creditAmount")
+	@Documentation(step = "Enter Amount to be credited to the user", expected = "Able to enter data.")
+	public static void enterAmountToCreditTest(String creditAmount) throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.clickAndClear(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_AMOUNT_TO_PAY_TEXTBOX_ID);
+			BrowserAction.enterFieldValue(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_AMOUNT_TO_PAY_TEXTBOX_ID, creditAmount);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters("wireNumber")
+	@Documentation(step = "Enter Wire Transfer related info in the textbox.", expected = "Enter Wire Transfer related info.")
+	public static void enterWireNumberTest(String wire) throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.clickAndClear(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_WIRE_NUMBER_TEXTBOX_ID);
+			BrowserAction.enterFieldValue(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_WIRE_NUMBER_TEXTBOX_ID, wire);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click Accept button.", expected = "Accept should be clicked")
+	public static void clickAcceptBtnTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_ACCEPT_BUTTON_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_CREDIT_ACCOUNT_PAGE_PAYMENT_SUCCESS_TOAST_MESSAGE_XPATH, 60);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters("debitAmount")
+	@Documentation(step = "Enter Debit amount in the textbox.", expected = "Able to enter Debit amount.")
+	public static void enterDebitAmountTest(String debitAmount) throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.clickAndClear(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_AMOUNT_TO_DEBIT_TEXTBOX_ID);
+			BrowserAction.enterFieldValue(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_AMOUNT_TO_DEBIT_TEXTBOX_ID, debitAmount);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Parameters("debitNote")
+	@Documentation(step = "Enter Debit amount in the textbox.", expected = "Able to enter Debit amount.")
+	public static void enterDebitNoteTest(String note) throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.clickAndClear(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_NOTE_TEXTBOX_ID);
+			BrowserAction.enterFieldValue(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_NOTE_TEXTBOX_ID, note);
+		} catch (Exception e) {
+			throw new ScriptException(e);
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click 'Debit Account Now' button.", expected = "Should be  able to click")
+	public static void clickDebitAccountNowTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(AdminCRMPageObjectMap.ADMIN_CRM_PAGE_DEBIT_ACCOUNT_NOW_BUTTON_XPATH);
+		} catch (Exception e) {
+			throw new ApplicationException(e, "Unable to click Debit Account now button.");
+		}
+		try {
+			BrowserWait.waitUntilText("! SUCCESS", 60);
+			BrowserWait.waitUntilText("Account Debited");
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "Couldn't verify account was debited. Possible Application issue.");
+		}
+	}
+	
+	// ------------------------- END --------------------------
 	
 	@Test
 	@Documentation(step = "Click View E-check Accounts for a user", expected = " View E-check Accounts should be clicked")
