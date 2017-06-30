@@ -2,7 +2,8 @@ package com.guru.testing.objectmap;
 
 public enum LoginPageObjectMap {
 	
-	LOGIN_PAGE_SIGN_IN_BUTTON_ID("ctl00_ContentPlaceHolder1_btnLoginAccount_btnLoginAccount_Button"),
+	//LOGIN_PAGE_SIGN_IN_BUTTON_ID("ctl00_ContentPlaceHolder1_btnLoginAccount_btnLoginAccount_Button"),
+	LOGIN_PAGE_SIGN_IN_BUTTON_XPATH("//input[@value='Sign In']"),
 	LOGIN_PAGE_EMAIL_USERNAME_TEXT_XPATH("//label[contains(text(),'Email or Username')]"),
 	LOGIN_PAGE_PASSWORD_TEXT_XPATH("//label[contains(text(),'Password')]"),
 	LOGIN_PAGE_EMAIL_VALID_TEXTBOX_ID("ctl00_ContentPlaceHolder1_ucLogin_txtUserName_txtUserName_TextBox"),

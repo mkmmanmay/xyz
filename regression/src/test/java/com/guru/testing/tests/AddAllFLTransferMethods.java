@@ -15,6 +15,7 @@ public class AddAllFLTransferMethods {
 		PaymentsInvoicePageTest.verifyFLInvoicePageTest();
 		PaymentsTransferPageTest.clickTransferMethodsTabTest();
 		PaymentsTransferPageTest.verifyTransferMethodsPageTest();
+		PaymentsTransferPageTest.removeAllPayMethodsTest();
 	}
 	
 	/*@Test(dependsOnMethods = { "goToFLPaymentsTest" })
@@ -41,9 +42,9 @@ public class AddAllFLTransferMethods {
 		AddWireTransferOnFLPayments.verifyWireTransferAdded();
 	}*/
 	
-	/*@Test(dependsOnMethods = { "goToFLPaymentsTest" })
+	@Test(dependsOnMethods = { "goToFLPaymentsTest" })
 	@Parameters({"firstName", "lastName", "email", "birthMonth", "birthYear", "country", "payoneerAddress", "city", "zip", "phoneNo",
-		"payoneerPass", "securityAns", "idNumber", "payoneerApproveUrl", "title"})
+		"payoneerPass", "securityAns", "idNumber", "title", "payoneerApproveUrl"})
 	public static void addPayoneerTestFL(String firstName, String lastName, String email, String birthMonth, String birthYear, 
 			 String country, String payoneerAddress, String city, String zip, String phoneNo, String pass, String securityAns
 			 , String idNumber, String title, String payoneerApproveUrl) throws Exception {
@@ -54,9 +55,9 @@ public class AddAllFLTransferMethods {
 		AddPayoneerOnFLPayments.finalizePayoneerDetails(idNumber);
 		AddPayoneerOnFLPayments.verifyPayoneerMethod(title, payoneerApproveUrl);
 		AddPayoneerOnFLPayments.verifyPayoneerIsAdded();
-	}*/
+	}
 	
-	@Test(dependsOnMethods = { "goToFLPaymentsTest" })
+	/*@Test(dependsOnMethods = { "goToFLPaymentsTest" })
 	@Parameters({"visaNumber", "visaMonth", "visaYear", "visaCvv", "mcNumber", "mcMonth", "mcYear", "mcCvv", 
 		"amexNumber", "amexMonth", "amexYear", "amexCvv"})
 	public static void addCreditCardsFLTest(String visaNumber, String visaMonth, String visaYear, String visaCvv,
@@ -66,6 +67,6 @@ public class AddAllFLTransferMethods {
 		AddCreditCardsFLPayments.addMasterCard(mcNumber, mcMonth, mcYear, mcCvv);
 		AddCreditCardsFLPayments.addAMEX(amexNumber, amexMonth, amexYear, amexCvv);
 		
-	}
+	}*/
 	
 }

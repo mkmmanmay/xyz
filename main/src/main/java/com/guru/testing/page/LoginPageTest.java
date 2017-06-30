@@ -9,6 +9,7 @@ import com.guru.framework.testing.logger.ScriptLogger;
 import com.guru.framework.testing.objects.documentation.Documentation;
 import com.guru.framework.testing.objects.exceptions.HTMLElementNotFoundException;
 import com.guru.framework.testing.objects.exceptions.ScriptException;
+import com.guru.framework.testing.selenium.WebDriverAction;
 import com.guru.testing.objectmap.LoginPageObjectMap;
 
 public class LoginPageTest {
@@ -25,7 +26,7 @@ public class LoginPageTest {
 			BrowserWait.waitUntilText("Sign in to Guru");			
 			verifyEmailOrUsernameTextTest();
 			verifyPasswordTextTest();
-			BrowserWait.waitUntilElementIsDisplayed(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_ID);
+			BrowserWait.waitUntilElementIsDisplayed(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_XPATH);
 		} catch (Exception e) {
 			throw new  HTMLElementNotFoundException(e,"Login page is elements not loaded in time. ");
 		}
@@ -85,9 +86,15 @@ public class LoginPageTest {
 	public static void clickSignInButtonTest() throws Exception {
 		ScriptLogger.info();
 		try {
-			BrowserAction.click(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_ID);
+			BrowserAction.click(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_XPATH);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			throw new ScriptException(e);
+		}
+		try {
+			BrowserAction.click(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_XPATH);
+		} catch (Exception e) {
+			ScriptLogger.debug("Sign In wasn't required to be clicked twice to proceed.");
 		}
 	}
 }

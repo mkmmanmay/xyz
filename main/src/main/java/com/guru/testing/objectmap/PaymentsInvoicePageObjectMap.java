@@ -12,7 +12,12 @@ public enum PaymentsInvoicePageObjectMap {
 	PAYMENTS_INVOICE_PAGE_FL_TRANSACTIONS_PLINK("Transactions"),
 	PAYMENTS_INVOICE_PAGE_1099_REPORTS_PLINK("1099 Reports"),
 	PAYMENTS_INVOICE_PAGE_FL_1099_TAX_FORMS_PLINK("1099 Tax Forms"),
-	PAYMENTS_INVOICE_PAGE_INVOICE_TABLE_ID("invoiceList");	
+	PAYMENTS_INVOICE_PAGE_INVOICE_TABLE_ID("invoiceList"),
+	
+	PAYMENTS_INVOICE_PAGE_INVOICE_ID_HYPERLINKS_XPATH("//td[contains(@class, 'invoiceList_details')]//div[@class='identityName']//a"),
+	PAYMENTS_INVOICE_PAGE_INVOICE_IDS_PAYMENT_STATUS_XPATH("//td[contains(@class, 'invoiceList_status')]"),
+	
+	;
 
 	
 	private final String value;

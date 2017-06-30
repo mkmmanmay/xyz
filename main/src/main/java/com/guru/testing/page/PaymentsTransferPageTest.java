@@ -39,7 +39,7 @@ public class PaymentsTransferPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserWait.waitForPageToBeLoaded();
-			BrowserWait.waitUntilText("Withdraw with: ", 30);
+			BrowserWait.waitUntilText("Withdraw with: ", 60);
 			BrowserWait.waitUntilTextVisible("Bank account", "PayPal", "Wire Transfer", "Payoneer" );
 			BrowserWait.waitUntilTextVisible(" Pay with: ", "Bank account", "Credit card", "PayPal");
 		} catch (Exception e) {
@@ -506,7 +506,7 @@ public class PaymentsTransferPageTest {
 			} catch (Exception e) {
 				throw new ScriptException("Unable to get payment title.");
 			}
-			if(paymentType.equals("Bank Account")) {
+			if(paymentType.equals("Prepaid MasterCard")) {
 				if(!text.get(i).findElement(By.className("avatarinfo")).findElement(By.className("pending")).getText().equals("Pending Verification")) {
 					throw new ApplicationException("Payoneer isn't in pending/processing state.");
 				}
@@ -526,8 +526,9 @@ public class PaymentsTransferPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserAction.openBrowser(url+AdminCRMPageTest.userID);
+			Thread.sleep(2000);
 		} catch (Exception e) {
-			throw new ScriptException("Unable to get payment methods added.");
+			throw new ScriptException("Unable to launch Payoneer Approve URL.");
 		}
 	}
 	
@@ -779,6 +780,7 @@ public class PaymentsTransferPageTest {
 	@Documentation(step = "Remove all payment methods added.", expected = "Able to remove payment methods.")
 	public static void removeAllPayMethodsTest() throws Exception {
 		ScriptLogger.info();
+		BrowserWait.waitUntilElementIsDisplayed(PaymentsTransferPageObjectMap.PAYMENTS_PAGE_TRANSFER_METHODS_REMOVE_LINK_XPATH, 10);
 		int j, k;
 		try {
 			List<WebElement> remove = BrowserAccess.getElements(PaymentsTransferPageObjectMap.PAYMENTS_PAGE_TRANSFER_METHODS_REMOVE_LINK_XPATH);

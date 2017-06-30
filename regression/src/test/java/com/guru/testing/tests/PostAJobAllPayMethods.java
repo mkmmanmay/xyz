@@ -20,12 +20,18 @@ public class PostAJobAllPayMethods {
 		DashboardPageTest.clickPostAJobTopNavTest();
 	}
 	
-	@Test(dependsOnMethods = "goToPostAJobPageTest")
+	@Test(dependsOnMethods = "goToPostAJobPageTest", priority = 1)
+	@Documentation(step="verify Post a Job page.", expected="Verification successful.")
+	public static void verifyPostAJobPageTest() throws Exception {
+		PostAJobPageTest.verifyPostAJobPageTest();
+	}
+	
+	@Test(dependsOnMethods = "goToPostAJobPageTest", priority = 2)
 	@Parameters({"jobDetails", "category", "skill", "fixedBudget"})
 	@Documentation(step="Enter valid Job details, and click 'Post Job' button.", expected="User is able to enter Job details, and clicks on 'Post Job' button,")
 	public static void enterJobDetailsTest(String jobDetails, String category,
 			String skill, String budget) throws Exception {
-		PostAJobPageTest.verifyPostAJobPageTest();
+		
 		PostAJobPageTest.enterRandomJobTitleTest();
 		PostAJobPageTest.enterJobDescriptionTest(jobDetails);
 		PostAJobPageTest.clickCategoryTest(category);

@@ -36,7 +36,6 @@ public class PayNowPageTest {
 			Thread.sleep(5000);
 			BrowserWait.waitUntilText("Apply your available funds", 10);
 			BrowserWait.waitUntilText("Cash Account");
-			BrowserWait.waitUntilText("Amount Due");
 			
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_AGREE_TO_PAY_CHECKBOX_ID);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAY_BUTTON_DISABLED_XPATH);
@@ -328,7 +327,7 @@ public class PayNowPageTest {
 	public static void verifyBidPurchaseSuccessTest(int bidsAdded) throws Exception {
 		ScriptLogger.info();
 		try {
-			BrowserWait.waitUntilTextVisible("Payment Receipt", 60);
+			BrowserWait.waitUntilText("Payment Receipt", 60);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_RECEIPT_DIV_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PRINT_RECEIPT_PLINK);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_TRANSACTION_ID_TEXT_XPATH);

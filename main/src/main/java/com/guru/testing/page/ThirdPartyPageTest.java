@@ -1,6 +1,9 @@
 package com.guru.testing.page;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,6 +14,8 @@ import com.guru.framework.testing.browser.BrowserWait;
 import com.guru.framework.testing.logger.ScriptLogger;
 import com.guru.framework.testing.objects.documentation.Documentation;
 import com.guru.framework.testing.objects.exceptions.ApplicationException;
+import com.guru.framework.testing.objects.exceptions.ScriptException;
+import com.guru.framework.testing.selenium.WebDriverAction;
 import com.guru.testing.objectmap.ThirdPartyPageObjectMap;
 
 public class ThirdPartyPageTest {
@@ -304,7 +309,9 @@ public class ThirdPartyPageTest {
 	public static void clickNextGettingStartedPageTest() throws Exception {
 		ScriptLogger.info();
 		try {
+			Thread.sleep(3000);
 			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_PERSONAL_DETAILS_NEXT_BUTTON_ID);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
@@ -410,6 +417,7 @@ public class ThirdPartyPageTest {
 	public static void clickNextContactDetailsPageTest() throws Exception {
 		ScriptLogger.info();
 		try {
+			Thread.sleep(3000);
 			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_CONTACT_DETAILS_NEXT_BUTTON_ID);
 		} catch (Exception e) {
 			throw new Exception(e);
@@ -488,6 +496,7 @@ public class ThirdPartyPageTest {
 	public static void clickNextSecurityDetailsPageTest() throws Exception {
 		ScriptLogger.info();
 		try {
+			Thread.sleep(3000);
 			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_SECURITY_DETAILS_NEXT_BUTTON_ID);
 		} catch (Exception e) {
 			throw new Exception(e);
@@ -502,12 +511,10 @@ public class ThirdPartyPageTest {
 			BrowserWait.waitForPageToBeLoaded();
 			Thread.sleep(5000);
 			BrowserAction.switchToFrame("iframMR");
-			//BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ID_TYPE_DROPDOWN_ID);
 			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ID_NUMBER_TEXTBOX_ID);
-			//BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_COUNTRY_OF_ISSUE_DROPDOWN_ID);
-			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX1_XPATH);
-			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX2_XPATH);
-			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX3_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX1_ID);
+			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX2_ID);
+			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX3_ID);
 			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ORDER_BUTTON_ID);
 		} catch (Exception e) {
 			//throw new Exception(e);
@@ -533,15 +540,24 @@ public class ThirdPartyPageTest {
 		ScriptLogger.info();
 		try {
 			Thread.sleep(2000);
-			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX1_XPATH);
-			Thread.sleep(3000);
-			//Thread.sleep(2000);
-			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX2_XPATH);
+			JavascriptExecutor js = (JavascriptExecutor)WebDriverAction.getDriver();
+			WebElement check1 = BrowserAction.getElement(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX1_ID);
+			js.executeScript("return document.getElementById('SignDocument_4_2').style.position = 'relative';");
+			js.executeScript("return document.getElementById('SignDocument_4_2').style.opacity = 1;");
+			check1.click();
 			Thread.sleep(2000);
-			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX3_XPATH);
+			WebElement check2 = BrowserAction.getElement(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX2_ID);
+			js.executeScript("return document.getElementById('SignDocument_3_13').style.position = 'relative';");
+			js.executeScript("return document.getElementById('SignDocument_3_13').style.opacity = 1;");
+			check2.click();
+			Thread.sleep(2000);
+			WebElement check3 = BrowserAction.getElement(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_I_AGREE_CHECKBOX3_ID);
+			js.executeScript("return document.getElementById('SignDocument_207').style.position = 'relative';");
+			js.executeScript("return document.getElementById('SignDocument_207').style.opacity = 1;");
+			check3.click();
 			Thread.sleep(2000);
 		} catch (Exception e) {
-			//throw new Exception(e);
+			throw new ScriptException("Couldn't click on checkboxes.");
 		}
 	}
 	
@@ -551,6 +567,7 @@ public class ThirdPartyPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserAction.click(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ORDER_BUTTON_ID);
+			Thread.sleep(2000);
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
@@ -561,8 +578,10 @@ public class ThirdPartyPageTest {
 	public static void verifyPayoneerOrderSuccessTest() throws Exception {
 		ScriptLogger.info();
 		try {
-			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ORDER_SUCCESS_CONGRATULATIONS_XPATH, 20);
-			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ORDER_SUCCESS_REVIEW_IN_PROCESS_XPATH);
+			BrowserWait.waitForPageToBeLoaded();
+			BrowserAction.switchToDefaultContent();
+			BrowserWait.waitUntilText("Congratulations!");
+			BrowserWait.waitUntilElementIsDisplayed(ThirdPartyPageObjectMap.PAYONEER_PAGE_PREPAID_CARD_SET_UP_PAGE_ORDER_SUCCESS_REVIEW_IN_PROCESS_XPATH, 10);
 			
 		} catch (Exception e) {
 			throw new Exception(e);

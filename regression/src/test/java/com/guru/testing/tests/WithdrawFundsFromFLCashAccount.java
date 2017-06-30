@@ -13,8 +13,6 @@ public class WithdrawFundsFromFLCashAccount {
 	//private static Float WIRE_TRANSFER_AMOUNT=(float) 0.00;
 	//private static Float PAYPAL_AMOUNT=(float) 0.00;
 	
-	
-	
 	@Test(alwaysRun=true )
 	@Documentation(step="Click Withdraw link on the dashboard",expected="Verify Withraw pop up is loaded")
 	public static void clickWithdrawLinkTest() throws Exception {
@@ -23,12 +21,12 @@ public class WithdrawFundsFromFLCashAccount {
 		CashAccPageTest.verifyWithdrawCashPopUp();
 	}
 	
-		@Test(dependsOnMethods = "clickWithdrawLinkTest")	
+	@Test(dependsOnMethods = "clickWithdrawLinkTest")	
 	@Parameters({"eCheckAmount","option1","eCheckRowNum"})
 	@Documentation(step="Enter Amount and Select E check option in the withdrawal pop up",expected="Verify no fee is charged")
-	public static void enterAmountSelectEcheckVerifyNoFeeTest(Float eCheckAmount,String option1, int eCheckRowNum) throws Exception {
-		CashAccPageTest.enterAmountByRow(eCheckAmount,eCheckRowNum);	
-		CashAccPageTest.selectSendToOptionAs(option1,eCheckRowNum);
+	public static void enterAmountSelectEcheckVerifyNoFeeTest(Float eCheckAmount, String option1, int eCheckRowNum) throws Exception {
+		CashAccPageTest.enterAmountByRow(eCheckAmount, eCheckRowNum);	
+		CashAccPageTest.selectSendToOptionAs(option1, eCheckRowNum);
 		CashAccPageTest.verifyNoWithdrawalFee(eCheckRowNum);
 	}
 	

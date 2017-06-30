@@ -1,13 +1,21 @@
 package com.guru.testing.page;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.guru.framework.testing.browser.BrowserAccess;
 import com.guru.framework.testing.browser.BrowserAction;
 import com.guru.framework.testing.browser.BrowserWait;
 import com.guru.framework.testing.logger.ScriptLogger;
 import com.guru.framework.testing.objects.documentation.Documentation;
 import com.guru.framework.testing.objects.exceptions.ApplicationException;
 import com.guru.framework.testing.objects.exceptions.HTMLElementNotFoundException;
+import com.guru.framework.testing.objects.exceptions.ScriptException;
+import com.guru.testing.objectmap.InvoicePageObjectMap;
 import com.guru.testing.objectmap.PaymentsInvoicePageObjectMap;
 
 public class PaymentsInvoicePageTest {
@@ -21,7 +29,7 @@ public class PaymentsInvoicePageTest {
 		try {
 			BrowserWait.waitForPageToBeLoaded();
 			BrowserWait.waitUntilPageTitle("Invoices - Employers - Guru");
-			BrowserWait.waitUntilText("Payments");
+			BrowserWait.waitUntilText("Payments", 30);
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_TAB_PLINK);
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_TABLE_ID);
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_BODY_ID);	
@@ -116,4 +124,52 @@ public class PaymentsInvoicePageTest {
 	}
 		
 	// --------------------------------- END -------------------------------------
+	
+	@Test
+	@Documentation(step = "Click on the Invoice ID for invoice details.", expected = "Able to click.")
+	public static void clickInvoiceIDTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			List<WebElement> invoices = BrowserAccess.getElements(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_ID_HYPERLINKS_XPATH);
+			for(WebElement inv: invoices) {
+				String id = inv.getText();
+				if(id.equals("Invoice ID: "+InvoicePageTest.invoiceID)) {
+					inv.click();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Invoice ID not found in the Invoice Summary page.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Verify invoice status refunded against the Invoice.", expected = "Able to verify.")
+	public static void verifyInvoiceStatusIsRefundedTest() throws Exception {
+		ScriptLogger.info();
+		int count = 0;
+		String stat;
+		try {
+			List<WebElement> invoices = BrowserAccess.getElements(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_ID_HYPERLINKS_XPATH);
+			for(WebElement inv: invoices) {
+				String id = inv.getText();
+				if(id.equals("Invoice ID: "+InvoicePageTest.invoiceID)) {
+					break;
+				}
+				else {
+					count++;
+				}
+			}
+			
+			List<WebElement> status = BrowserAccess.getElements(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_IDS_PAYMENT_STATUS_XPATH);
+			stat = status.get(count).findElement(By.cssSelector(".ng-scope.ng-binding")).getText();
+			
+		} catch (Exception e) {
+			throw new ScriptException("Unable to get payment status of the invoice");
+		}
+		if(!stat.contains("Refunded")) {
+			throw new ApplicationException("Status of the Invoice is not 'Refunded'.");
+		}
+	}
+	
 }

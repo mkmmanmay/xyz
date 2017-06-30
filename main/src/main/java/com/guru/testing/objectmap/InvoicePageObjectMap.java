@@ -14,6 +14,8 @@ public enum InvoicePageObjectMap {
 	INVOICE_PAGE_FL_1099_TAX_FORM_TAB_PLINK("1099 Tax Forms"),
 	INVOICE_PAGE_FL_TRANSACTION_TAB_PLINK("Transactions"),
 	
+	
+	
 	// -------- VIEW & PAY --------
 	
 	INVOICE_PAGE_FIRST_VIEW_AND_PAY_XPATH("(//table[@id='invoiceList']//a[@class=' module_btn secondary_btn'])[1]"),
@@ -27,6 +29,9 @@ public enum InvoicePageObjectMap {
 	INVOICE_PAGE_INVOICE_DETAILS_PRINT_BUTTON_XPATH("//button[contains(text(), 'Print')]"),
 	INVOICE_PAGE_INVOICE_DETAILS_PAY_INVOICE_BUTTON_XPATH("//button[contains(text(), 'Pay Invoice')]"),
 	INVOICE_PAGE_INVOICE_DETAILS_INVOICE_TOTAL_AMOUNT_XPATH("//li[@class='grandTotal']//div[@id='txtInvoiceTotalView']"),
+	INVOICE_PAGE_INVOICE_DETAILS_ARCHIVE_BUTTON_XPATH("//button[contains(text(), 'Archive')]"),
+	INVOICE_PAGE_INVOICE_DETAILS_ISSUE_REFUND_BUTTON_XPATH("//a[contains(text(), 'Issue Refund')]"),
+	
 	
 	// ------------------ SEND INVOICE ----------
 	INVOICE_PAGE_CREATE_INVOICE_INVOICE_BUILDER_SECTION_ID("invoiceBuilder"),
@@ -34,9 +39,17 @@ public enum InvoicePageObjectMap {
 	INVOICE_PAGE_CREATE_INVOICE_INVOICE_DETAILS_TOTAL_ID("txtInvoiceTotal"),
 	INVOICE_PAGE_CREATE_INVOICE_WHAT_KIND_OF_JOB_IS_THIS_DROPDOWN_SELECT_XPATH("//select[contains(@id, 'ddlInvocieCategory_Select')]"),
 	INVOICE_PAGE_CREATE_INVOICE_PREVIEW_INVOICE_BUTTON_XPATH("//a[contains(text(), 'Preview Invoice')]"),
+	INVOICE_PAGE_CREATE_INVOICE_PREVIEW_INVOICE_INVOICE_ID_TEXT_XPATH("//span[contains(@id, 'invoiceId')]"),
+	
 	INVOICE_PAGE_CREATE_INVOICE_PREVIEW_INVOICE_PREVIEW_HEADER_ID("previewHeader"),
 	INVOICE_PAGE_CREATE_INVOICE_PREVIEW_INVOICE_SEND_INVOICE_BUTTON_ID("SendInvoiceMS"),
 	
+	// -------------------- ISSUE REFUND --------------
+	INVOICE_PAGE_ISSUE_REFUND_SECTION_EMPLOYER_SHOULD_RECEIVE_TEXTBOX_XPATH("//input[contains(@id, 'txtRefundAmount')]"),
+	INVOICE_PAGE_ISSUE_REFUND_SECTION_ISSUE_REFUND_BUTTON_XPATH("//input[contains(@id, 'InvoiceRefund_btnIssueRefund')]"),
+	INVOICE_PAGE_ISSUE_REFUND_SECTION_INVOICE_AMOUNT_TEXT_XPATH("//ul[@class='module_list tight']//li[2]"),
+	INVOICE_PAGE_ISSUE_REFUND_SECTION_CONFIRM_REFUND_BUTTON_XPATH("//input[@value='Confirm Refund']"),
+	INVOICE_PAGE_ISSUE_REFUND_CONFIRMATION_TOAST_MESSAGE_XPATH("//p[@class='module_toast toast_top'][contains(text(), 'Refund Issued!')]"),
 	;	
 
 	

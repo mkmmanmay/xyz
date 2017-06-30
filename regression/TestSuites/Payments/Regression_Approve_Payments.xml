@@ -11,7 +11,7 @@
 	<parameter name="implicitWaitTime" value="10" />
 	<parameter name="reportName" value="APPROVE_PAYMENT" />
 	<parameter name="reportDetailLevel" value="43" />
-	<parameter name="url" value="https://qa.guru.com/admin/login.aspx" />
+	<parameter name="url" value="https://qa-admin.guru.com/admin/login.aspx" />
 	<parameter name="username" value="small" />
 	<parameter name="password" value="password" />
 

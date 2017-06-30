@@ -1,6 +1,5 @@
 package com.guru.testing.page;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -73,7 +72,7 @@ public class AdminManageTestUsersPageTest {
 	public static void goToInfoPageByIndexTest(int index) throws Exception {
 		ScriptLogger.info();
 		try {
-			Thread.sleep(7000);
+			Thread.sleep(10000);
 			List<WebElement> row = BrowserAction.getElements(AdminManageTestUsersPageObjectMap.ADMIN_MANAGE_USERS_PAGE_USERS_LIST_ROWS_XPATH);
 			List<WebElement> columns = row.get(index).findElements(By.tagName("td"));
 			columns.get(3).click();

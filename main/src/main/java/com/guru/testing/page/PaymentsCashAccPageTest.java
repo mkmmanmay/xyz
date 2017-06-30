@@ -31,7 +31,7 @@ public class PaymentsCashAccPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserWait.waitForPageToBeLoaded();
-			BrowserWait.waitUntilTextVisible("Balance:" );
+			BrowserWait.waitUntilTextVisible("Balance:", 30);
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsCashAccPageObjectMap.PAYMENTS_PAGE_CASH_ACCOUNT_WITHDRAW_BUTTON_XPATH);
 		} catch (Exception e) {
 			throw new HTMLElementNotFoundException(e, "Unable to find verify Transfer Methods page");

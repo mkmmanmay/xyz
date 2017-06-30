@@ -33,14 +33,14 @@
 		<parameter name="birthMonth" value="Feb"/>
 		<parameter name="birthYear" value="1993"/>
 		<parameter name="country" value="Hungary"/>
-		<parameter name="payoneerAddress" value="21, Baker St"/>
+		<parameter name="payoneerAddress" value="21B, Baker St"/>
 		<parameter name="city" value="Hungry"/>
 		<parameter name="zip" value="M1M2M3"/>
 		<parameter name="phoneNo" value="12345678"/>
 		<parameter name="payoneerPass" value="guru123"/> <!-- Password has to be alphaNumeric -->
 		<parameter name="securityAns" value="guru123"/>
 		<parameter name="idNumber" value="12345678"/>
-		<parameter name="payoneerApproveUrl" value="http://qa.guru.com/Services/Payoneer-IPNListener.aspx?APPROVED=true&#38;payeeid="/>
+		<parameter name="payoneerApproveUrl" value="https://qa.guru.com/Services/Payoneer-IPNListener.aspx?APPROVED=true&#38;payeeid="/>
 		<parameter name="visaNumber" value="4111111111111111"/>
 		<parameter name="visaMonth" value="4 - Apr"/>
 		<parameter name="visaYear" value="2032"/>
