@@ -106,17 +106,6 @@ public class JobDetailsPageTest {
 			BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_JOB_DESCRIPTION_XPATH);			
 			BrowserWait.waitUntilText("Ask a question about this job");
 			BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_DIV_ID);
-			BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_TEXT_AREA_ID);
-			try {
-				BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_TEXT_AREA_FOCUSED_XPATH);
-				BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_BUTTON_DISABLED_XPATH);
-				BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_DELETE_ICON_XPATH);	
-			} catch (Exception e) {
-				BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_TEXT_AREA_NOT_FOCUSED_XPATH);
-				BrowserWait.waitUntilElementIsNotDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_BUTTON_DISABLED_XPATH);
-				BrowserWait.waitUntilElementIsNotDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_ASK_QUESTION_DELETE_ICON_XPATH);	
-			}
-					
 			BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_APPLICATION_DETAILS_SECTION_ID);
 			BrowserWait.waitUntilText("Quotes","Premium","Invited","Hired","Invited- Not Applied");
 			BrowserWait.waitUntilElementIsDisplayed(JobDetailsPageObjectMap.JOB_DETAILS_PAGE_QUOTES_BOTTOM_SPAN_ID);

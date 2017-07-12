@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.guru.framework.testing.browser.BrowserAccess;
 import com.guru.framework.testing.browser.BrowserAction;
 import com.guru.framework.testing.browser.BrowserWait;
 import com.guru.framework.testing.logger.ScriptLogger;
@@ -36,7 +37,8 @@ public class PaymentsTransferPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserWait.waitForPageToBeLoaded();
-			BrowserWait.waitUntilTextVisible("Withdraw with: ", "Bank account", "PayPal", "Wire Transfer", "Payoneer" );
+			BrowserWait.waitUntilTextVisible("Withdraw with: ", 30);
+			BrowserWait.waitUntilTextVisible("Bank account", "PayPal", "Wire Transfer", "Payoneer" );
 			BrowserWait.waitUntilTextVisible(" Pay with: ", "Bank account", "Credit card", "PayPal");
 		} catch (Exception e) {
 			throw new HTMLElementNotFoundException(e, "Unable to find verify Transfer Methods page");
@@ -84,4 +86,35 @@ public class PaymentsTransferPageTest {
 			throw new HTMLElementNotFoundException(e, "Couldn't click; or the element was invisible/disabled. Or Remove was unsuccessful.");
 		}
 	}
+	
+	// ----------------------- REMOVE ALL METHODS ----------------------
+	// --------------------------- START -------------------------------
+	@Test
+	@Documentation(step = "Remove all payment methods added.", expected = "Able to remove payment methods.")
+	public static void removeAllPayMethodsTest() throws Exception {
+		ScriptLogger.info();
+		int j, k;
+		try {
+			List<WebElement> remove = BrowserAccess.getElements(PaymentsTransferPageObjectMap.PAYMENTS_PAGE_TRANSFER_METHODS_REMOVE_LINK_XPATH);
+			int size = remove.size();
+			j = size;
+			for(int i = 0; i < size; i++) {
+				remove.get(i).click();
+				BrowserWait.waitUntilElementIsDisplayed(PaymentsTransferPageObjectMap.PAYMENTS_PAGE_TRANSFER_METHODS_CONFIRM_REMOVE_XPATH);
+				BrowserAction.click(PaymentsTransferPageObjectMap.PAYMENTS_PAGE_TRANSFER_METHODS_CONFIRM_REMOVE_XPATH);
+				do {
+					try{
+						List<WebElement> remove1 = BrowserAccess.getElements(PaymentsTransferPageObjectMap.PAYMENTS_PAGE_TRANSFER_METHODS_REMOVE_LINK_XPATH);
+						k = remove1.size();
+					} catch (Exception e) {
+						k = j;
+					}
+				} while (j == k);
+				j--;
+			}
+		} catch (Exception e) {
+			ScriptLogger.debug("No Payment methods added to be removed.");
+		}
+	}
+	// --------------------------- END -------------------------------
 }

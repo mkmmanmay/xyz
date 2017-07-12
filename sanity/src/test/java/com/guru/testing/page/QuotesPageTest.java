@@ -46,18 +46,18 @@ public class QuotesPageTest {
 	
 	
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Click All quotes tab on Quotes page", expected = "All quoptes should be clicked")
 	public static void clickAllQuotesTest() throws Exception {
 		ScriptLogger.info();
 		try {
-			BrowserAction.click(QuotesPageObjectMap.QUOTES_PAGE_ALL_QUOTES_ID);			
+			BrowserAction.click(QuotesPageObjectMap.QUOTES_PAGE_ALL_QUOTES_ID,WebDriverAction.ACTION_STYLE_WEBDRIVER,WebDriverAction.ACTION_STYLE_JAVASCRIPT);			
 		} catch (Exception e) {
 			throw new ScriptException(e);
 		}
 	}
 	
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Verify Random job title is present", expected = "Job title should be present")
 	public static void verifyQuoteIsPresentTest() throws Exception {
 		ScriptLogger.info();
 		try {
@@ -68,8 +68,8 @@ public class QuotesPageTest {
 	}
 	
 	@Test
-	@Documentation(step = "", expected = "")
-	public static void selectJobAppliedByNameTest() throws Exception {
+	@Documentation(step = "Select the random job applied", expected = "Random job posted should be clicked")
+	public static void selectJobAppliedByRandomNameTest() throws Exception {
 		ScriptLogger.info();
 		try {
 		
@@ -77,7 +77,7 @@ public class QuotesPageTest {
 
 			for (WebElement webElement : list) {
 				WebElement element=webElement;
-				if(webElement.getText().contains(PostAJobPageTest.RANDOM_TOKEN)){
+				if(webElement.getText().equals(PostAJobPageTest.RANDOM_JOB_TITLE)){
 					element.click();
 					break;
 				}			
@@ -90,7 +90,7 @@ public class QuotesPageTest {
 	
 	
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Verify quote is loaded", expected = "Quote should be loaded")
 	public static void verifyQuoteLoadedTest() throws Exception {		
 		ScriptLogger.info();
 		try {
@@ -115,7 +115,7 @@ public class QuotesPageTest {
 
 
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Click hide quote", expected = "Quote shoudld be hidden")
 	public static void hideQuoteTest() throws Exception {		
 		ScriptLogger.info();
 		try {
@@ -127,7 +127,7 @@ public class QuotesPageTest {
 
 	@Test
 	@Parameters("messageText")
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Enter Random message in Quote", expected = "Random message should be entered")
 	public static void enterMsgTest(String messageText) throws Exception {
 		ScriptLogger.info();
 		RANDOM_MESSAGE=messageText+StringUtils.generateRandomString(5);
@@ -135,14 +135,14 @@ public class QuotesPageTest {
 	}
 		
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Click to send message", expected = "Message should be sent")
 	public static void clickSendTest() throws Exception {
 		ScriptLogger.info();
 		WorkroomPageTest.clickSendMessageTest();
 	}
 	
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Verify Random message is present", expected = "Message should be present in the message thread")
 	public static void verifyMsgSentThreadTest() throws Exception{
 		ScriptLogger.info();
 		try {			

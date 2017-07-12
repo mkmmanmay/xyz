@@ -20,6 +20,12 @@ public enum CashAccPageObjectMap {
 	CASH_ACCOUNT_PAGE_WITHDRAW_POP_UP_TITLE_ID("addWorkLabel"),
 	CASH_ACCOUNT_PAGE_WITHDRAW_POP_UP_WITHRAW_TO_ANOTHER_ACCOUNT_PLINK("+ Withdraw to another account"),
 	CASH_ACCOUNT_PAGE_WITHDRAW_POP_UP_SEND_TO_DROPDOWN_XPATH("//select[@ng-model='withdraw.destination']"),
+	
+	// ------------- EMP CASH ACCOUNT -----------------
+	CASH_ACCOUNT_PAGE_EMP_TYPE_DROPDOWN_XPATH("(//a[@class='dropToggle']//span[contains(@class, 'active')])[1]"),
+	CASH_ACCOUNT_PAGE_EMP_DATE_DROPDOWN_XPATH("(//a[@class='dropToggle']//span[contains(@class, 'active')])[2]"),
+	CASH_ACCOUNT_PAGE_EMP_ADD_FUNDS_BUTTON_XPATH("//button[contains(text(), ' Add Funds ')]"),
+	CASH_ACCOUNT_PAGE_EMP_BALANCE_TEXT_XPATH("//div[@class='pull-right-absolute']//span"),
 	;
 	
 	private final String value;

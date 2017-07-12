@@ -1,5 +1,6 @@
 package com.guru.testing.page;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -98,10 +99,10 @@ public class DashboardPageTest {
 		}
 	}
 
-	@Test
-	@Parameters("workroomIndex")
+	/********************START--Selecting a job from dashboard********************************/
+
 	@Documentation(step = "Click an active workroom.", expected = "Able to click.")
-	public static void clickEMPWorkroomByIndexTest(int index) throws Exception {		
+	public static void clickEMPWorkroomByIndex(int index) throws Exception {		
 		ScriptLogger.info();
 		try {
 			List<WebElement> workrooms = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_WORKROOM_EMP_JOBS_LIST_XPATH);
@@ -110,11 +111,41 @@ public class DashboardPageTest {
 			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue.");
 		}
 	}
+	
+	@Documentation(step = "Click on the job name on emp woroom" , expected = "Able to click.")
+	public static void clickEmpWorkroomByName(String workroomName) throws Exception {
+		ScriptLogger.info();
+		List<WebElement> jobList;
+		try {
+			jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_WORKROOM_EMP_JOBS_LIST_XPATH);			
+		}  catch (Exception e) {
+			throw new ScriptException("Unable to get elements; possible locator or selenium issue. If not, possible application issue. ");
+		}
+		
+		selectAndClickJob(workroomName,jobList);
+	}
+	
 
-	@Test
+	@Parameters("jobName")
+	@Documentation(step = "Click on the job." , expected = "Able to click.")
+	public static void clickJobUnderQuotes(String name) throws Exception {
+		ScriptLogger.info();
+		List<WebElement> jobList;
+		try {
+			jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_QUOTES_EMP_JOBS_LIST_XPATH);
+			
+		}  catch (Exception e) {
+			throw new ScriptException("Unable to get elements; possible locator or selenium issue. If not, possible application issue. ");
+		}
+		selectAndClickJob(name,jobList);
+	}
+	
+	
+	
+	
 	@Parameters("workroomIndex")
 	@Documentation(step = "Click first active workroom.", expected = "Able to click.")
-	public static void clickFLWorkroomByIndexTest(int index) throws Exception {		
+	public static void clickFLWorkroomByIndex(int index) throws Exception {		
 		ScriptLogger.info();
 		try {
 			List<WebElement> workrooms = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_WORKROOM_FL_JOBS_LIST_XPATH);
@@ -124,30 +155,22 @@ public class DashboardPageTest {
 		}
 	}
 	
-	@Test
-	@Parameters("jobName")
-	@Documentation(step = "Click on the job." , expected = "Able to click.")
-	public static void clickJobUnderQuotesTest(String name) throws Exception {
+	
+	@Documentation(step = "Click on the job name frm workroom" , expected = "Able to click.")
+	public static void clickFLWorkroomByName(String workroomName) throws Exception {
 		ScriptLogger.info();
+		List<WebElement> jobList;
 		try {
-			List<WebElement> jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_EMP_JOBS_LIST_XPATH);
-			for(WebElement el : jobList) {
-				WebElement job = el.findElement(By.tagName("a"));
-				String jobName = job.getText();
-				if(jobName.equalsIgnoreCase(name)) {
-					WebDriverAction.click(job);
-					break;
-				} else {
-					ScriptLogger.debug("Still searching...");
-				}
-			}
+			jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_CURRENT_JOBS_HIRED_IN_JOB_NAMES_XPATH);
 		}  catch (Exception e) {
-			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue. ");
+			throw new ScriptException("Unable to elements; possible locator or selenium issue. If not, possible application issue. ");
 		}
+		selectAndClickJob(workroomName,jobList);
 	}
 	
-	@Test
-	@Parameters("workroomIndex")
+	
+	
+	
 	@Documentation(step = "Get name of the workroom by its index." , expected = "Able to retrieve data.")
 	public static void getEMPWorkroomJobNameByIndex(int index) throws Exception {
 		ScriptLogger.info();
@@ -159,51 +182,36 @@ public class DashboardPageTest {
 		}
 	}
 	
-	@Test
+	
 	@Documentation(step = "Click on the job name randomly generated and posted.." , expected = "Able to click.")
-	public static void clickRandomJobnameWorkroomTest() throws Exception {
+	public static void clickRandomJobnameWorkroom() throws Exception {
 		ScriptLogger.info();
+		List<WebElement> jobList;
 		try {
-			List<WebElement> jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_WORKROOM_EMP_JOBS_LIST_XPATH);
-			for(WebElement el : jobList) {
-				WebElement job = el.findElement(By.tagName("a"));
-				String jobName = job.getText();
-				if(jobName.equalsIgnoreCase(PostAJobPageTest.RANDOM_JOB_TITLE)) {
-					WebDriverAction.click(job);
-					break;
-				} else {
-					ScriptLogger.debug("Still searching...");
-				}
-			}
+			jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_WORKROOM_EMP_JOBS_LIST_XPATH);
 		}  catch (Exception e) {
-			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue.");
+			throw new ScriptException("Unable to elements; possible locator or selenium issue. If not, possible application issue.");
 		}
+		selectAndClickJob(PostAJobPageTest.RANDOM_JOB_TITLE,jobList);
 	}
 	
-	@Test
+	
 	@Documentation(step = "Click on the job name randomly generated and posted.." , expected = "Able to click.")
-	public static void clickRandomJobnamePostedTest() throws Exception {
+	public static void clickRandomJobnamePostedFromQuotes() throws Exception {
 		ScriptLogger.info();
+		List<WebElement> jobList;
 		try {
-			List<WebElement> jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_EMP_JOBS_LIST_XPATH);
-			for(WebElement el : jobList) {
-				WebElement job = el.findElement(By.tagName("a"));
-				String jobName = job.getText();
-				if(jobName.equalsIgnoreCase(PostAJobPageTest.RANDOM_JOB_TITLE)) {
-					WebDriverAction.click(job);
-					break;
-				} else {
-					ScriptLogger.debug("Still searching...");
-				}
-			}
+			jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_QUOTES_EMP_JOBS_LIST_XPATH);
+			
 		}  catch (Exception e) {
-			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue.");
+			throw new ScriptException("Unable to get elements; possible locator or selenium issue. If not, possible application issue.");
 		}
+		selectAndClickJob(PostAJobPageTest.RANDOM_JOB_TITLE,jobList);
 	}
 	
-	@Test
+
 	@Documentation(step = "Click on the job name randomly generated in which acceptance is pending on fl side.." , expected = "Able to click.")
-	public static void clickAcceptRandomJobHireFLTest() throws Exception {
+	public static void clickAcceptRandomJobHireFL() throws Exception {
 		ScriptLogger.info();
 		try {
 			List<WebElement> jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_CURRENT_JOBS_PENDING_ACCEPTANCE_JOBS_CONTAINER_XPATH);
@@ -221,49 +229,41 @@ public class DashboardPageTest {
 		}  catch (Exception e) {
 			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue. ");
 		}
+	}	
+	
+	@Documentation(step = "Click on the job name randomly generated and posted.." , expected = "Able to click.")
+	public static void clickHiredRandomJobFL() throws Exception {
+		ScriptLogger.info();
+		List<WebElement> jobList ;
+		try {
+			jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_CURRENT_JOBS_HIRED_IN_JOB_NAMES_XPATH);
+		}  catch (Exception e) {
+			throw new ScriptException("Unable to get elements; possible locator or selenium issue. If not, possible application issue. ");
+		}
+		selectAndClickJob(PostAJobPageTest.RANDOM_JOB_TITLE,jobList);
 	}
 	
-	@Test
-	@Documentation(step = "Click on the job name randomly generated and posted.." , expected = "Able to click.")
-	public static void clickFLWorkroomByNameTest() throws Exception {
-		ScriptLogger.info();
+	/************Private common method for clicking on a job************/
+	private static void selectAndClickJob(String workroomName, List<WebElement> jobList) throws Exception {
 		try {
-			List<WebElement> jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_CURRENT_JOBS_HIRED_IN_JOB_NAMES_XPATH);
 			for(WebElement el : jobList) {
 				WebElement job = el.findElement(By.tagName("a"));
 				String jobName = job.getText();
-				if(jobName.equalsIgnoreCase(jobWorkroomName)) {
+				if(jobName.equalsIgnoreCase(workroomName)) {
 					WebDriverAction.click(job);
 					break;
 				} else {
-					ScriptLogger.debug();
+					throw new ApplicationException("Job :- "+workroomName+" is not found");
 				}
 			}
-		}  catch (Exception e) {
+		} catch (Exception e) {
 			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue. ");
 		}
+		
+		
 	}
 	
-	@Test
-	@Documentation(step = "Click on the job name randomly generated and posted.." , expected = "Able to click.")
-	public static void clickHiredRandomJobFLTest() throws Exception {
-		ScriptLogger.info();
-		try {
-			List<WebElement> jobList = BrowserAction.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_CURRENT_JOBS_HIRED_IN_JOB_NAMES_XPATH);
-			for(WebElement el : jobList) {
-				WebElement job = el.findElement(By.tagName("a"));
-				String jobName = job.getText();
-				if(jobName.equalsIgnoreCase(PostAJobPageTest.RANDOM_JOB_TITLE)) {
-					WebDriverAction.click(job);
-					break;
-				} else {
-					ScriptLogger.debug();
-				}
-			}
-		}  catch (Exception e) {
-			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue. ");
-		}
-	}
+	/********************END--Selecting a job from dashboard********************************/
 	
 	@Test
 	@Documentation(step = "Click 'My Managers' link in the EMP Dashboard page..", expected = "Jobs tab should be clicked")
@@ -677,6 +677,38 @@ public class DashboardPageTest {
 	}
 	
 	// ----------------------------- END ----------------------------------
+	
+	// -------------------------- ALERTS RELATED ---------------------------
+	// ----------------------------- START ---------------------------------
+	@Test
+	@Documentation(step = "Click Refund Requested alert in the Alerts section.", expected = "Able to click.")
+	public static void clickRefundRequestedAlertFLTest() throws Exception {
+		ScriptLogger.info();
+		List<String> title = new ArrayList<String>();
+		int count = 1;
+		try {
+			List<WebElement> alertTitle = BrowserAccess.getElements(DashboardPageObjectMap.DASHBOARD_PAGE_FL_ALERT_SECTION_ALERT_NAMES_XPATH);
+			for(int i = 0; i < alertTitle.size(); i++) {
+				title.add(alertTitle.get(i).getText());
+			}
+			for (int j = 0; j < alertTitle.size(); j++) {
+				if(title.get(j).equals("Refund Requested")) {
+					alertTitle.get(j).click();
+					break;
+				} else {
+					count++;
+				}
+			}
+		} catch (Exception e) {
+			throw new ApplicationException(e, "Unable to click on Continue button.");
+		}
+		
+		if (count > 10) {
+			throw new ApplicationException("Refund Requested alert didn't appear.");
+		}
+	}
+	
+	// ----------------------------- END -----------------------------------
 	
 	public static void switchToThisWindow() throws Exception{
 		ScriptLogger.info();

@@ -1,5 +1,6 @@
 package com.guru.testing.page;
 
+import java.awt.Robot;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -342,8 +343,6 @@ public class DashboardPageTest {
 			Thread.sleep(3000);
 			BrowserWait.waitUntilElementIsDisplayed(DashboardPageObjectMap.DASHBOARD_PAGE_SIGN_OUT_XPATH);
 			BrowserAction.click(DashboardPageObjectMap.DASHBOARD_PAGE_SIGN_OUT_XPATH);
-			/*WebElement signoutbtn = BrowserAction.getElement(DashboardPageObjectMap.DASHBOARD_PAGE_SIGN_OUT_XPATH);	
-			signoutbtn.click();	*/
 		} catch (Exception e) {
 			throw new ScriptException(" Unable to click; possible locator or selenium issue. If not, possible application issue.");
 		}
@@ -384,7 +383,9 @@ public class DashboardPageTest {
 
 		ScriptLogger.info();
 		try {
-			BrowserAction.click(DashboardPageObjectMap.DASHBOARD_PAGE_FL_OWNER_OPTIONS_DROPDOWN_EDIT_PROFILE_LINK_ID); 
+			BrowserAction.click(DashboardPageObjectMap.DASHBOARD_PAGE_FL_OWNER_OPTIONS_DROPDOWN_EDIT_PROFILE_LINK_ID);
+			/*Robot robot=new Robot();
+			robot.mouseMove(1000,2000);	*/
 		} catch (Exception e) {
 			throw new ScriptException(e);
 		}
@@ -398,6 +399,7 @@ public class DashboardPageTest {
 			BrowserAction.click(DashboardPageObjectMap.DASHBOARD_PAGE_FL_OWNER_OPTIONS_DROPDOWN_BUY_BIDS_LINK_ID); 
 		} catch (Exception e) {
 			throw new ScriptException(e);
+			
 		}
 	}
 	

@@ -92,6 +92,18 @@ public class PaymentsInvoicePageTest {
 		}
 	}
 	
+	@Test
+	@Documentation(step = "Click Cash Account tab on payments page", expected = "Cash Account Under Payments page should be clicked.")
+	public static void clickCashAccountTabTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_CASH_ACCOUNT_PLINK);
+			
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click Cash Account Tab");
+		}
+	}
+	
 	// ---------------------- METHODS RELATED TO VIEW & PAY INVOICES ---------------
 	// --------------------------------- START -------------------------------------
 		

@@ -1,6 +1,9 @@
 package com.guru.testing.page;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -35,7 +38,8 @@ public class WorkroomPageTest {
 	public static String randomName = null;
 	public static String lastDayOfMonthClicked = null;
 	public static int inviteSize;
-	
+	public static float futureWorkValue = 0;
+	/*
 	@Test
 	@Documentation(step = "Verify if 'Workroom' page on the EMP side loaded.", expected = "'Workroom' page for the user should load.")
 	public static void verifyEMPWorkroomPageTest() throws Exception {
@@ -47,17 +51,17 @@ public class WorkroomPageTest {
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_JOB_CHATS_TAB_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_JOB_TASKS_TAB_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_JOB_FILE_FOLDERS_TAB_XPATH);
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_RIGHT_COLUMN_XPATH);
+			//BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_RIGHT_COLUMN_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_JOB_PUBLIC_FILES_PLINK);
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_JOB_PRIVATE_FILES_PLINK);
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_JOB_ADD_A_MANAGER_PLINK);
+			//BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_JOB_ADD_A_MANAGER_PLINK);
 			BrowserWait.waitUntilText("Add Gurus");
 			BrowserWait.waitUntilText("My Managers");
 			BrowserWait.waitUntilText("Outstanding Invoices");
 		} catch (Exception e) {
 			throw new HTMLElementNotFoundException(e, "One of more element necessary for page verification didn't appear.")	;	
 		}
-	}
+	}*/
 	
 	@Test
 	@Documentation(step = "Verify Job title in workroom.", expected = "Able to verify.")
@@ -582,12 +586,12 @@ public class WorkroomPageTest {
 	
 	// ------------------------------ END ---------------------------
 	
-	// ---------------------- EMP SIDE SAFEPAY RELATED --------------
+	// ---------------------- EMP & FL SIDE SAFEPAY RELATED --------------
 	// ----------------------------- START --------------------------
 	
 	@Test
 	@Documentation(step = "Click on 'Safe Pay' Navigation tab.", expected = "User is able to click.")
-	public static void clickSafePayTabTest() throws Exception {
+	public static void clickSafePayTab() throws Exception {
 		// Common for both EMP and FL
 		ScriptLogger.info();	
 		try {
@@ -599,11 +603,19 @@ public class WorkroomPageTest {
 	
 	@Test
 	@Documentation(step = "Verify 'Safe Pay' Navigation tab for EMP Workroom.", expected = "User is able to verify.")
-	public static void verifyEMPSafePayTabTest() throws Exception {
+	public static void verifyEMPSafePayTab() throws Exception {
 		ScriptLogger.info();	
 		try {
 			BrowserWait.waitUntilText("SafePay Account ", 30);
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "SafePay Account header text didn't appear.");
+		}
+		try {
 			BrowserWait.waitUntilText("Add Funds to SafePay");
+		} catch (Exception e) {
+			ScriptLogger.debug("Add Funds to SafePay text didn't appear; it's possible that there's a pending Safepay fund request, either due to the agreement or a request from the Freelancer.");
+		}
+		try {
 			BrowserWait.waitUntilText("Transaction History");
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_SAFEPAY_TAB_SAFEPAY_DETAILS_SECTION_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_ADD_FUNDS_BUTTON_XPATH);
@@ -627,7 +639,7 @@ public class WorkroomPageTest {
 	
 	@Test
 	@Documentation(step = "Click on 'Add Funds' button.", expected = "User is able to click.")
-	public static void clickAddFundsTest() throws Exception {
+	public static void clickAddFunds() throws Exception {
 		ScriptLogger.info();	
 		try {
 			BrowserAction.click(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_ADD_FUNDS_BUTTON_XPATH);
@@ -653,13 +665,90 @@ public class WorkroomPageTest {
 	
 	@Test
 	@Documentation(step = "Click on 'Add Funds' button under the Add funds to Safepay section.", expected = "User is able to click.")
-	public static void clickAddFundsToSafepayTest() throws Exception {
+	public static void clickAddFundsToSafepay() throws Exception {
 		ScriptLogger.info();	
 		try {
 			BrowserAction.click(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_ADD_FUNDS_BUTTON_UNDER_ADD_FUNDS_TO_SAFEPAY_SECTION_XPATH);
 		} catch (Exception e) {
 			throw new ScriptException("Unable to click; either it's selenium issue, or a different locator was given in objectmap.");
 		}
+	}
+	
+	@Test
+	@Documentation(step = "Click on 'Request a Refund' link under the Add funds to Safepay section.", expected = "User is able to click.")
+	public static void clickRequestRefundTest() throws Exception {
+		ScriptLogger.info();	
+		try {
+			BrowserAction.click(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_LINK_PLINK);
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click 'Request a Refund'.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Verify 'Request a Refund' section.", expected = "User is able to verify.")
+	public static void verifyRequestRefundSectionTest() throws Exception {
+		ScriptLogger.info();	
+		try {
+			BrowserWait.waitUntilText("Request a Refund", 30);
+			BrowserWait.waitUntilText("SafePay funds for future work", 30);
+			
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "Unable to verify 'Request a Refund' section.");
+		}
+		try {
+			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_FUTURE_WORK_TEXT_XPATH);
+		} catch(Exception e) {
+			ScriptLogger.debug("There's no Safepay fund for future Work.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "click on 'SafePay funds for future work' radio.", expected = "User is able to click.")
+	public static void clickFutureWorkRadioTest() throws Exception {
+		ScriptLogger.info();	
+		String text = null;
+		try {
+			text = BrowserAccess.getElement(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_FUTURE_WORK_TEXT_XPATH).getText();
+		} catch (Exception e) {
+			throw new ScriptException("Unable to retrieve text from the radio label.");
+		}
+		try {
+			if (text.equals("SafePay funds for future work")) {
+				BrowserAction.click(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_FUTURE_WORK_TEXT_XPATH);
+			} else {
+				ScriptLogger.debug("Safepay funds for future work text not found.");
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click on 'SafePay funds for Future Work'.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "get Refund amount against Future Work.", expected = "User is able to retrieve data..")
+	public static void getFutureWorkAmountTest() throws Exception {
+		ScriptLogger.info();	
+		String text = null;
+		
+		try {
+			text = BrowserAccess.getElement(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_FUTURE_WORK_AMOUNT_XPATH).getText();
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to get amount against 'SafePay funds for Future Work'.");
+		}
+		int indexOfDollar = text.indexOf("$");
+		futureWorkValue = Float.valueOf(text.substring(indexOfDollar+1));
+	}
+	
+	@Test
+	@Documentation(step = "click on 'Request Refund' button.", expected = "User is able to click.")
+	public static void clickRequestRefundBtnTest() throws Exception {
+		ScriptLogger.info();	
+		try {
+			BrowserAction.click(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_REQUEST_REFUND_BUTTON_XPATH);
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click on 'Request Refund' Button.");
+		}
+		
 	}
 
 	
@@ -1716,7 +1805,7 @@ try {
 	}
 	
 	@Test
-	@Documentation(step = "Verify 'Agreement' Navigation tab.", expected = "User is able to verify.")
+	@Documentation(step = "Verify 'Status Updates' Navigation tab.", expected = "User is able to verify.")
 	public static void verifyStatusTabEMPTest() throws Exception {
 		ScriptLogger.info();	
 		try {
@@ -2073,33 +2162,93 @@ try {
 		}
 	}
 
-	public static void verifyEmpFundsInSafePayTest(String date,Float amount, String paymentMethod) throws Exception {
+	public static void verifySafepayTransactionByDate(String date,Float amount, String paymentMethod) throws Exception {
+		
+	}
+	public static void verifyLatestSafepayTransaction(Boolean autoFund,Float amount, String paymentMethod) throws Exception {
+		
 		ScriptLogger.info();
-		try {
+		try {		
 			BrowserWait.waitUntilElementIsNotDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_NOT_FUNDED_BANNER_ICON_XPATH);
-			WebElement safepayLabelElement=BrowserAction.getElement(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_SAFEPAY_TAB_XPATH);
-			List <WebElement> tdElement=BrowserAction.getElements(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_TRANSACTION_HISTORY_TABLE_XPATH);
-			verifyEmpTransactionWithFeeOnPage(safepayLabelElement, amount);
-			switch (paymentMethod) {
-			case "Cash Account":
-				amount=(float) (amount+amount*2.5/100);
-				if(!tdElement.get(0).getText().equals(date)||!tdElement.get(1).getText().equals("Funds Automatically Added - Cash Account")||!verifyEmpTransactionWithFeeOnPage(tdElement.get(0), amount)){
-					throw new ApplicationException("Transaction Not Found");
-				}
+			List <WebElement> trElement=BrowserAction.getElements(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_TRANSACTION_HISTORY_TABLE_XPATH);
+			String transactionRemarks=trElement.get(1).getText();
+			String dateElementText=trElement.get(0).getText();
+			WebElement amountElement=trElement.get(2);
+		
+					switch (paymentMethod) {
+					case "CASH_ACCOUNT":
+						if(!verifyDateAsToday(dateElementText)){
+							throw new ApplicationException("Date of transaction is is mismatch");
+						}
+						if(!verifyEmpTransactionWithFeeOnPage(amountElement, amount)){
+							throw new ApplicationException("Amount is mismatch");
+						}						
+						if(autoFund&&!transactionRemarks.equals("Funds Automatically Added - Cash Account")){
+							throw new ApplicationException("Funds not added automatically");
+						}						
+						else if(!autoFund&&!transactionRemarks.equals("Funds Added - Cash Account")){
+							throw new ApplicationException("Funds not added");
+						}
 
-				break;
-			case "Credit Card":
-				verifyEmpTransactionWithFeeOnPage(safepayLabelElement,amount);
-				
-				
-				break;
-			case "Pay Pal":
-				break;
-			case "E Check":
-				break;
-			default:
-				break;
-			}
+						break;
+					case "CREDIT_CARD":
+						if(!verifyDateAsToday(dateElementText)){
+							throw new ApplicationException("Date of transaction is is mismatch");
+						}
+						
+						if(!verifyEmpTransactionWithFeeOnPage(amountElement, amount)){
+							throw new ApplicationException("Amount is mismatch");
+						}
+						
+						if(autoFund){
+							
+						if(!(transactionRemarks.equals("Funds Automatically Added - Visa (1111)")||transactionRemarks.equals("Funds Automatically Added - Amex (8431)")||transactionRemarks.equals("Funds Automatically Added - Amex (0005)")||transactionRemarks.equals("Funds Automatically Added - Master (5100)"))){
+							throw new ApplicationException("Funds not added automatically");
+						}
+						}
+						
+						else if(!(transactionRemarks.equals("Funds Added - Visa (1111)")||transactionRemarks.equals("Funds Added - Amex (8431)")||transactionRemarks.equals("Funds Added - Amex (0005)")||transactionRemarks.equals("Funds Added - Master (5100)"))){
+							
+							throw new ApplicationException("Funds not added");
+						}
+						
+						
+						break;
+						
+						
+					case "PAY_PAL":
+						//TODO Check what text is shown in autofund
+						
+						amount=(float) (amount+amount*2.5/100);
+						BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_TRANSACTION_HISTORY_PENDING_AMOUNT_NOTE_XPATH);
+						String pendingTransactionText=BrowserAction.getElement(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_TRANSACTION_HISTORY_PENDING_AMOUNT_NOTE_XPATH).getText();
+						int precision = 100;
+						amount= (float) (Math.floor(amount * precision +.5)/precision);
+						DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+						Date date = new Date();
+						String todaysDate=dateFormat.format(date);
+					
+						
+						String genericPayPalText="PayPal is verifying the transaction - look for an updated SafePay balance by";
+						String genericPaymentMadeText="You made a payment of $";
+						
+						if(!(pendingTransactionText.contains(genericPaymentMadeText)&&pendingTransactionText.contains(amount.toString())&&pendingTransactionText.contains(todaysDate)&&pendingTransactionText.contains(genericPayPalText))){
+							throw new ApplicationException("Funds not added");
+						}
+						break;
+						
+					case "E Check":
+						break;
+						//TODO Other methods
+					default:
+						break;
+					
+				}
+			
+			
+			
+		
+			
 		} catch (Exception e) {
 			throw new ScriptException("");
 		}
@@ -2111,19 +2260,22 @@ try {
 	
 	// ---------------------------- END ------------------------------
 	
-	public static Boolean verifyEmpTransactionWithFeeOnPage(WebElement label, Float amount) {
+	public static Boolean verifyEmpTransactionWithFeeOnPage(WebElement element, Float amount) {
 		ScriptLogger.info();
 		Boolean flag=false;
-		try {
-			Float amountElement=CommonPageTest.getAmount(label, "");			
-			Float ccTransactionFee=(float) (amount*(2.5/100));
-			amount=amount+ccTransactionFee;
+		try {	
+			Float amountElement=CommonPageTest.getAmount(element, "");			
+			Float transactionFee=(float) (amount*(2.5/100));
+			amount=amount+transactionFee;
+			int precision = 100;
+			amount= (float) (Math.floor(amount * precision +.5)/precision);
+			
 			if(amount.compareTo(amountElement)!=0){
 				throw new ApplicationException("Expected Amount: $"+amount+"Actual amount: $ "+amountElement);
 			}
 			flag=true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		return flag;
 		
@@ -2295,8 +2447,66 @@ try {
 		}
 		
 	}
-	
 	// --------------------------- END -------------------------------
+
+	public static void verifyEmpWorkroomByAgreement(String agreementType)throws Exception {
+		ScriptLogger.info();
+		try {
+			
+		} catch (Exception e) {
+			throw new Exception();	
+		}
+		
+	}
+
+	public static void raiseInvoiceByAgreementTypeTest(String agreementType) throws Exception{
+		ScriptLogger.info();
+		try {
+			
+		} catch (Exception e) {
+			throw new Exception();	
+		}
+		
+	}
+
+	public static void verifyFLWorkroomByAgreement(String agreementType) throws Exception{
+		ScriptLogger.info();
+		try {
+			
+		} catch (Exception e) {
+			throw new Exception();	
+		}
+		
+	}
+
+	public static void verifyAddSafePayFunds() throws Exception{
+		
+		ScriptLogger.info();
+		try {
+			BrowserWait.waitUntilText("We charge a 2.5% handling fee for all payment methods. However, use one of our preferred payment methods (check, bank account, wire transfer) and we’ll kick the 2.5% back to you… plus an extra 1%!", 15);
+			
+			BrowserWait.waitUntilText("Amount to add to SafePay");
+			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_AMOUNT_TO_ADD_TEXTBOX_VALID_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_ADD_FUNDS_BUTTON_UNDER_ADD_FUNDS_TO_SAFEPAY_SECTION_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_EMP_SAFEPAY_CANCEL_BUTTON_UNDER_ADD_FUNDS_TO_SAFEPAY_SECTION_XPATH);
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e,"Safepay fund page elements did not load properly.");	
+		}
+	}
+
 	
+	
+	private static boolean verifyDateAsToday(String dateElementText){
+		DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+		Date date = new Date();
+		String todaysDate=dateFormat.format(date);
+		if(!todaysDate.equalsIgnoreCase(dateElementText)){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+		
 
 }

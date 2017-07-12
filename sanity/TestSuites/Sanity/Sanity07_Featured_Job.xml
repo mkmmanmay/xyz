@@ -78,7 +78,7 @@
 			<class name="com.guru.testing.page.PayNowPageTest">
 			<parameter name="paymentMethod" value="CASH_ACCOUNT"/>
 				<methods>
-					<include name="verifyPayForFeaturingJobTest" />
+					<include name="verifyPayNowPageTest" />
 					<include name="verifyPaymentMethodTest" />
 					<include name="clickUseCAfunds" />
 					<include name="selectAgreeToPayCheckboxTest" />

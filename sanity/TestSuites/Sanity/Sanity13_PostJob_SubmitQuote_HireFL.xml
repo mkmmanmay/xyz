@@ -92,7 +92,7 @@
 			</class>
 			</classes>	
 			</test>
-	<test name = "2.  " preserve-order="true">
+	<test name = "2.Signout employer and verify login page  " preserve-order="true">
 	<classes>		
 			<class name="com.guru.testing.page.DashboardPageTest">
 			<methods>
@@ -161,7 +161,7 @@
 				<parameter name="noOfMilestones" value="1"/>
 				<parameter name="milestoneNames" value="Req"/>
 				<parameter name="milestoneDueDates" value="01-12-2019"/>
-				<parameter name="milestoneAmounts" value="50"/>
+				<parameter name="milestoneAmounts" value="50.50"/>
 				<parameter name="safepayOption" value="MANUAL_PAYMENTS"/>
 				<parameter name="paymentSchedule" value="14 days"/>
 				<parameter name="statusUpdates" value="Monthly"/>
@@ -214,7 +214,7 @@
 			<class name="com.guru.testing.page.QuotesPageTest">
 			<parameter name="messageText" value="Test Msg-"/>
 			<methods>
-					<include name="selectJobAppliedByNameTest"/>
+					<include name="selectJobAppliedByRandomNameTest"/>
 					<include name="verifyQuoteLoadedTest"/>
 					<include name="hideQuoteTest"/>
 					<include name="enterMsgTest"/>
@@ -230,7 +230,9 @@
 				</methods>
 			</class>
 			<class name = "com.guru.testing.page.BidsPageTest" >
-			<parameter name="messageText" value="Test Msg-"/>			
+			<parameter name="messageText" value="Test Msg-"/>
+			<parameter name="bidsSpent" value="6"/>
+						
 				<methods>
 					<include name="verifyBidsPageTest" />
 					<include name="getBidsCountAfterTest" />

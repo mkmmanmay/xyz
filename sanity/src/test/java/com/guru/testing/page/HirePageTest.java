@@ -28,7 +28,7 @@ public class HirePageTest {
 	public static String RANDOM_MESSAGE;
 	
 	@Test
-	@Documentation(step = "", expected = "")
+	@Documentation(step = "Verify Hire page for Employer side", expected = "Mandatory elements on the Hire page of Employer should be verified")
 	public static void verifyHirePageTest() throws Exception {
 		ScriptLogger.info();
 		try {			

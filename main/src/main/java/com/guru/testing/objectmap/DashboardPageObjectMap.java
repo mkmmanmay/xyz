@@ -60,7 +60,7 @@ public enum DashboardPageObjectMap {
 	
 	
 	// ---------- QUOTES SECTION EMP DASHBOARD --------------
-	DASHBOARD_PAGE_EMP_JOBS_LIST_XPATH("//section[@id='hire']//ul[@id='hireList']//li"),
+	DASHBOARD_PAGE_QUOTES_EMP_JOBS_LIST_XPATH("//section[@id='hire']//ul[@id='hireList']//li"),
 	
 	// ---------- WORKROOM SECTION EMP DASHBOARD --------------
 	DASHBOARD_PAGE_WORKROOM_EMP_JOBS_LIST_XPATH("//section[@id='manage']//ul[@id='manageList']//li"),
@@ -77,6 +77,9 @@ public enum DashboardPageObjectMap {
 	
 	// -------------------- ALERTS SECTION EMP -----------------
 	DASHBOARD_PAGE_ALERT_SECTION_ALERT_NAMES_XPATH("//ul[@class='module_list tight alertList']//p[@class='identityName']"),
+	
+	// ------------------- ALERTS SECTION FL -------------------
+	DASHBOARD_PAGE_FL_ALERT_SECTION_ALERT_NAMES_XPATH("//p[@class='identityName']//strong"),
 	;
 
 

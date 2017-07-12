@@ -20,13 +20,13 @@ import com.guru.testing.page.WorkroomPageTest;
 public class IssueInvoiceRefund {
 	
 	@Test(alwaysRun = true)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Post a Job' tab." , expected = "Able to Click.")
 	public static void clickPostAJobTest() throws Exception {
 		DashboardPageTest.clickPostAJobTopNavTest();
 	}
 	
 	@Test(dependsOnMethods = "clickPostAJobTest", priority = 1)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Post A Job page." , expected = "Verification of Post A Job should be successfull.")
 	public static void verifyPostJobTest() throws Exception {
 		PostAJobPageTest.verifyPostAJobPageTest();
 	}
@@ -45,71 +45,72 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "enterJobDetailsTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="click on 'Post Job' button." , expected = "Able to Click.")
 	public static void clickPostJobTest() throws Exception {
 		PostAJobPageTest.clickPostJobButtonTest();
 	}
 	
 	@Test(dependsOnMethods = "clickPostJobTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Payment page for featuring the Job, and click on checkboxes." , expected = "Able to Verify, and click on Terms and Conditions checkbox.")
 	public static void verifyFeaturePaymentPageTest() throws Exception {
 		PayNowPageTest.verifyPayNowPageTest();
 		PayNowPageTest.selectAgreeToPayCheckboxTest();
 	}
 	
 	@Test(dependsOnMethods = "verifyFeaturePaymentPageTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Pay' button." , expected = "Able to click.")
 	public static void clickPayTest() throws Exception {
 		PayNowPageTest.clickPayTest();
 	}
 	
 	@Test(dependsOnMethods = "clickPayTest", priority = 3)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Payment was successful." , expected = "Verification should be a success.")
 	public static void verifyPaymentSuccessTest() throws Exception {
 		PayNowPageTest.verifyJobPostedTest();
 	}
 	
 	@Test(dependsOnMethods = "clickPayTest", priority = 4)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="click on 'Dashboard' tab in the top level navigation." , expected = "Able to click.")
 	public static void goBackToDashboardTest() throws Exception {
 		DashboardPageTest.clickDashboardTopNavTest();
 	}
 	
 	@Test(dependsOnMethods = "goBackToDashboardTest", priority = 5)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Dashboard Page loaded." , expected = "Verification should be a sucess.")
 	public static void verifyDashboardTest() throws Exception {
 		DashboardPageTest.verifyEMPDashboardPageTest();
 	}
 	
 	@Test(dependsOnMethods = "goBackToDashboardTest", priority = 6)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Go to Quotes/Hire page of job posted, and retrieve its Tiny URL." , expected = "Able to retrieve the Tiny URL.")
 	public static void getTinyUrlOfJobPostedTest() throws Exception {
-		DashboardPageTest.clickRandomJobnamePostedTest();
+		DashboardPageTest.clickRandomJobnamePostedFromQuotes();
+		HirePageTest.verifyHirePageTest();
 		HirePageTest.getTinyURLTest();
 	}
 	
 	@Test(dependsOnMethods = "getTinyUrlOfJobPostedTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Sign Out'." , expected = "Able to click.")
 	public static void signoutEmpTest() throws Exception {
 		DashboardPageTest.signOutEmployerTest();
 	}
 	
 	@Test(dependsOnMethods = "signoutEmpTest", priority = 7)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Login Page of the application." , expected = "Verification should be a sucess.")
 	public static void verifyLoginTest() throws Exception {
 		LoginPageTest.verifyLoginPageTest();
 	}
 	
 	@Test(dependsOnMethods = "signoutEmpTest", priority = 8)
 	@Parameters({"flUsername", "flPassword"})
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Enter FL credentials for login." , expected = "Able to Enter data.")
 	public static void enterFLCredTest(String emailUsername, String password) throws Exception {
 		LoginPageTest.enterEmailOrUsernameTest(emailUsername);
 		LoginPageTest.enterPasswordTest(password);
 	}
 	
 	@Test(dependsOnMethods = "enterFLCredTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Sign In' button, and verify Security Page." , expected = "Able to click, and then verify.")
 	public static void clickLoginFLTest() throws Exception {
 		LoginPageTest.clickSignInButtonTest();
 		SecurityQuestionsPageTest.verifyingSecurityQuestionsPageTest();
@@ -135,25 +136,25 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "verifyFLDashboardPageTest", priority = 12)
-	@Documentation(step="", expected="")
+	@Documentation(step="Launch the Tiny URL retrieved earlier.", expected="Able to navigate to the Url.")
 	public static void launchTinyURLTest() throws Exception {
 		LaunchApplicationPageTest.navigateToUrlTest(HirePageTest.tinyUrl);
 	}
 	
 	@Test(dependsOnMethods = "launchTinyURLTest", priority = 13)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Job Details loaded.", expected="Verification should be a sucess.")
 	public static void verifyJobDetailsTest() throws Exception {
 		JobDetailsPageTest.verifyJobDetailsPageTest();
 	}
 	
 	@Test(dependsOnMethods = "launchTinyURLTest", priority = 14)
-	@Documentation(step="", expected="")
+	@Documentation(step="Click on 'Apply' button.", expected="Able to click.")
 	public static void clickApplyTest() throws Exception {
 		JobDetailsPageTest.clickApplyTest();
 	}
 	
 	@Test(dependsOnMethods = "clickApplyTest", priority = 15)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Apply Form.", expected="Verification should be a sucess.")
 	public static void verifyApplyFormTest() throws Exception {
 		JobDetailsPageTest.verifyApplyQuotesFormTest();
 	}
@@ -176,27 +177,27 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "submitQuoteTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Sign out'." , expected = "Able to click.")
 	public static void signoutFlTest() throws Exception {
 		DashboardPageTest.signOutFlTest();
 	}
 	
 	@Test(dependsOnMethods = "signoutFlTest", priority = 17)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Login Page." , expected = "Verification should be a sucess.")
 	public static void verifyLoginPageTest() throws Exception {
 		LoginPageTest.verifyLoginPageTest();
 	}
 	
 	@Test(dependsOnMethods = "signoutFlTest", priority = 18)
 	@Parameters({"username", "password"})
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Enter EMP Credentials." , expected = "Able to enter data in textboxes.")
 	public static void enterEMPCredTest(String emailUsername, String password) throws Exception {
 		LoginPageTest.enterEmailOrUsernameTest(emailUsername);
 		LoginPageTest.enterPasswordTest(password);
 	}
 	
 	@Test(dependsOnMethods = "enterEMPCredTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Sign In'." , expected = "Able to click.")
 	public static void clickLoginEMPTest() throws Exception {
 		LoginPageTest.clickSignInButtonTest();
 		SecurityQuestionsPageTest.verifyingSecurityQuestionsPageTest();
@@ -222,19 +223,19 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "clickLoginEMPTest", priority = 22 )
-	@Documentation(step="", expected="")
+	@Documentation(step="Go to the 'Quotes' page of the Job posted earlier.", expected="Able to Navigate successfully.")
 	public static void goToJobTest() throws Exception {
-		DashboardPageTest.clickRandomJobnamePostedTest();
+		DashboardPageTest.clickRandomJobnamePostedFromQuotes();
 	}
 	
 	@Test(dependsOnMethods = "goToJobTest", priority = 23)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Hire/Quotes page.", expected="Verification should be a sucess.")
 	public static void verifyHirePageTest() throws Exception {
 		HirePageTest.verifyHirePageTest();
 	}
 	
 	@Test(dependsOnMethods = "goToJobTest", priority = 24)
-	@Documentation(step="", expected="")
+	@Documentation(step="Hire the FL quote submitted earlier.", expected="Hiring shoulde be a success.")
 	public static void hireFLPageTest() throws Exception {
 		HirePageTest.clickHireBtnTest();
 		HirePageTest.verifyAgreementPopUpTest();
@@ -243,27 +244,27 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "hireFLPageTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="'Sign out' user." , expected = "Able to Sign out.")
 	public static void logoutEmpTest() throws Exception {
 		DashboardPageTest.signOutEmployerTest();
 	}
 	
 	@Test(dependsOnMethods = "logoutEmpTest", priority = 25)
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Verify Login Page." , expected = "Verification should be a sucess.")
 	public static void verifySignInTest() throws Exception {
 		LoginPageTest.verifyLoginPageTest();
 	}
 	
 	@Test(dependsOnMethods = "logoutEmpTest", priority = 26)
 	@Parameters({"flUsername", "flPassword"})
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Enter FL credentials." , expected = "Able to enter data in textboxes.")
 	public static void enterFreeCredTest(String emailUsername, String password) throws Exception {
 		LoginPageTest.enterEmailOrUsernameTest(emailUsername);
 		LoginPageTest.enterPasswordTest(password);
 	}
 	
 	@Test(dependsOnMethods = "enterFreeCredTest")
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Click on 'Sign In' button." , expected = "Verification should be a sucess.")
 	public static void clickSignInFLTest() throws Exception {
 		LoginPageTest.clickSignInButtonTest();
 		SecurityQuestionsPageTest.verifyingSecurityQuestionsPageTest();
@@ -289,13 +290,13 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "clickSignInFLTest", priority = 30)
-	@Documentation(step="", expected="")
+	@Documentation(step="Go to the Workroom of the Job the FL was hired to.", expected="Able to click on the Workroom link on the FL dashboard.")
 	public static void goToHiredWorkroomTest() throws Exception {
-		DashboardPageTest.clickHiredRandomJobFLTest();
+		DashboardPageTest.clickHiredRandomJobFL();
 	}
 	
 	@Test(dependsOnMethods = "goToHiredWorkroomTest", priority = 31)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Workroom.", expected="Verification should be a sucess.")
 	public static void verifyWorkroomTest() throws Exception {
 		WorkroomPageTest.verifyFLWorkroomPageTest();
 	}
@@ -436,7 +437,7 @@ public class IssueInvoiceRefund {
 	
 	@Test(dependsOnMethods = "signOutEmployerTest", priority = 53)
 	@Parameters({"flUsername", "flPassword"})
-	@Documentation(step="" , expected = "")
+	@Documentation(step="Enter FL credentials." , expected = "Able to data into Textboxes.")
 	public static void enterFreeLCredTest(String emailUsername, String password) throws Exception {
 		LoginPageTest.enterEmailOrUsernameTest(emailUsername);
 		LoginPageTest.enterPasswordTest(password);
@@ -444,76 +445,76 @@ public class IssueInvoiceRefund {
 	}
 	
 	@Test(dependsOnMethods = "enterFreeLCredTest", priority = 54)
-	@Documentation(step="Verify FL Dashboard page.", expected="Dashboard page loads for FL")
+	@Documentation(step="Verify FL Dashboard page.", expected="Dashboard page loads for FL.")
 	public static void verifyFreeLDashboardPageTest() throws Exception {
 		DashboardPageTest.verifyFLDashboardPageTest();
 	}
 	
 	@Test(dependsOnMethods = "enterFreeLCredTest", priority = 55)
-	@Documentation(step="", expected="")
+	@Documentation(step="Click on 'Payments' tab.", expected="Able to click.")
 	public static void goToPaymentsTest() throws Exception {
 		DashboardPageTest.clickPaymentsTabTest();
 	}
 	
 	@Test(dependsOnMethods = "goToPaymentsTest", priority = 56)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Invoice summary page loaded.", expected="Verification should be a sucess.")
 	public static void verifyInvoiceSummaryTest() throws Exception {
 		PaymentsInvoicePageTest.verifyFLInvoicePageTest();
 	}
 	
 	@Test(dependsOnMethods = "goToPaymentsTest", priority = 57)
-	@Documentation(step="", expected="")
+	@Documentation(step="Click on Paid Invoice ID.", expected="Able to click.")
 	public static void clickOnPaidInvoiceTest() throws Exception {
 		PaymentsInvoicePageTest.clickInvoiceIDTest();
 	}
 	
 	@Test(dependsOnMethods = "clickOnPaidInvoiceTest", priority = 58)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Invoice Details.", expected="Verification should be a sucess.")
 	public static void verifyPaidInvoiceTest() throws Exception {
 		InvoicePageTest.verifyPaidInvoiceDetailsTest();
 	}
 	
 	@Test(dependsOnMethods = "clickOnPaidInvoiceTest", priority = 59)
-	@Documentation(step="", expected="")
+	@Documentation(step="click on 'Issue Refund' button.", expected="Able to click.")
 	public static void clickIssueRefundTest() throws Exception {
 		InvoicePageTest.clickIssueRefundTest();
 	}
 	
 	@Test(dependsOnMethods = "clickIssueRefundTest", priority = 60)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Issue Refund section.", expected="Verification should be a sucess.")
 	public static void verifyIssueRefundSectionTest() throws Exception {
 		InvoicePageTest.verifyIssueRefundSectionTest();
 	}
 	
 	@Test(dependsOnMethods = "clickIssueRefundTest", priority = 61)
-	@Documentation(step="", expected="")
+	@Documentation(step="Enter the amount Employer should receive.", expected="Able to enter the amount.")
 	public static void enterEmployerReceivingAmountTest() throws Exception {
 		InvoicePageTest.getInvoiceAmountTest();
 		InvoicePageTest.enterAmountEmpShouldGetTest(InvoicePageTest.invoiceAmount);
 	}
 	
 	@Test(dependsOnMethods = "enterEmployerReceivingAmountTest")
-	@Documentation(step="", expected="")
+	@Documentation(step="Click on 'Issue Refund' button after entering amount.", expected="Able to click.")
 	public static void clickIssueRefundBtnTest() throws Exception {
 		InvoicePageTest.issueRefundAfterEnteringAmountTest();
 		
 	}
 	
 	@Test(dependsOnMethods = "clickIssueRefundBtnTest")
-	@Documentation(step="", expected="")
+	@Documentation(step="click on 'Confirm Refund'.", expected="Able to click.")
 	public static void clickConfirmRefundTest() throws Exception {
 		InvoicePageTest.clickConfirmRefundTest();
 		
 	}
 	
 	@Test(dependsOnMethods = "clickConfirmRefundTest", priority = 62)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Invoice summary page.", expected="Verification should be a sucess.")
 	public static void verifyPaymentsInvoicePageTest() throws Exception {
 		PaymentsInvoicePageTest.verifyFLInvoicePageTest();
 	}
 	
 	@Test(dependsOnMethods = "clickConfirmRefundTest", priority = 63)
-	@Documentation(step="", expected="")
+	@Documentation(step="Verify Status against the paid invoice changed to 'Refunded'.", expected="Verification should be a sucess.")
 	public static void verifyInvoiceRefundedTest() throws Exception {
 		PaymentsInvoicePageTest.verifyInvoiceStatusIsRefundedTest();
 	}

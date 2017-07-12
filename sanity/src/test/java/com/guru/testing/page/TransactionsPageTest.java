@@ -173,7 +173,7 @@ public class TransactionsPageTest {
 		String toDate = StringUtils.stringBetween(range, "to ", "", 1);
 		String toMonth = StringUtils.stringBetween(toDate, "", " ", 1);
 		String toDay = StringUtils.stringBetween(toDate, " ", "", 1);
-		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("IST"));
+		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
 		int month = calendar.get(Calendar.MONTH);
 		int todayDay = calendar.get(Calendar.DATE);
 		List<String> monthList = Arrays.asList("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct",

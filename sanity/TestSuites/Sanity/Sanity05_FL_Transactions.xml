@@ -1,6 +1,6 @@
 <suite name="Sanity Transactions for Freelancer" verbose="1" preserve-order="true" >
 	<listeners>
-		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+	<!-- 	<listener class-name="com.guru.framework.testing.helpers.PDFReporter" /> -->
 		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
 	</listeners>
 
@@ -69,21 +69,23 @@
 		</classes>
 	</test>
 	
-	<test name="2. Verify Calendar Controls, Sort by payment, Print and Download options ">
+	<test name="2. Verify Sort by Paymenyt, Calendar Controls Print and Download options ">
 	<classes>
 			<class name="com.guru.testing.page.TransactionsPageTest">			
 			<parameter name="noDataDateRange" value="25-02-2017|02-03-2017" />
 			<parameter name="fromDateAfterToDate" value="23-02-2017|01-02-2017" />			
 			<parameter name="dateRangeMoreThanAYear" value="01-02-2015|01-02-2016" />
-			<parameter name="validDataDateRange" value="01-02-2007|01-04-2007" />			
+			<parameter name="validDataDateRange" value="01-07-2017|07-07-2017" />	
+			<!-- <parameter name="validDataDateRange" value="01-02-2007|01-04-2007" />			 -->
 			<parameter name="noDataText" value="You have no transaction in this date range." />
 			<parameter name="rangeMoreThanYearText" value="Please select a date range that does not exceed 12 months." />
 			<methods>
 				<include name="verifyDefaultDateRangeTest" />
+				<include name="applyDateRangeValidDataTest" />
+				<include name="clickFilter3Test" />
 				<include name="applyReportByPaymentMethodTest" />
 				<include name="verifyReportByPaymentMethodTest" />
-				<include name="verifySortByPaymentMethodTest" />
-				<include name="applyReportByEmployerTest" />
+				<include name="verifySortByPaymentMethodTest" />	
 				<include name="applyDateRangeNoDataTest" />	
 				<include name="clickFilter1Test" />	
 				<include name="verifyWhenNoDataPresentTest" />															
@@ -92,14 +94,7 @@
 				<include name="closeCalendarTest" />				
 				<include name="applyDateRangeMoreThanAYearTest" />			
 				<include name="clickFilter2Test" />				
-				<include name="verifyDateRangeMoreThanAYearTest" />				
-				<include name="reloadAndVerifyDateRangeTest" />
-				<include name="applyDateRangeValidDataTest" />
-				<include name="clickFilter3Test" />
-				<include name="verifyDataIsLoadedTest" />	
-				<include name="verifyReportingByOptionsTest" />
-				<include name="verifyDownloadOptionsTest" />
-				<include name="closeDownloadOptionTest" />							
+				<include name="verifyDateRangeMoreThanAYearTest" />								
 			</methods>
 		</class>
 	
@@ -107,15 +102,28 @@
 	</test>
 
 		<test name="3. Verify Sort by Employer Name">
+		
 	<classes>
+	<parameter name="validDataDateRange" value="01-02-2007|01-04-2007" />
 			<class name="com.guru.testing.page.TransactionsPageTest">
 			<methods>
+				<include name="applyReportByEmployerTest" />	
+				<include name="applyDateRangeValidDataTest" />
+				<include name="clickFilterTest" />	
+				<include name="verifyDataIsLoadedTest" />	
 				<include name="verifyReportByEmployerTest" />
+				<include name="reloadAndVerifyDateRangeTest" />				
+				<include name="verifyReportingByOptionsTest" />
+				<include name="verifyDownloadOptionsTest" />
+				<include name="closeDownloadOptionTest" />	
+				
 			</methods>
 		</class>
 	
 	</classes>
 	</test>
+	
+
 	
 	<test name="5. Download report by PDF and Verify Print ">
 	<classes>

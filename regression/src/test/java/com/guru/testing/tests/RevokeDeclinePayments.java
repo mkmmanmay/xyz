@@ -85,7 +85,7 @@ public class RevokeDeclinePayments {
 	public static void goToJobHirePageTest() throws Exception {
 		DashboardPageTest.clickDashboardTopNavTest();
 		DashboardPageTest.verifyEMPDashboardPageTest();
-		DashboardPageTest.clickRandomJobnamePostedTest();
+		DashboardPageTest.clickRandomJobnamePostedFromQuotes();
 	}
 	
 	@Test(dependsOnMethods="goToJobHirePageTest", priority = 9)
@@ -214,7 +214,7 @@ public class RevokeDeclinePayments {
 	@Test(dependsOnMethods = "verifyEMPLoggedInTest", priority = 27)
 	@Documentation(step="Navigate to the Job's hire page.", expected="Navigation successful.")
 	public static void goToJobHirePageAgainTest() throws Exception {
-		DashboardPageTest.clickRandomJobnamePostedTest();
+		DashboardPageTest.clickRandomJobnamePostedFromQuotes();
 	}
 	
 	@Test(dependsOnMethods="goToJobHirePageAgainTest", priority = 28)
@@ -268,7 +268,7 @@ public class RevokeDeclinePayments {
 	@Parameters("flWorkroomIndex")
 	@Documentation(step="Navigate to the Hired Job's workroom.", expected="Navigation success.")
 	public static void goToWorkroomTest(int index) throws Exception{
-		DashboardPageTest.clickFLWorkroomByIndexTest(index);
+		DashboardPageTest.clickFLWorkroomByIndex(index);
 			
 	}
 	

@@ -95,7 +95,7 @@ public class TestBuyingBids {
 	public static void verifyCAEntryTest(String type, String bids) {
 		try {
 			CashAccPageTest.clickCashAccTabTest();
-			CashAccPageTest.verifyCashAccPageTest();
+			CashAccPageTest.verifyCashAccPageFLTest();
 			CashAccPageTest.verifyTransactionsTest(bids);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -30,9 +30,12 @@ public class PayNowPageTest {
 	public static void verifyPayNowPageTest() throws Exception {
 		ScriptLogger.info();
 		try {
-			BrowserWait.waitUntilPageTitle("Make Payment - Guru.com");
-			BrowserWait.waitUntilText("Apply your available funds", "Amount Due", "Cash Account");			
-			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_DIV_XPATH);
+			BrowserWait.waitForPageToBeLoaded();
+			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_DIV_XPATH, 30);
+			Thread.sleep(5000);
+			BrowserWait.waitUntilText("Apply your available funds", 10);
+			BrowserWait.waitUntilText("Cash Account");
+			BrowserWait.waitUntilText("Amount Due");
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_AGREE_TO_PAY_CHECKBOX_ID);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAY_BUTTON_DISABLED_XPATH);
 		} catch (Exception e) {
@@ -324,8 +327,8 @@ public class PayNowPageTest {
 	public static void verifyBidPurchaseSuccessTest(int bidsAdded) throws Exception {
 		ScriptLogger.info();
 		try {
-			BrowserWait.waitUntilTextVisible("Payment Receipt");
-			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_RECEIPT_DIV_XPATH, 60);
+			BrowserWait.waitUntilText("Payment Receipt", 60);
+			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_RECEIPT_DIV_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PRINT_RECEIPT_PLINK);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_TRANSACTION_ID_TEXT_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_RECEIPT_BACK_TO_BIDS_PAGE_PLINK);
@@ -356,7 +359,7 @@ public class PayNowPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserWait.waitUntilPageTitle("Make Payment - Guru.com");
-			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_DIV_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_DIV_XPATH, 30);
 			BrowserWait.waitUntilText("Apply your available funds","Amount Due","Cash Account","Select a payment method");	
 		} catch (Exception e) {
 			throw new HTMLElementNotFoundException(e, "One or more elements necessary didn't load at all, or in time during execution. Possible Application issue.");

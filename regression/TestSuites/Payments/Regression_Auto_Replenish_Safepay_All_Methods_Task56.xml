@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression_Auto_Replenish_With_Task" verbose="1" preserve-order="true" >
+	<listeners>
+		<listener class-name="com.guru.framework.testing.helpers.PDFReporter" />
+		<listener class-name="com.guru.framework.testing.selenium.BaseTestNGWebDriverListener" />
+	</listeners>
+
+		<parameter name="browser" value="chrome" />
+		<parameter name="waitTime" value="5" />
+		<parameter name="thinkTime" value="5" />
+		<parameter name="implicitWaitTime" value="10" />
+		<parameter name="reportName" value="REGRESSION_ADD_ALL_EMP_PAYMENT_METHODS" />
+		<parameter name="reportDetailLevel" value="43" />
+		<parameter name="url" value="http://qa-admin.guru.com/admin" />
+		<parameter name="username" value="small" />
+		<parameter name="password" value="password" />
+	
+	
+		<parameter name="jobIndex" value="1" />
+		<parameter name="autoFund" value="true" />
+		<parameter name="amount" value="100" />
+		
+	<test name = "Regression_Auto_Replenish_With_Task">
+	<parameter name="taskId" value="56" />	
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.AdminLogin" />
+			<class name="com.guru.testing.tests.RunTaskEngine" />
+		</classes>
+	</test>
+	<test name = "Verify safepay is funded by Cash">
+	<parameter name="url" value="http://qa.guru.com/login.aspx" />
+		<parameter name="username" value="autoempcashprimary@mailinator.com" />
+		<parameter name="password" value="12345678" />	
+		<parameter name="paymentType" value="CASH_ACCOUNT" />
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.EMPLogin" />
+			<class name="com.guru.testing.tests.OpenEmpWorkroomByIndex" />			
+			<class name="com.guru.testing.tests.VerifyEmpFundsInSafepay" />
+			<class name="com.guru.testing.tests.EMPLogout" />
+		</classes>
+	</test>
+	
+	<test name = "Verify safepay is funded by CC">
+	<parameter name="url" value="http://qa.guru.com/login.aspx" />
+		<parameter name="username" value="autoempccprimary@mailinator.com" />
+		<parameter name="password" value="12345678" />
+		<parameter name="paymentType" value="CREDIT_CARD" />
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.EMPLogin" />
+			<class name="com.guru.testing.tests.OpenEmpWorkroomByIndex" />	
+			<class name="com.guru.testing.tests.VerifyEmpFundsInSafepay" />
+			<class name="com.guru.testing.tests.EMPLogout" />
+		</classes>
+	</test>
+	
+	<test name = "Verify safepay is funded by Pay pal">
+	<parameter name="url" value="http://qa.guru.com/login.aspx" />
+		<parameter name="username" value="autoemppaypalprimary@mailinator.comm" />
+		<parameter name="password" value="12345678" />
+		<parameter name="paymentType" value="PAY_PAL" />
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.EMPLogin" />
+			<class name="com.guru.testing.tests.OpenEmpWorkroomByIndex" />	
+			<class name="com.guru.testing.tests.VerifyEmpFundsInSafepay" />
+			<class name="com.guru.testing.tests.EMPLogout" />
+		</classes>
+	</test>
+	
+	<test name = "Verify safepay is funded by Echeck">
+		<parameter name="url" value="http://qa.guru.com/login.aspx" />
+		<parameter name="username" value=" autoempecheckprimary@mailinator.com" />
+		<parameter name="password" value="12345678" />
+		<parameter name="paymentType" value="E_CHECK" />
+		<classes>
+			<class name="com.guru.testing.tests.LaunchApplication"/>
+			<class name="com.guru.testing.tests.EMPLogin" />
+			<class name="com.guru.testing.tests.OpenEmpWorkroomByIndex" />	
+			<class name="com.guru.testing.tests.VerifyEmpFundsInSafepay" />
+			<class name="com.guru.testing.tests.EMPLogout" />
+		</classes>
+	</test>
+ </suite>

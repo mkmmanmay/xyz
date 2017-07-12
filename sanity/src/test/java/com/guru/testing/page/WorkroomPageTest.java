@@ -947,13 +947,16 @@ public class WorkroomPageTest {
 			String current = BrowserAction.getElement(WorkroomPageObjectMap.WORKROOM_PAGE_TASKS_TAB_TASK_DETAIL_PAGE_DUE_DATE_CALENDAR_HEADER_XPATH).getText();
 			String[] parts = current.split(" ");
 			String month = parts[0];
+			String mon = null;
 			String year = parts[1];
 			String day = null;
 			switch(month) {
 			case "January":
+				mon = "Jan";
 				day="31";
 				break;
 			case "February":
+				mon = "Feb";
 				if(Integer.parseInt(year)% 4 == 0) {
 					day="29";
 					break;
@@ -962,32 +965,42 @@ public class WorkroomPageTest {
 					break;
 				}
 			case "March":
+				mon = "Mar";
 				day="31";
 				break;
 			case "April":
+				mon = "Apr";
 				day="30";
 				break;
 			case "May":
+				mon = "May";
 				day="31";
 				break;
 			case "June":
+				mon = "Jun";
 				day="30";
 				break;
 			case "July":
+				mon = "Jul";
 				day="31";
 				break;
 			case "August":
+				mon = "Aug";
 				day="31";
 				break;
 			case "September":
+				mon = "Sep";
 				day="30";
 				break;
 			case "October":
+				mon = "Oct";
 				day="31";
 				break;
 			case "November":
+				mon = "Nov";
 				day="30";
 			case "Decemeber":
+				mon = "Dec";
 				day="31";
 				break;
 			}
@@ -1023,7 +1036,7 @@ public class WorkroomPageTest {
 				}
 			}
 			
-			lastDayOfMonthClicked = month+ " " +day+ ", "+year;
+			lastDayOfMonthClicked = mon+ " " +day+ ", "+year;
 		} catch (Exception e) {
 			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue.");
 		}
@@ -1347,10 +1360,13 @@ public class WorkroomPageTest {
 		try {
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_AGREEMENT_TAB_SEND_TO_EMPLOYER_BUTTON_XPATH, 15);
 			BrowserAction.click(WorkroomPageObjectMap.WORKROOM_PAGE_AGREEMENT_TAB_SEND_TO_EMPLOYER_BUTTON_XPATH);
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_AGREEMENT_TAB_AGREEMENT_SENT_TOAST_MESSAGE_XPATH);
-			
 		} catch (Exception e) {
-			throw new ScriptException("Unable to click; either it's selenium issue, or a different locator was given in objectmap.");
+			throw new ApplicationException("Unable to click.");
+		}
+		try {
+			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_AGREEMENT_TAB_AGREEMENT_SENT_TOAST_MESSAGE_XPATH);
+		} catch (Exception e) {
+			throw new ApplicationException("Agreement sent success toast message didn't appear. ");
 		}
 	} 
 	
@@ -1437,26 +1453,21 @@ public class WorkroomPageTest {
 		ScriptLogger.info();	
 		try {
 			
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_DIV_XPATH);
-			BrowserWait.waitUntilText("Everyone in Work Room", "Chats");
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_PARTICIPANTS_LINK_XPATH);
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_CHAT_TEXTAREA__XPATH, 15);
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_ATTACH_FILES_BUTTON_ID);
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_SEND_CHAT_BUTTON_XPATH);			
-			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_RIGHT_PANE_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_DIV_XPATH, 30);
+			BrowserWait.waitUntilText("No recent chats found.", "Chats");
 			BrowserWait.waitUntilElementIsDisplayed(WorkroomPageObjectMap.WORKROOM_PAGE_CHATS_PAGE_CREATE_NEW_CHAT_PLUS_ICON_XPATH);
 			
 		} catch (Exception e) {
-			throw new HTMLElementNotFoundException(e, "One of more element necessary for page verification didn't appear.")	;	
+			throw new HTMLElementNotFoundException(e, "One of more element necessary for Chats page verification didn't appear.")	;	
 		}
 		
-		if(!getReceivingNotificationCheckbox()){
+		/*if(!getReceivingNotificationCheckbox()){
 			throw new ApplicationException("Recieve Notification is not checked by default");
 		}
 		
 		if(getChatRoomCountTest()!=1){
 			throw new ApplicationException("Default Chatroom is not present");
-		}
+		}*/
 	}
 	private static int getChatRoomCountTest() throws Exception {
 		List<WebElement> element;

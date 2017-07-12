@@ -562,6 +562,7 @@ public class EditProfilePageTest {
 	@Documentation(step = "", expected = "")
 	public static void addFilesTest(String files) throws Exception {
 		ScriptLogger.info();
+		Thread.sleep(8000);
 		FileHandler.uploadFilesFromPath(files,"|");
 	}
 	

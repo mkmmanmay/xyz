@@ -21,7 +21,7 @@ public class PaymentsInvoicePageTest {
 		try {
 			BrowserWait.waitForPageToBeLoaded();
 			BrowserWait.waitUntilPageTitle("Invoices - Employers - Guru");
-			BrowserWait.waitUntilText("Payments");
+			BrowserWait.waitUntilText("Payments", 30);
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_TAB_PLINK);
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_INVOICE_BODY_ID);	
 			BrowserWait.waitUntilElementIsDisplayed(PaymentsInvoicePageObjectMap.PAYMENTS_INVOICE_PAGE_FEEDBACK_TAB_PLINK);	

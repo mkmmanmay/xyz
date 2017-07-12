@@ -21,7 +21,7 @@ public class AddTeamMemberFL {
 	@Parameters({"index"})
 	@Documentation(step="Navigation to a workroom in from the FL's dashboard.", expected="FL is able to navigate from Dashboard to respective workroom.")
 	public static void goToAWorkroomTest(int index) throws Exception{
-		DashboardPageTest.clickFLWorkroomByIndexTest(index);
+		DashboardPageTest.clickFLWorkroomByIndex(index);
 		WorkroomPageTest.verifyFLWorkroomPageTest();
 	}
 	
@@ -137,7 +137,7 @@ public class AddTeamMemberFL {
 	@Parameters({"index"})
 	@Documentation(step="Go to the workroom the team members were added from initially.", expected="Navigation to the workroom successful.")
 	public static void goToAWorkroomAgainTest(int index) throws Exception{
-		DashboardPageTest.clickFLWorkroomByIndexTest(index);
+		DashboardPageTest.clickFLWorkroomByIndex(index);
 		WorkroomPageTest.verifyFLWorkroomPageTest();
 	}
 	

@@ -68,9 +68,16 @@ public enum WorkroomPageObjectMap {
 	WORKROOM_PAGE_FL_SAFEPAY_REQUEST_FUNDS_BUTTON_XPATH("//a[contains(text(), 'Request Funds')]"),
 	WORKROOM_PAGE_AMOUNT_TO_ADD_TEXTBOX_VALID_XPATH("//input[@ng-model='requestAmountInput']"), // prefilled with amount more than 0
 	WORKROOM_PAGE_EMP_SAFEPAY_ADD_FUNDS_BUTTON_UNDER_ADD_FUNDS_TO_SAFEPAY_SECTION_XPATH("//button[contains(text(), 'Add Funds')]"),
+	WORKROOM_PAGE_EMP_SAFEPAY_CANCEL_BUTTON_UNDER_ADD_FUNDS_TO_SAFEPAY_SECTION_XPATH("//a[contains(text(), 'Cancel')]"),
 	WORKROOM_PAGE_EMP_SAFEPAY_NOT_FUNDED_BANNER_ICON_XPATH("//div[@class='module_sideNavigation module_box viewSinglePro']//ul//li[3]//span[@class='notification module_badge hide show badge_pending']"),
 	WORKROOM_PAGE_EMP_SAFEPAY_SAFEPAY_TAB_XPATH("//a[@ng-click='selectTab(3)']"),
 	WORKROOM_PAGE_EMP_SAFEPAY_TRANSACTION_HISTORY_TABLE_XPATH("//table[@class='module_table tight stripes ng-scope']//tr[2]//td"),
+	WORKROOM_PAGE_EMP_SAFEPAY_TRANSACTION_HISTORY_PENDING_AMOUNT_NOTE_XPATH("//p[@ng-if='isPayPalPendingAmountNote()']"),
+	WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_LINK_PLINK("Request a Refund"),
+	WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_FUTURE_WORK_TEXT_XPATH("//label[@for='rdoSelect']//span[@class='list_title']"),
+	WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_FUTURE_WORK_AMOUNT_XPATH("//label[@for='rdoSelect']//span[@class='subtext ng-binding']"),
+	WORKROOM_PAGE_EMP_SAFEPAY_REQUEST_A_REFUND_REQUEST_REFUND_BUTTON_XPATH("//input[@value='Request Refund']"),
+	
 	
 	// --------------- AGREEMENT FL ----------
 	WORKROOM_PAGE_FL_AGREEMENT_TAB_AGREEMENT_BASED_HEADER_XPATH("//header[@class='cpsection-title']"),
@@ -106,7 +113,7 @@ public enum WorkroomPageObjectMap {
 	
 	// ----------------- AGREEMENT EMP --------
 	
-	WORKROOM_PAGE_EMP_STATUS_UPDATES_TAB_HEADER_XPATH("//header[contains(@class, 'module_box_header_filled module_box_header_filled_table')]"),
+	WORKROOM_PAGE_EMP_STATUS_UPDATES_TAB_HEADER_XPATH("//header[contains(@class, 'module_box_header_filled')]"),
 	WORKROOM_PAGE_EMP_AGREEMENT_TAB_VIEW_AGREEMENT_HEADER_TEXT_XPATH("//h2[contains(text(), 'View Agreement')]"),
 	WORKROOM_PAGE_EMP_AGREEMENT_TAB_REVIEW_YOUR_SAFEPAY_HEADER_TEXT_XPATH("//h3[contains(text(), 'Review your SafePay and autopay requirements below.')]"),
 	WORKROOM_PAGE_EMP_AGREEMENT_TAB_PAYMENT_SCHEDULE_HEADER_TEXT_XPATH("//h3[contains(text(), 'Payment Schedule - invoices will be paid within:')]"),

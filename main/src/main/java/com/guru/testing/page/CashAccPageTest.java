@@ -5,10 +5,10 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.guru.framework.testing.browser.BrowserAccess;
 import com.guru.framework.testing.browser.BrowserAction;
 import com.guru.framework.testing.browser.BrowserWait;
 import com.guru.framework.testing.logger.ScriptLogger;
@@ -19,10 +19,13 @@ import com.guru.framework.testing.objects.exceptions.ScriptException;
 import com.guru.framework.testing.selenium.WebDriverAction;
 import com.guru.testing.objectmap.CashAccPageObjectMap;
 import com.guru.testing.objectmap.CommonObjectMap;
-import com.guru.testing.objectmap.DashboardPageObjectMap;
 
 public class CashAccPageTest {
 	public static Float CASH_ACCOUNT_BALANCE;
+	public static float caBalanceBefore;
+	public static float caBalanceAfter;
+	
+	
 	@Test
 	@Documentation(step = "click 'Cash Account' tab.", expected = "Should be able to click.")
 	public static void clickCashAccTabTest() throws Exception {
@@ -36,7 +39,7 @@ public class CashAccPageTest {
 	
 	@Test
 	@Documentation(step = "Verify the Cash Account page for Freelancer.", expected = "Cash Account page should  appear.")
-	public static void verifyCashAccPageTest() throws Exception {
+	public static void verifyCashAccPageFLTest() throws Exception {
 		ScriptLogger.info();
 		try {
 			BrowserWait.waitForPageToBeLoaded();
@@ -47,20 +50,79 @@ public class CashAccPageTest {
 		}
 	}
 	
+	@Test
+	@Documentation(step = "Verify the Cash Account page for Employer.", expected = "Cash Account page should  appear.")
+	public static void verifyCashAccPageEMPTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserWait.waitForPageToBeLoaded();
+			BrowserWait.waitUntilTextVisible("Balance:" );
+			BrowserWait.waitUntilElementIsDisplayed(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_WITHDRAW_BUTTON_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_EMP_TYPE_DROPDOWN_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_EMP_DATE_DROPDOWN_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_EMP_ADD_FUNDS_BUTTON_XPATH);
+			
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "Unable to find verify Cash Account page");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "", expected = "")
+	public static void getEMPCashBalanceBeforeTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			String text = BrowserAccess.getElementInnerHtml(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_EMP_BALANCE_TEXT_XPATH);
+			int indexOfDollar = text.indexOf("$");
+			caBalanceBefore = Float.valueOf(text.substring(indexOfDollar+1));
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to get Cash Account balance.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "", expected = "")
+	public static void getEMPCashBalanceAfterTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			String text = BrowserAccess.getElementInnerHtml(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_EMP_BALANCE_TEXT_XPATH);
+			int indexOfDollar = text.indexOf("$");
+			caBalanceAfter = Float.valueOf(text.substring(indexOfDollar+1));
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to get Cash Account balance.");
+		}
+	}
+	
 	// METHODS THAT CORRESPOND TO VERIFYNG CA HISTORY AFTER MAKING BIDS PURCHASE
 	@Test
 	@Parameters({"bidsAdded"})
 	@Documentation(step = "Verify top two transactions shown in CA history.", expected = "Should be able to verify.")
 	public static void verifyTransactionsTest(String bids) throws Exception {
 		ScriptLogger.info();
+		String row1 = null, row2 = null;
 		try {
-			String row1 = BrowserAction.getElement(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_DESCRIPTION_ROW1_XPATH).getText();
-			String row2 = BrowserAction.getElement(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_DESCRIPTION_ROW2_XPATH).getText();
-			if(!(row1.equalsIgnoreCase("Payment for "+bids+" bids") && row2.equalsIgnoreCase("Transfer for "+bids+" bids"))) {
-				throw new ApplicationException("Cash Account history description doesn't match with what was expected");
-			}
+			row1 = BrowserAction.getElement(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_DESCRIPTION_ROW1_XPATH).getText();
+			row2 = BrowserAction.getElement(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_DESCRIPTION_ROW2_XPATH).getText();
 		} catch (Exception e) {
-			throw new HTMLElementNotFoundException(e, "Unable to find verify Transfer Methods page");
+			throw new ScriptException("Unable to get description of either first row or second of the CA History Description column.");
+		}
+		if(!(row1.equalsIgnoreCase("Payment for "+bids+" bids") && row2.equalsIgnoreCase("Transfer for "+bids+" bids"))) {
+			throw new ApplicationException("Cash Account history description doesn't match with what was expected: 'Payment for #BidCount bids'.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Verify refunded invoice status in CA History.", expected = "Should be able to verify.")
+	public static void verifyRefundedInvoiceDescriptionTest() throws Exception {
+		ScriptLogger.info();
+		String row1 = null;
+		try {
+			row1 = BrowserAction.getElement(CashAccPageObjectMap.CASH_ACCOUNT_PAGE_DESCRIPTION_ROW1_XPATH).getText();
+		} catch (Exception e) {
+			throw new ScriptException("Unable to get description of either first row of the CA History Description column.");
+		}
+		if(!(row1.equals("Refund for Invoice ID: "+InvoicePageTest.refundInvoiceID))) {
+			throw new ApplicationException("Cash Account history description doesn't match with what was expected: 'Refund for Invoice ID: $ID'.");
 		}
 	}
 

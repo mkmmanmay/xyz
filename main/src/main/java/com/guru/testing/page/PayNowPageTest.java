@@ -64,7 +64,22 @@ public class PayNowPageTest {
 		}
 	}
 	
-	// -------------------- TO DO -------------------------
+	
+	public static void payByPaymentMethod(String paymentMethod) throws Exception {
+			ScriptLogger.info();
+			switch (paymentMethod) {
+			case "CASH_ACCOUNT": clickUseCAfunds();
+			break;
+			
+			/*case "CREDIT_CARD": clickPayWithCCTest();
+			break;*/
+			
+			default:
+				break;
+			}
+			//TODO similar to verify method
+		}
+		
 	@Test
 	@Parameters("paymentMethod")
 	@Documentation(step = "Verify payment method is present", expected = "Payment method provided should be present")
@@ -701,7 +716,7 @@ public class PayNowPageTest {
 	
 	@Test
 	@Documentation(step = "Verify Pay Now page for Safepay.", expected = "Pay now page should be verified")
-	public static void verifyPayforSafepayTest() throws Exception {
+	public static void verifyPayforSafepay() throws Exception {
 		ScriptLogger.info();
 		try {
 			verifyPayNowPageTest();			
@@ -713,12 +728,12 @@ public class PayNowPageTest {
 	
 	@Test
 	@Documentation(step = "Verify payment for Safepay succeeded.", expected = "Payment success should be verified.")
-	public static void verifySafepayFundSuccessTest() throws Exception {
+	public static void verifySafepayFundSuccess() throws Exception {
 		ScriptLogger.info();
 		try {		
 			BrowserWait.waitUntilText("Payment Receipt", 30);
-			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_SAFEPAY_FUNDED_SUCCESS_PAGE_THANK_YOU_STATEMENT_CONTAINER_XPATH);
-			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_TRANSACTION_ID_TEXT_XPATH, 60);			
+			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_SAFEPAY_FUNDED_SUCCESS_PAGE_THANK_YOU_STATEMENT_CONTAINER_XPATH, 60);
+			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_TRANSACTION_ID_TEXT_XPATH);			
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PAYMENT_RECEIPT_DIV_XPATH);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_PRINT_RECEIPT_PLINK);
 			BrowserWait.waitUntilElementIsDisplayed(PayNowPageObjectMap.PAY_NOW_PAGE_SAFEPAY_FUNDED_SUCCESS_PAGE_BACK_TO_SAFEPAY_PAGE_PLINK);
@@ -729,7 +744,7 @@ public class PayNowPageTest {
 	
 	@Test
 	@Documentation(step = "Click 'Back to SafePay page' link.", expected = "Able to click.")
-	public static void clickBackToSafePayPageTest() throws Exception {
+	public static void clickBackToSafePayPage() throws Exception {
 		ScriptLogger.info();
 		try {
 			BrowserAction.click(PayNowPageObjectMap.PAY_NOW_PAGE_SAFEPAY_FUNDED_SUCCESS_PAGE_BACK_TO_SAFEPAY_PAGE_PLINK);

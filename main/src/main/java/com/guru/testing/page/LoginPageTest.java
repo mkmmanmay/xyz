@@ -87,14 +87,14 @@ public class LoginPageTest {
 		ScriptLogger.info();
 		try {
 			BrowserAction.click(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_XPATH);
-			Thread.sleep(3000);
+			/*Thread.sleep(3000);*/
 		} catch (Exception e) {
 			throw new ScriptException(e);
 		}
-		try {
+		/*try {
 			BrowserAction.click(LoginPageObjectMap.LOGIN_PAGE_SIGN_IN_BUTTON_XPATH);
 		} catch (Exception e) {
 			ScriptLogger.debug("Sign In wasn't required to be clicked twice to proceed.");
-		}
+		}*/
 	}
 }

@@ -50,6 +50,19 @@ public enum InvoicePageObjectMap {
 	INVOICE_PAGE_ISSUE_REFUND_SECTION_INVOICE_AMOUNT_TEXT_XPATH("//ul[@class='module_list tight']//li[2]"),
 	INVOICE_PAGE_ISSUE_REFUND_SECTION_CONFIRM_REFUND_BUTTON_XPATH("//input[@value='Confirm Refund']"),
 	INVOICE_PAGE_ISSUE_REFUND_CONFIRMATION_TOAST_MESSAGE_XPATH("//p[@class='module_toast toast_top'][contains(text(), 'Refund Issued!')]"),
+	
+	INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_ISSUE_REFUND_BUTTON_XPATH("//div[contains(@id, 'SafepayRefundRequest_DisputeBtn')]//input[@value='Issue Refund']"),
+	INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_DISPUTE_REFUND_BUTTON_XPATH("//div[contains(@id, 'SafepayRefundRequest_DisputeBtn')]//input[@value='Dispute Refund']"),
+	INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_CONFIRM_ISSUE_REFUND_BUTTON_XPATH("//input[contains(@id, 'AgreeToRefund_btnIssueRefund')]"),
+	
+	// --------------------- REQUEST REFUND -----------
+	INVOICE_PAGE_REQUEST_REFUND_SECTION_ADD_MORE_REASONS_BTN_ID("addButton"),
+	INVOICE_PAGE_REQUEST_REFUND_SECTION_REQUEST_REFUND_BTN_ID("btnRequestRefund"),
+	INVOICE_PAGE_REQUEST_REFUND_SECTION_CANCEL_BTN_ID("btnCancelRefund"),
+	INVOICE_PAGE_REQUEST_REFUND_SECTION_REASONS_TEXTBOXES_XPATH("//textarea[@class='niceInput txtReason']"),
+	INVOICE_PAGE_REQUEST_REFUND_SENT_SECTION_EDIT_BUTTON_XPATH("//span[contains(@id, 'SafepayRefundRequest_EditTab')]//a[contains(text(), 'Edit')]"),
+	INVOICE_PAGE_REQUEST_REFUND_SENT_SECTION_CANCEL_BUTTON_XPATH("//a[contains(text(), 'Cancel')]"),
+	INVOICE_PAGE_REQUEST_REFUND_SENT_SECTION_INVOICE_ID_TEXT_XPATH("//ul[@class='module_list tight']//li[1]"),
 	;	
 
 	

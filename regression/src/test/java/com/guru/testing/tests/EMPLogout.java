@@ -14,7 +14,7 @@ public class EMPLogout {
 		DashboardPageTest.signOutEmployerTest();
 	}
 	
-	@Test(dependsOnMethods = { "clickLogoutFLTest" })
+	@Test(dependsOnMethods = { "clickLogoutEMPTest" })
 	@Documentation(step="Verify Login page.", expected="Able to verify Login page.")
 	public static void clickSignInTest() throws Exception {
 		LoginPageTest.verifyLoginPageTest();

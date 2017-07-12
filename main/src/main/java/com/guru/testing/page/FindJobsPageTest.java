@@ -22,6 +22,7 @@ import com.guru.testing.constants.SortOptionsFindJobs;
 import com.guru.testing.objectmap.CommonObjectMap;
 import com.guru.testing.objectmap.FindJobsPageObjectMap;
 import com.guru.testing.objectmap.HomePageObjectMap;
+import com.guru.testing.page.PostAJobPageTest;
 
 public class FindJobsPageTest {
 	

@@ -26,6 +26,7 @@ public class InvoicePageTest {
 	public static double invTotal;
 	public static String invoiceID;
 	public static String invoiceAmount;
+	public static int refundInvoiceID;
 	
 	@Test
 	 @Documentation(step = "Verify the Invoice page", expected = "Invoice Page should be loaded")
@@ -250,6 +251,68 @@ public class InvoicePageTest {
 	}
 	
 	@Test
+	@Documentation(step = "Verify 'Issue Refund' section.", expected = "Able to verify.")
+	public static void verifyIssueSafepayRefundSectionTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserWait.waitForPageToBeLoaded();
+			BrowserWait.waitUntilText("The Employer has requested a refund for the reasons listed below. To avoid having the funds automatically refunded, either issue or dispute the refund by", 30);
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_ISSUE_REFUND_BUTTON_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_DISPUTE_REFUND_BUTTON_XPATH);
+			
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "One or more elements necessary for Issue Refund section verification didn't load. Possible Build/Application issue.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click 'Issue Refund' button.", expected = "Able to click.")
+	public static void clickIssueSafepayRefundTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(InvoicePageObjectMap.INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_ISSUE_REFUND_BUTTON_XPATH);	
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click 'Issue refund' Button.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Verify 'Confirm Refund' section.", expected = "Able to verify.")
+	public static void verifyconfirmSafepayRefundSectionTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserWait.waitUntilText("Confirm Refund", 30);
+			BrowserWait.waitUntilText("All refunds are final. Guru.com cannot recover refunded payments.");
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_CONFIRM_ISSUE_REFUND_BUTTON_XPATH);
+			
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e, "One or more elements necessary for Confirm Issue Refund section verification didn't load. Possible Build/Application issue.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click 'Issue Refund' to Confirm the Issue of Refund.", expected = "Able to click.")
+	public static void clickConfirmIssueSafepayRefundTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(InvoicePageObjectMap.INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_CONFIRM_ISSUE_REFUND_BUTTON_XPATH);	
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click 'Issue refund' Button.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click 'Issue Refund' section.", expected = "Able to click.")
+	public static void verifyRefundTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(InvoicePageObjectMap.INVOICE_PAGE_ISSUE_SAFEPAY_REFUND_ISSUE_REFUND_BUTTON_XPATH);	
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click 'Issue refund' Button.");
+		}
+	}
+	
+	@Test
 	@Documentation(step = "Click on 'Pay Invoice'.", expected = "Able to click.")
 	public static void clickPayInvoiceTest() throws Exception {
 		ScriptLogger.info();
@@ -367,5 +430,110 @@ public class InvoicePageTest {
 			throw new ScriptException("Unable to click; possible locator or selenium issue. If not, possible application issue. Or perhaps the elements after clicking didn't appear.");
 		}
 	}
+	
+	// -------------- REQUEST A REFUND REASONS SECTION --------------
+	// ---------------------------- START ---------------------------
+	@Test
+	@Documentation(step = "Verify the Request a Refund List of Reasons section.", expected = "The section should load.")
+	public static void verifyRequestRefundReasonsSectionTest() throws Exception {
+		ScriptLogger.info();
+		int size = 0;
+		try {
+			BrowserWait.waitForPageToBeLoaded();
+			BrowserWait.waitUntilText("Request a Refund", 30);
+			BrowserWait.waitUntilText("List your reasons for requesting a refund. Attach evidence that supports your position...");
+			BrowserWait.waitUntilText("List of Reasons");
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_ADD_MORE_REASONS_BTN_ID);
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_REQUEST_REFUND_BTN_ID);
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_CANCEL_BTN_ID);
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_REASONS_TEXTBOXES_XPATH);
+		} catch (Exception e) {
+			throw new HTMLElementNotFoundException(e,"One of more element necessary for Request a Refund List of Reasons section verification didn't appear.");
+		}
+		try {
+			List<WebElement> textarea = BrowserAccess.getElements(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_REASONS_TEXTBOXES_XPATH);
+			size = textarea.size();
+		} catch (Exception e) {
+			ScriptLogger.debug("Unable to get size of textboxes in the List of Reasons section.");
+		}
+		if(size!=3) {
+			throw new ApplicationException("Number of Textboxes for 'List of Reasons' isn't 3.");
+		}
+	}
+	
+	@Test
+	@Parameters({"noOfReasons", "reasonContent"})
+	@Documentation(step = "Enter List of Reasons.", expected = "Able to enter.")
+	public static void enterListOfReasonsTest(int reasonsCount, String reasonContent) throws Exception {
+		ScriptLogger.info();
+		String[] reasons = reasonContent.split("-");
+		int size = 0;
+		try {
+			if(reasonsCount <= 3) {
+				List<WebElement> textarea = BrowserAccess.getElements(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_REASONS_TEXTBOXES_XPATH);
+				size = reasons.length;
+				for(int i = 0; i < size; i++) {
+					textarea.get(i).sendKeys(reasons[i]);
+				}
+			} else if (reasonsCount > 3) {
+				for(int j = 0; j < reasonsCount - 3; j++) {
+					BrowserAction.click(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_ADD_MORE_REASONS_BTN_ID);
+					Thread.sleep(1000);
+				}
+				List<WebElement> textarea = BrowserAccess.getElements(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_REASONS_TEXTBOXES_XPATH);
+				size = reasons.length;
+				for(int i = 0; i < size; i++) {
+					textarea.get(i).sendKeys(reasons[i]);
+				}
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to enter list of Reasons.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Click Request Refund Button.", expected = "Able to click")
+	public static void clickRequestRefundTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserAction.click(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SECTION_REQUEST_REFUND_BTN_ID);
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click Request Refund Button.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Verify Request Refund with List of Reasons sent.", expected = "Able to verify.")
+	public static void verifyRequestRefundSentTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			BrowserWait.waitForPageToBeLoaded();
+			BrowserWait.waitUntilText("Your request for a refund of", 30);
+			BrowserWait.waitUntilText("was sent to", "They have through", "to either issue the refund or dispute your request. If they do not respond by the deadline, we will automatically issue the refund to your cash account.");
+			BrowserWait.waitUntilText("If your guru disputes your request, the");
+			BrowserWait.waitUntilText("process will begin. We will email you when a response is received or once the funds have been added to your cash account.");
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SENT_SECTION_EDIT_BUTTON_XPATH);
+			BrowserWait.waitUntilElementIsDisplayed(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SENT_SECTION_CANCEL_BUTTON_XPATH);
+			BrowserWait.waitUntilText("Listed Reasons");
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click Request Refund Button.");
+		}
+	}
+	
+	@Test
+	@Documentation(step = "Get the Invoice ID generated after the request for refund is sent successfully.", expected = "Able to retrieve the ID.")
+	public static void getInvoiceIDGeneratedTest() throws Exception {
+		ScriptLogger.info();
+		try {
+			String invoiceText = BrowserAccess.getElement(InvoicePageObjectMap.INVOICE_PAGE_REQUEST_REFUND_SENT_SECTION_INVOICE_ID_TEXT_XPATH).getText();
+			int indexOfColon = invoiceText.indexOf(':');
+			String after = invoiceText.substring(indexOfColon + 1);
+			refundInvoiceID = Integer.parseInt(after.trim());
+		} catch (Exception e) {
+			throw new ApplicationException("Unable to click Request Refund Button.");
+		}
+	}
+	
+	// ----------------------------- END ------------------------------
 		
 }

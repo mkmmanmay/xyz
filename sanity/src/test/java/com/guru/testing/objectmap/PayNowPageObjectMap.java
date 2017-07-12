@@ -6,7 +6,7 @@ public enum PayNowPageObjectMap {
 	PAY_NOW_PAGE_PAYMENT_RECEIPT_DIV_XPATH("//div[@class='layout-right-aside hasAnimation hasTransform hasFade in']"),
 	PAY_NOW_PAGE_AUTO_RENEWAL_HELP_NAV_PLINK("auto-renewal"),
 	PAY_NOW_PAGE_TERMS_AND_CONDITIONS_HELP_NAV_PLINK("terms and conditions"),
-	PAY_NOW_PAGE_AUTO_RENEW_CHECKBOX_ID("autoRenew1"),
+	PAY_NOW_PAGE_AUTO_RENEW_CHECKBOX_ID("autoRenew"),
 	PAY_NOW_PAGE_AGREE_TO_PAY_CHECKBOX_ID("iagree"),
 	PAY_NOW_PAGE_USE_CASH_ACCOUNT_XPATH("//a[contains(text(), 'Use')]"),
 	PAY_NOW_PAGE_AMERICAN_EXPRESS_LOGO_XPATH("//img[@alt='American Express']"),
